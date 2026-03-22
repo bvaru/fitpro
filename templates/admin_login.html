@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>21 Days — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <style>
+:root{
+  --forest:#0d3b2e;--forest-mid:#155740;--forest-lt:#1e7a58;
+  --saffron:#e8930a;--red:#c0392b;
+  --ink:#111827;--slate:#374151;--muted:#6b7280;--subtle:#9ca3af;
+  --border:#e5e7eb;--surface:#faf9f6;--white:#ffffff;
+  --ff-d:'Fraunces',serif;--ff-b:'Outfit',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--ff-b);min-height:100vh;display:flex;background:var(--surface);-webkit-font-smoothing:antialiased;}
+
+/* LEFT */
+.left{width:480px;flex-shrink:0;background:var(--forest);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 52px;}
+.left-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 100% 0%,rgba(232,147,10,.16) 0%,transparent 55%),radial-gradient(ellipse 60% 70% at 0% 100%,rgba(21,87,64,.5) 0%,transparent 55%),linear-gradient(160deg,#0d3b2e 0%,#0f4535 40%,#112e1e 100%);}
+.left-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:28px 28px;}
+.left-inner{position:relative;z-index:1;width:100%;max-width:340px;}
+
+.logo{display:inline-flex;align-items:stretch;border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.25);margin-bottom:32px;}
+.logo .ln{background:rgba(255,255,255,.12);color:#fff;font-family:var(--ff-d);font-weight:800;font-size:22px;padding:6px 12px;border:1px solid rgba(255,255,255,.1);border-right:none;border-radius:8px 0 0 8px;}
+.logo .ld{background:var(--saffron);color:#fff;font-family:var(--ff-b);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px 6px 10px;border-radius:0 8px 8px 0;display:flex;align-items:center;}
+
+.left-title{font-family:var(--ff-d);font-size:24px;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:6px;}
+.left-sub{font-size:14px;color:rgba(255,255,255,.42);margin-bottom:40px;line-height:1.5;}
+
+.feat{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:15px 18px;margin-bottom:10px;}
+.feat-ic{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.fic-g{background:rgba(30,122,88,.35);color:#6ee7b7;}
+.fic-a{background:rgba(232,147,10,.25);color:#fcd34d;}
+.fic-b{background:rgba(147,197,253,.15);color:#93c5fd;}
+.feat-t{font-size:13.5px;font-weight:600;color:#fff;}
+.feat-s{font-size:12px;color:rgba(255,255,255,.38);margin-top:2px;}
+
+.stats-row{display:flex;border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;margin-top:28px;}
+.stat{flex:1;padding:14px 0;text-align:center;border-right:1px solid rgba(255,255,255,.1);}
+.stat:last-child{border-right:none;}
+.stat-n{font-family:var(--ff-d);font-size:22px;font-weight:700;color:#fff;letter-spacing:-.5px;}
+.stat-n .sup{color:var(--saffron);font-size:14px;}
+.stat-l{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:3px;}
+
+/* RIGHT */
+.right{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 48px;position:relative;}
+.right::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--forest),var(--saffron));}
+.form-box{width:100%;max-width:380px;}
+
+.form-title{font-family:var(--ff-d);font-size:28px;font-weight:800;letter-spacing:-.8px;color:var(--ink);margin-bottom:4px;}
+.form-sub{font-size:14px;color:var(--muted);margin-bottom:28px;}
+
+.role-note{background:#f0f9f5;border:1px solid rgba(13,59,46,.15);border-radius:10px;padding:14px 16px;margin-bottom:24px;display:flex;gap:10px;align-items:flex-start;}
+.role-note i{color:var(--forest);font-size:15px;margin-top:1px;flex-shrink:0;}
+.role-note-title{font-size:12.5px;font-weight:700;color:var(--forest);margin-bottom:5px;}
+.role-note-body{font-size:12px;color:#166534;line-height:1.55;}
+.role-note a{color:var(--forest);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-top:6px;font-size:12px;}
+
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:7px;}
+.field-wrap{position:relative;}
+.field-wrap i{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:15px;color:#d1d5db;}
+.field input{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:10px;color:var(--slate);padding:13px 16px 13px 42px;font-family:var(--ff-b);font-size:14px;transition:all .2s;}
+.field input:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(13,59,46,.08);}
+.field input::placeholder{color:#d1d5db;}
+
+.btn-sign{width:100%;background:var(--forest);color:#fff;border:none;padding:14px;border-radius:10px;font-family:var(--ff-b);font-size:15px;font-weight:600;cursor:pointer;transition:all .25s;box-shadow:0 2px 8px rgba(13,59,46,.3);display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px;}
+.btn-sign:hover{background:var(--forest-mid);transform:translateY(-1px);box-shadow:0 4px 16px rgba(13,59,46,.35);}
+
+.err-bar{display:flex;align-items:center;gap:8px;background:#fef2f2;border:1px solid rgba(192,57,43,.2);color:var(--red);padding:12px 16px;border-radius:10px;font-size:13.5px;font-weight:500;margin-bottom:20px;}
+
+.divider{height:1px;background:var(--border);margin:24px 0;}
+
+.creds-box{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px;}
+.creds-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.creds-title{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:7px;}
+.creds-hint{font-size:11px;color:var(--subtle);}
+.cred-row{display:flex;align-items:center;justify-content:space-between;padding:10px 13px;background:var(--surface);border:1.5px solid var(--border);border-radius:9px;cursor:pointer;transition:all .2s;margin-bottom:8px;}
+.cred-row:last-of-type{margin-bottom:0;}
+.cred-row:hover{background:#f0f9f5;border-color:rgba(13,59,46,.2);}
+.cred-k{font-size:12px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:7px;}
+.cred-v{font-family:'Courier New',monospace;font-size:13px;font-weight:700;color:var(--slate);}
+.cred-a{font-size:11px;color:var(--subtle);display:flex;align-items:center;gap:4px;}
+.warn{background:#fffbeb;border:1.5px solid #fde68a;border-radius:8px;padding:11px 13px;margin-top:12px;display:flex;gap:8px;font-size:12px;color:#92400e;line-height:1.55;}
+.warn code{background:#fde68a;padding:1px 5px;border-radius:3px;font-size:11px;}
+
+.back-link{display:block;text-align:center;margin-top:22px;color:var(--subtle);font-size:13px;font-weight:500;text-decoration:none;transition:color .2s;}
+.back-link:hover{color:var(--forest);}
+
+#toast{position:fixed;bottom:20px;right:20px;background:var(--forest);color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:500;opacity:0;transform:translateY(8px);transition:all .25s;pointer-events:none;}
+#toast.show{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){.left{display:none;}.right::before{display:none;}.right{padding:40px 24px;}}
+  </style>
+</head>
+<body>
+
+<div class="left">
+  <div class="left-bg"></div>
+  <div class="left-dots"></div>
+  <div class="left-inner">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
+      <img src="/static/images/logo.jpeg" alt="21 Days" style="height:54px;width:54px;border-radius:50%;object-fit:cover;box-shadow:0 2px 10px rgba(0,0,0,.25);"/>
+      <div>
+        <div style="font-family:var(--ff-d);font-size:18px;font-weight:800;color:#fff;letter-spacing:-.3px;line-height:1.15;">21 Days Weight Loss Center</div>
+        <div style="font-size:10.5px;color:rgba(255,255,255,.4);letter-spacing:.12em;text-transform:uppercase;margin-top:2px;">Since 2016</div>
+      </div>
+    </div>
+    <div class="left-title">Admin Dashboard</div>
+    <div class="left-sub">Manage your programme, track users &amp; revenue.</div>
+    <div class="feat"><div class="feat-ic fic-g"><i class="bi bi-people-fill"></i></div><div><div class="feat-t">User Management</div><div class="feat-s">Leads &amp; customers in real-time</div></div></div>
+    <div class="feat"><div class="feat-ic fic-a"><i class="bi bi-credit-card-2-front-fill"></i></div><div><div class="feat-t">Payment Tracking</div><div class="feat-s">All Razorpay transactions live</div></div></div>
+    <div class="feat"><div class="feat-ic fic-b"><i class="bi bi-file-earmark-excel-fill"></i></div><div><div class="feat-t">Excel Export</div><div class="feat-s">Download complete data instantly</div></div></div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-n">12K<span class="sup">+</span></div><div class="stat-l">Members</div></div>
+      <div class="stat"><div class="stat-n">21<span class="sup">d</span></div><div class="stat-l">Challenge</div></div>
+      <div class="stat"><div class="stat-n">4.9<span class="sup">★</span></div><div class="stat-l">Rating</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="right">
+  <div class="form-box">
+    <div class="form-title">Sign in</div>
+    <div class="form-sub">Admin access only</div>
+
+
+    {% if error %}<div class="err-bar"><i class="bi bi-exclamation-circle-fill"></i>{{ error }}</div>{% endif %}
+
+    <form method="POST" action="/admin">
+      <div class="field">
+        <label>Username</label>
+        <div class="field-wrap"><i class="bi bi-person-fill"></i><input type="text" name="username" placeholder="Enter username" required autofocus autocomplete="username"/></div>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <div class="field-wrap"><i class="bi bi-lock-fill"></i><input type="password" name="password" id="pwd" placeholder="Enter password" required autocomplete="current-password"/></div>
+      </div>
+      <button type="submit" class="btn-sign"><i class="bi bi-box-arrow-in-right"></i> Sign In to Dashboard</button>
+    </form>
+
+    <a href="/" class="back-link"><i class="bi bi-arrow-left"></i> &nbsp;Back to 21 Days Website</a>
+
+    </div>
+</div>
+
+<div id="toast">✓ Filled!</div>
+<script>
+  function fill(val,type){
+    if(type==='user')document.querySelector('input[name="username"]').value=val;
+    else document.getElementById('pwd').value=val;
+    const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800);
+  }
+</script>
+</body>
+</html>
