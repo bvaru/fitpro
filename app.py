@@ -52,6 +52,7 @@ class User(db.Model):
     instagram  = db.Column(db.String(120), nullable=True)
     # "registered" = lead who filled the form; "paid" = completed payment
     status     = db.Column(db.String(20), nullable=False, default="registered")
+    is_deleted = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     payments   = db.relationship("Payment", backref="user", lazy=True)
@@ -83,6 +84,14 @@ with app.app_context():
     try:
         db.session.execute(db.text(
             "ALTER TABLE users ADD COLUMN instagram VARCHAR(120)"
+        ))
+        db.session.commit()
+    except Exception:
+        db.session.rollback()  # Column already exists — safe to ignore
+    # Migrate: add `is_deleted` column
+    try:
+        db.session.execute(db.text(
+            "ALTER TABLE users ADD COLUMN is_deleted BOOLEAN NOT NULL DEFAULT FALSE"
         ))
         db.session.commit()
     except Exception:
@@ -300,7 +309,7 @@ def admin_logout():
 @app.route("/dashboard")
 @login_required
 def dashboard():
-    users    = User.query.order_by(User.created_at.desc()).all()
+    users    = User.query.filter_by(is_deleted=False).order_by(User.created_at.desc()).all()
     payments = Payment.query.order_by(Payment.created_at.desc()).all()
     total_revenue = sum(p.amount for p in payments if p.status == "paid") // 100
     paid_count    = sum(1 for p in payments if p.status == "paid")
@@ -316,6 +325,14 @@ def dashboard():
         lead_users=lead_users,
     )
 
+@app.route("/admin/delete_user/<int:user_id>", methods=["POST"])
+@login_required
+def delete_user(user_id):
+    user = User.query.get_or_404(user_id)
+    user.is_deleted = True
+    db.session.commit()
+    return redirect(url_for("dashboard"))
+
 
 @app.route("/download")
 @login_required
@@ -323,19 +340,19 @@ def download_excel():
     import pandas as pd
     import io
 
-    users = User.query.order_by(User.created_at.desc()).all()
+    all_users = User.query.order_by(User.created_at.desc()).all()
     payments = Payment.query.order_by(Payment.created_at.desc()).all()
 
     users_data = [{
         "ID":         u.id,
-        "Name":       u.name,
+        "Name":       u.name + (" (Deleted)" if getattr(u, 'is_deleted', False) else ""),
         "Email":      u.email or "",
         "Phone":      u.phone,
         "Instagram":  ("@" + u.instagram) if u.instagram else "",
         "Plan":       u.plan or "",
         "Status":     u.status.upper(),
         "Registered": u.created_at.strftime("%Y-%m-%d %H:%M"),
-    } for u in users]
+    } for u in all_users]
 
     payments_data = [{
         "ID":         p.id,
