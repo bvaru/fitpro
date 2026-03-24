@@ -194,7 +194,7 @@ tr.row-paid td:first-child{border-left:3px solid var(--green);}
       <div class="tc-wrap">
         <table>
           <thead>
-            <tr><th>User</th><th>Phone</th><th>Email</th><th>Instagram</th><th>Plan</th><th>Status</th><th>Registered</th></tr>
+            <tr><th>User</th><th>Phone</th><th>Email</th><th>Instagram</th><th>Plan</th><th>Status</th><th>Registered</th><th>Actions</th></tr>
           </thead>
           <tbody>
             {% for u in users %}
@@ -206,6 +206,13 @@ tr.row-paid td:first-child{border-left:3px solid var(--green);}
               <td class="td-m">{{ u.plan or '—' }}</td>
               <td>{% if u.status=='paid' %}<span class="badge b-paid">Paid</span>{% else %}<span class="badge b-lead">Lead</span>{% endif %}</td>
               <td class="td-m">{{ u.created_at.strftime('%d %b %Y, %I:%M %p') }}</td>
+              <td>
+                <form method="POST" action="{{ url_for('delete_user', user_id=u.id) }}" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this user? They will remain in Excel exports but will be hidden from the dashboard.');">
+                  <button type="submit" style="background:none;border:none;color:var(--red);cursor:pointer;" title="Delete User">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </form>
+              </td>
             </tr>
             {% endfor %}
           </tbody>
