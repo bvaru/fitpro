@@ -1,728 +1,2690 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>21 Days Weight Loss Center — Since 2016 | India's Trusted Weight Loss Programme</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <style>
-:root{
-  --forest:#0d3b2e;
-  --forest-mid:#155740;
-  --forest-lt:#1e7a58;
-  --forest-pale:#e8f5f0;
-  --forest-subtle:#f0f9f5;
-  --saffron:#e8930a;
-  --saffron-lt:#fdf3e3;
-  --saffron-pale:#fef9f0;
-  --red:#c0392b;
-  --red-lt:#fdf0ef;
-  --ink:#111827;
-  --slate:#374151;
-  --muted:#6b7280;
-  --subtle:#9ca3af;
-  --border:#e5e7eb;
-  --border-soft:#f3f4f6;
-  --paper:#faf9f6;
-  --white:#ffffff;
-  --ff-display:'Fraunces',serif;
-  --ff-body:'Outfit',sans-serif;
-  --r-sm:10px;
-  --r-md:14px;
-  --r-lg:20px;
-  --shadow-sm:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
-  --shadow-md:0 4px 16px rgba(0,0,0,.07),0 1px 4px rgba(0,0,0,.04);
-  --shadow-lg:0 12px 40px rgba(0,0,0,.1),0 2px 8px rgba(0,0,0,.05);
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--ff-body);color:var(--slate);background:var(--white);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased;}
-::-webkit-scrollbar{width:4px;}
-::-webkit-scrollbar-track{background:var(--border-soft);}
-::-webkit-scrollbar-thumb{background:var(--forest);border-radius:4px;}
+    :root {
+      --forest: #0d2857;
+      /* Deep Royal Blue to match logo */
+      --forest-mid: #14376f;
+      /* Lighter Royal Blue */
+      --forest-lt: #1e4b8e;
+      /* Bright Royal Blue */
+      --forest-pale: #f4f7fc;
+      /* Blue-tinted white */
+      --forest-subtle: #ebf0f8;
+      /* Soft blue subtle */
+      --saffron: #e11d48;
+      /* Ruby Red Accent */
+      --saffron-lt: #ffe4e6;
+      /* Rose 100 */
+      --saffron-pale: #fff1f2;
+      /* Rose 50 */
+      --red: #dc2626;
+      --red-lt: #fef2f2;
+      --ink: #0d2857;
+      --slate: #475569;
+      --muted: #64748b;
+      --subtle: #94a3b8;
+      --border: #e2e8f0;
+      --border-soft: #f1f5f9;
+      --paper: #ffffff;
+      --white: #ffffff;
+      --ff-display: 'Plus Jakarta Sans', sans-serif;
+      --ff-body: 'Inter', sans-serif;
+      --r-sm: 12px;
+      --r-md: 16px;
+      --r-lg: 24px;
+      --shadow-sm: 0 4px 12px rgba(15, 23, 42, .03);
+      --shadow-md: 0 12px 32px rgba(15, 23, 42, .06), 0 4px 12px rgba(15, 23, 42, .03);
+      --shadow-lg: 0 24px 64px rgba(15, 23, 42, .08), 0 8px 24px rgba(15, 23, 42, .04);
+    }
 
-/* ── LOGO ── */
-.logo{display:inline-flex;align-items:center;text-decoration:none;}
-.logo-img{
-  height:52px;width:52px;
-  border-radius:50%;
-  object-fit:cover;
-  box-shadow:0 2px 8px rgba(0,0,0,.25);
-  transition:transform .25s;
-}
-.logo:hover .logo-img{transform:scale(1.06);}
-/* Scrolled state — slightly smaller */
-#navbar.scrolled .logo-img{height:44px;width:44px;}
-/* Logo text beside image */
-.logo-text{
-  margin-left:10px;
-  display:flex;flex-direction:column;line-height:1.1;
-}
-.logo-text .lt-main{
-  font-family:var(--ff-display);font-weight:800;font-size:17px;
-  letter-spacing:-.3px;color:#fff;
-}
-#navbar.scrolled .logo-text .lt-main{color:var(--ink);}
-.logo-text .lt-sub{
-  font-size:9.5px;font-weight:600;letter-spacing:.12em;
-  text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:1px;
-}
-#navbar.scrolled .logo-text .lt-sub{color:var(--muted);}
-/* Gate logo */
-.gate-logo-img{height:52px;width:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 10px rgba(0,0,0,.3);}
-/* Footer logo */
-.footer-logo-wrap{display:inline-flex;align-items:center;gap:10px;text-decoration:none;justify-content:center;}
-.footer-logo-img{height:44px;width:44px;border-radius:50%;object-fit:cover;opacity:.85;}
-.footer-logo-text{font-family:var(--ff-display);font-size:16px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:-.3px;text-align:left;line-height:1.2;}
-.footer-logo-text span{display:block;font-family:var(--ff-body);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:1px;}
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* ── NAVBAR ── */
-#navbar{position:fixed;top:0;left:0;right:0;z-index:900;transition:all .3s;}
-#navbar.scrolled{background:rgba(255,255,255,.97);box-shadow:0 1px 0 var(--border),0 2px 20px rgba(0,0,0,.06);backdrop-filter:blur(20px);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 0;transition:padding .3s;}
-#navbar.scrolled .nav-inner{padding:13px 0;}
-.nav-links{display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0;}
-.nav-links a{color:rgba(255,255,255,.8);font-size:13.5px;font-weight:500;text-decoration:none;padding:7px 13px;border-radius:7px;transition:all .2s;letter-spacing:.01em;}
-#navbar.scrolled .nav-links a{color:var(--muted);}
-.nav-links a:hover{color:#fff;background:rgba(255,255,255,.12);}
-#navbar.scrolled .nav-links a:hover{color:var(--forest);background:var(--forest-subtle);}
-.btn-nav{background:var(--saffron);color:#fff!important;border:none;padding:9px 20px;border-radius:8px;font-size:13.5px;font-weight:600;cursor:pointer;transition:all .2s;letter-spacing:.01em;box-shadow:0 2px 8px rgba(232,147,10,.3);}
-.btn-nav:hover{background:#d4830a;transform:translateY(-1px);box-shadow:0 4px 14px rgba(232,147,10,.4);}
-.nav-toggle{display:none;background:none;border:none;color:white;font-size:24px;cursor:pointer;padding:4px;}
-#navbar.scrolled .nav-toggle{color:var(--slate);}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* ── HERO ── */
-#hero{
-  min-height:100vh;position:relative;overflow:hidden;
-  display:flex;align-items:center;padding:100px 0 80px;
-  background:var(--forest);
-}
-/* Real photo layer — a person doing home yoga/workout */
-.hero-photo{
-  position:absolute;inset:0;
-  background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80&fit=crop&crop=focalpoint&fp-x=0.65&fp-y=0.4');
-  background-size:cover;
-  background-position:center 30%;
-  background-repeat:no-repeat;
-}
-/* Dark overlay — keeps text readable, image is secondary */
-.hero-bg{
-  position:absolute;inset:0;
-  background:
-    linear-gradient(90deg, rgba(13,59,46,.96) 0%, rgba(13,59,46,.88) 45%, rgba(13,59,46,.55) 100%),
-    linear-gradient(180deg, rgba(13,59,46,.3) 0%, transparent 40%, rgba(13,59,46,.5) 100%);
-}
-.hero-grain{
-  position:absolute;inset:0;opacity:.03;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:200px 200px;
-}
-.hero-line{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;}
+    body {
+      font-family: var(--ff-body);
+      color: var(--slate);
+      background: var(--forest-pale);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+    }
 
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:6px 16px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:24px;background:rgba(255,255,255,.05);}
-.live-dot{width:6px;height:6px;background:#4ade80;border-radius:50%;animation:pulse 2s ease-in-out infinite;}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,.5);}50%{box-shadow:0 0 0 7px rgba(74,222,128,0);}}
+    /* ── LAYOUT ── */
+    .sec {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+    }
 
-.hero-h1{font-family:var(--ff-display);font-size:clamp(48px,7vw,90px);font-weight:800;line-height:.95;letter-spacing:-2px;color:#fff;margin-bottom:8px;}
-.hero-h1 em{font-style:italic;font-weight:400;background:linear-gradient(135deg,#fcd34d,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero-sub{font-size:clamp(15px,1.8vw,17px);font-weight:300;color:rgba(255,255,255,.55);line-height:1.8;max-width:460px;margin:22px 0 36px;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-hero{display:inline-flex;align-items:center;gap:9px;background:var(--saffron);color:#fff;border:none;padding:15px 30px;font-family:var(--ff-body);font-size:15px;font-weight:600;border-radius:10px;cursor:pointer;transition:all .25s;box-shadow:0 4px 20px rgba(232,147,10,.4);text-decoration:none;letter-spacing:.01em;}
-.btn-hero:hover{background:#d4830a;transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,147,10,.5);color:#fff;}
-.btn-hero-ghost{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.18);padding:15px 30px;font-size:15px;font-weight:500;border-radius:10px;cursor:pointer;transition:all .25s;text-decoration:none;}
-.btn-hero-ghost:hover{background:rgba(255,255,255,.13);color:#fff;border-color:rgba(255,255,255,.32);}
-.hero-stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:48px;padding-top:36px;border-top:1px solid rgba(255,255,255,.1);}
-.stat-val{font-family:var(--ff-display);font-size:38px;font-weight:700;color:#fff;line-height:1;letter-spacing:-1px;}
-.stat-lbl{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:5px;}
+    .sec-alt {
+      background: var(--paper);
+    }
 
-/* ── HERO CAROUSEL ── */
-.hero-img-col{position:relative;display:flex;align-items:center;justify-content:center;}
-.hero-img-frame{
-  position:relative;width:100%;max-width:520px;
-  border-radius:24px;overflow:hidden;
-  box-shadow:0 24px 80px rgba(0,0,0,.45), 0 4px 16px rgba(0,0,0,.2);
-  border:1px solid rgba(255,255,255,.12);
-}
-/* Carousel track — slides sit side by side, we move them with transform */
-.carousel-track{
-  position:relative;
-  width:100%;
-  aspect-ratio:4/5;          /* same ratio as old single image */
-  overflow:hidden;
-  background:#0d3b2e;         /* dark fallback while loading */
-}
-.carousel-slide{
-  position:absolute;inset:0;
-  opacity:0;
-  transition:opacity .9s ease-in-out;
-  z-index:0;
-}
-.carousel-slide.active{
-  opacity:1;
-  z-index:1;
-}
-.carousel-slide img{
-  width:100%;height:100%;
-  object-fit:cover;
-  object-position:center top;
-  display:block;
-}
-/* Gradient overlay at bottom — same as before */
-.hero-img-overlay{
-  position:absolute;bottom:0;left:0;right:0;height:45%;
-  background:linear-gradient(0deg,rgba(13,59,46,.88) 0%,transparent 100%);
-  z-index:2;pointer-events:none;
-}
-/* Dot indicators */
-.carousel-dots{
-  position:absolute;bottom:72px;left:50%;transform:translateX(-50%);
-  display:flex;gap:7px;z-index:3;
-}
-.cdot{
-  width:7px;height:7px;border-radius:50%;
-  background:rgba(255,255,255,.35);
-  border:1px solid rgba(255,255,255,.2);
-  cursor:pointer;transition:all .3s;
-}
-.cdot.active{background:#fff;transform:scale(1.2);}
-/* Floating card — bottom left */
-.hero-float-card{
-  position:absolute;bottom:24px;left:20px;
-  background:rgba(255,255,255,.97);
-  backdrop-filter:blur(12px);
-  border-radius:14px;padding:13px 18px;
-  display:flex;align-items:center;gap:12px;
-  box-shadow:0 8px 32px rgba(0,0,0,.2);
-  border:1px solid rgba(255,255,255,.8);
-  min-width:180px;z-index:4;
-}
-.hfc-icon{font-size:26px;line-height:1;flex-shrink:0;}
-.hfc-val{font-family:var(--ff-display);font-size:18px;font-weight:700;color:var(--ink);line-height:1;letter-spacing:-.5px;}
-.hfc-lbl{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:3px;}
-/* Floating badge — top right */
-.hero-float-badge{
-  position:absolute;top:20px;right:20px;
-  background:rgba(255,255,255,.97);
-  backdrop-filter:blur(12px);
-  border-radius:100px;padding:8px 16px;
-  display:flex;align-items:center;gap:7px;
-  font-size:12.5px;font-weight:700;color:var(--ink);
-  box-shadow:0 4px 16px rgba(0,0,0,.15);
-  border:1px solid rgba(255,255,255,.8);
-  z-index:4;
-}
-@media(max-width:992px){
-  .hero-img-frame{max-width:400px;margin:0 auto;}
-  .carousel-track{aspect-ratio:3/2;}
-}
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
 
-/* ── SHARED SECTION ── */
-.sec{padding:96px 0;}
-.sec-overline{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--forest-lt);margin-bottom:14px;}
-.sec-overline::before{content:'';width:20px;height:2px;background:var(--saffron);border-radius:2px;}
-.sec-h2{font-family:var(--ff-display);font-size:clamp(32px,4.5vw,52px);font-weight:700;letter-spacing:-1.5px;color:var(--ink);line-height:1.1;}
-.sec-h2 em{font-style:italic;color:var(--forest-lt);}
+    ::-webkit-scrollbar-track {
+      background: var(--border-soft);
+    }
 
-/* ── ABOUT ── */
-#about{background:var(--paper);}
-.photo-frame{
-  position:relative;border-radius:20px;overflow:hidden;
-  background:var(--forest-subtle);
-  box-shadow:var(--shadow-lg);
-  min-height:520px;display:flex;align-items:flex-end;
-}
-/* When owner adds their real photo — this class makes it fill the frame perfectly */
-.owner-photo{
-  position:absolute;inset:0;
-  width:100%;height:100%;
-  object-fit:cover;
-  object-position:center 15%;  /* keeps face centred, not cut off at top */
-  display:block;
-}
-.photo-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
-.photo-icon{width:88px;height:88px;border-radius:50%;background:rgba(13,59,46,.08);border:2px dashed rgba(13,59,46,.18);display:flex;align-items:center;justify-content:center;font-size:36px;color:rgba(13,59,46,.3);}
-.photo-hint{font-size:12px;font-weight:600;color:rgba(13,59,46,.4);text-align:center;line-height:1.5;}
-.photo-caption{position:relative;z-index:1;width:100%;background:linear-gradient(0deg,rgba(13,59,46,.9) 0%,transparent 100%);padding:44px 22px 22px;}
-.photo-name{font-family:var(--ff-display);font-size:18px;font-weight:700;color:#fff;margin-bottom:2px;}
-.photo-role{font-size:12px;color:rgba(255,255,255,.6);}
-.photo-chip{position:absolute;top:18px;left:18px;display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.95);border-radius:100px;padding:7px 13px;font-size:11.5px;font-weight:700;color:var(--forest);box-shadow:0 4px 16px rgba(0,0,0,.12);}
+    ::-webkit-scrollbar-thumb {
+      background: var(--forest);
+      border-radius: 4px;
+    }
 
-.about-text{font-size:16px;font-weight:500;color:var(--slate);line-height:1.85;}
-.about-chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px;}
-.chip{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;font-size:12.5px;font-weight:600;}
-.chip-green{background:var(--forest-subtle);color:var(--forest);border:1px solid rgba(13,59,46,.12);}
-.chip-amber{background:var(--saffron-lt);color:#92530a;border:1px solid rgba(232,147,10,.15);}
-.chip-purple{background:#f5f3ff;color:#5b21b6;border:1px solid rgba(91,33,182,.1);}
+    /* ── LOGO ── */
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
 
-.feat-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);padding:24px 20px;height:100%;transition:all .25s;position:relative;overflow:hidden;}
-.feat-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s;}
-.feat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:transparent;}
-.feat-card:hover::before{background:var(--saffron);}
-.feat-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:14px;}
-.fi-g{background:var(--forest-subtle);color:var(--forest);}
-.fi-a{background:var(--saffron-lt);color:var(--saffron);}
-.fi-p{background:#f5f3ff;color:#5b21b6;}
-.fi-r{background:#fef2f2;color:var(--red);}
-.feat-h{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:7px;}
-.feat-p{font-size:13px;color:var(--muted);line-height:1.65;}
+    .logo-img {
+      height: 64px;
+      width: 64px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+      transition: transform .25s;
+    }
 
-/* ── PLANS ── */
-#plans{background:var(--forest);position:relative;overflow:hidden;}
-#plans::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 100% 0%,rgba(232,147,10,.12) 0%,transparent 55%),radial-gradient(ellipse 50% 50% at 0% 100%,rgba(21,87,64,.5) 0%,transparent 55%);}
-#plans::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px;}
-.plan-over{color:rgba(255,255,255,.45)!important;}
-.plan-over::before{background:var(--saffron)!important;}
-.plan-h2{color:#fff!important;}
-.plan-h2 em{color:rgba(253,211,99,.85)!important;-webkit-text-fill-color:unset!important;}
-.plan-card{border-radius:18px;padding:32px 26px;height:100%;position:relative;overflow:hidden;transition:all .3s;}
-.plan-card.tier{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);}
-.plan-card.tier:hover{background:rgba(255,255,255,.08);transform:translateY(-3px);border-color:rgba(255,255,255,.18);}
-.plan-card.featured{background:#fff;border:none;box-shadow:0 4px 24px rgba(0,0,0,.2),0 20px 60px rgba(0,0,0,.25);}
-.plan-card.featured:hover{transform:translateY(-4px);box-shadow:0 8px 40px rgba(0,0,0,.25),0 28px 70px rgba(0,0,0,.3);}
-.plan-popular{position:absolute;top:16px;right:16px;background:var(--saffron);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:100px;box-shadow:0 2px 8px rgba(232,147,10,.4);}
-.plan-tier-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px;}
-.plan-card.tier .plan-tier-label{color:rgba(255,255,255,.4);}
-.plan-card.featured .plan-tier-label{color:var(--forest);}
-.plan-tagline{font-size:13px;margin-bottom:20px;}
-.plan-card.tier .plan-tagline{color:rgba(255,255,255,.38);}
-.plan-card.featured .plan-tagline{color:var(--muted);}
-.plan-price{font-family:var(--ff-display);font-size:54px;font-weight:800;letter-spacing:-2px;line-height:1;}
-.plan-card.tier .plan-price{color:#fff;}
-.plan-card.featured .plan-price{color:var(--ink);}
-.plan-price sub{font-family:var(--ff-body);font-size:18px;font-weight:500;vertical-align:super;letter-spacing:0;}
-.plan-price small{font-size:15px;font-weight:400;letter-spacing:0;}
-.plan-card.tier .plan-price sub,.plan-card.tier .plan-price small{color:rgba(255,255,255,.3);}
-.plan-card.featured .plan-price sub,.plan-card.featured .plan-price small{color:var(--muted);}
-.plan-sep{margin:18px 0;border-color:rgba(255,255,255,.1);}
-.plan-card.featured .plan-sep{border-color:var(--border);}
-.plan-list{list-style:none;padding:0;margin:0 0 26px;}
-.plan-list li{display:flex;align-items:center;gap:10px;font-size:13.5px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05);}
-.plan-card.featured .plan-list li{border-color:var(--border-soft);color:var(--slate);}
-.plan-card.tier .plan-list li{color:rgba(255,255,255,.72);}
-.plan-list li:last-child{border-bottom:none;}
-.plan-list li i{font-size:14px;flex-shrink:0;}
-.plan-list li.off{opacity:.3;text-decoration:line-through;}
-.btn-plan{width:100%;padding:13px;border:none;border-radius:10px;font-family:var(--ff-body);font-size:14px;font-weight:600;cursor:pointer;transition:all .25s;letter-spacing:.01em;}
-.btn-plan-amber{background:var(--saffron);color:#fff;box-shadow:0 2px 10px rgba(232,147,10,.35);}
-.btn-plan-amber:hover{background:#d4830a;transform:translateY(-1px);box-shadow:0 4px 16px rgba(232,147,10,.45);}
-.btn-plan-forest{background:var(--forest);color:#fff;box-shadow:0 2px 10px rgba(13,59,46,.4);}
-.btn-plan-forest:hover{background:var(--forest-mid);transform:translateY(-1px);box-shadow:0 4px 16px rgba(13,59,46,.45);}
-.btn-plan-ghost{background:transparent;border:1px solid rgba(255,255,255,.2)!important;color:rgba(255,255,255,.8);}
-.btn-plan-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.38)!important;}
+    .logo:hover .logo-img {
+      transform: scale(1.06);
+    }
 
-/* ── TRANSFORMATIONS — Horizontal scroll gallery ── */
-#transformations{background:var(--paper);}
+    /* Scrolled state — slightly smaller */
+    #navbar.scrolled .logo-img {
+      height: 52px;
+      width: 52px;
+    }
 
-/* Outer scroll wrapper */
-.tg-scroll{
-  overflow-x:auto;
-  overflow-y:visible;
-  padding:8px 0 20px;
-  /* Hide scrollbar on Chrome/Safari but keep scroll working */
-  scrollbar-width:thin;
-  scrollbar-color:var(--border) transparent;
-  cursor:grab;
-}
-.tg-scroll:active{cursor:grabbing;}
-.tg-scroll::-webkit-scrollbar{height:4px;}
-.tg-scroll::-webkit-scrollbar-track{background:transparent;}
-.tg-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+    /* Logo text beside image */
+    .logo-text {
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
 
-/* Inner flex row — does NOT wrap */
-.tg-track{
-  display:flex;
-  gap:18px;
-  width:max-content;   /* expands as wide as needed */
-  padding:0 4px 4px;
-}
+    .logo-text .lt-main {
+      font-family: var(--ff-display);
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: -.3px;
+      color: #fff;
+    }
 
-/* Each card — fixed width, square image */
-.tg-card{
-  width:280px;
-  flex-shrink:0;
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:var(--shadow-sm);
-  transition:transform .3s, box-shadow .3s, border-color .3s;
-}
-.tg-card:hover{
-  transform:translateY(-5px);
-  box-shadow:var(--shadow-lg);
-  border-color:rgba(13,59,46,.18);
-}
+    #navbar.scrolled .logo-text .lt-main {
+      color: var(--ink);
+    }
 
-/* Image area — 1:1 square, no cropping, contain so the whole photo shows */
-.tg-img{
-  width:100%;
-  aspect-ratio:1/1;
-  overflow:hidden;
-  background:var(--forest-subtle);
-  position:relative;
-}
-.tg-img img{
-  width:100%;
-  height:100%;
-  object-fit:contain;   /* ← contain = shows full image, no cropping */
-  object-position:center;
-  display:block;
-  transition:transform .4s ease;
-  background:#fff;
-}
-.tg-card:hover .tg-img img{transform:scale(1.03);}
+    .logo-text .lt-sub {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .5);
+      margin-top: 1px;
+    }
 
-/* Text below image */
-.tg-body{padding:14px 16px 16px;}
-.tg-name{font-size:14px;font-weight:700;color:var(--ink);}
-.tg-detail{font-size:12.5px;color:var(--muted);margin-top:3px;}
-.tg-chip{
-  display:inline-flex;align-items:center;gap:5px;
-  background:var(--forest-subtle);color:var(--forest);
-  border-radius:6px;padding:3px 10px;
-  font-size:11px;font-weight:600;margin-top:8px;
-}
+    #navbar.scrolled .logo-text .lt-sub {
+      color: var(--muted);
+    }
 
-/* Gallery nav arrows */
-.tg-nav{
-  display:flex;align-items:center;justify-content:center;
-  gap:16px;margin-top:20px;
-}
-.tg-arrow{
-  width:42px;height:42px;border-radius:50%;
-  background:var(--white);border:1.5px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;color:var(--forest);cursor:pointer;
-  transition:all .2s;box-shadow:var(--shadow-sm);
-  flex-shrink:0;
-}
-.tg-arrow:hover{background:var(--forest);color:#fff;border-color:var(--forest);box-shadow:var(--shadow-md);}
-.tg-arrow:disabled{opacity:.35;cursor:not-allowed;}
-.tg-arrow:disabled:hover{background:var(--white);color:var(--forest);border-color:var(--border);box-shadow:var(--shadow-sm);}
-.tg-counter{font-size:13px;font-weight:600;color:var(--subtle);min-width:44px;text-align:center;}
+    /* Gate logo */
+    .gate-logo-img {
+      height: 52px;
+      width: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
+    }
 
-/* ── TESTIMONIALS ── */
-#testimonials{background:var(--white);}
-.testi-card{background:var(--paper);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 26px;height:100%;transition:all .3s;position:relative;overflow:hidden;}
-.testi-card::before{content:'"';position:absolute;top:12px;right:18px;font-family:var(--ff-display);font-size:72px;line-height:1;color:var(--border);z-index:0;}
-.testi-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(13,59,46,.15);}
-.stars{color:var(--saffron);font-size:13px;letter-spacing:1px;}
-.testi-quote{font-family:var(--ff-display);font-style:italic;font-size:15px;line-height:1.78;color:var(--slate);margin:12px 0 20px;position:relative;z-index:1;}
-.testi-author{display:flex;align-items:center;gap:11px;}
-.testi-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-size:16px;font-weight:700;color:#fff;flex-shrink:0;}
-.av-g{background:var(--forest);}
-.av-a{background:var(--saffron);}
-.av-r{background:var(--red);}
-.testi-name{font-size:13.5px;font-weight:700;color:var(--ink);}
-.testi-meta{font-size:12px;color:var(--subtle);}
+    /* Footer logo */
+    .footer-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      justify-content: center;
+    }
 
-/* ── CONTACT ── */
-#contact{background:var(--paper);}
-.contact-wrap{background:var(--forest);border-radius:var(--r-lg);padding:56px 52px;position:relative;overflow:hidden;box-shadow:var(--shadow-lg);}
-.contact-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 0% 50%,rgba(232,147,10,.09) 0%,transparent 55%),radial-gradient(ellipse 50% 60% at 100% 0%,rgba(21,87,64,.4) 0%,transparent 50%);}
-.contact-wrap::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px;}
-.contact-over{color:rgba(255,255,255,.4)!important;}
-.contact-over::before{background:var(--saffron)!important;}
-.ch{font-family:var(--ff-display);font-size:clamp(30px,4vw,44px);font-weight:700;letter-spacing:-1.5px;color:#fff;line-height:1.1;margin-bottom:14px;}
-.ch em{font-style:italic;color:rgba(253,211,99,.85);}
-.cdesc{color:rgba(255,255,255,.42);font-size:15px;line-height:1.7;}
-.c-insta-row{
-  text-decoration:none;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:10px;padding:10px 14px;
-  transition:all .2s;
-}
-.c-insta-row:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.9);}
-.c-icon-insta{
-  background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888) !important;
-  color:#fff !important;
-}
-.c-info-row{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.6);font-size:14px;}
-.c-icon{width:36px;height:36px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.form-lbl{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:8px;}
-.form-inp{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#fff;padding:13px 16px;font-family:var(--ff-body);font-size:14px;transition:all .2s;}
-.form-inp:focus{outline:none;border-color:rgba(253,211,99,.5);background:rgba(255,255,255,.1);box-shadow:0 0 0 3px rgba(253,211,99,.1);}
-.form-inp::placeholder{color:rgba(255,255,255,.2);}
+    .footer-logo-img {
+      height: 44px;
+      width: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      opacity: .85;
+    }
 
-/* ── FOOTER ── */
-footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:44px 0;text-align:center;}
-.foot-links{margin:18px 0;}
-.foot-links a{color:rgba(255,255,255,.32);font-size:13px;text-decoration:none;margin:0 11px;transition:color .2s;}
-.foot-links a:hover{color:rgba(255,255,255,.7);}
-.foot-copy{font-size:12px;color:rgba(255,255,255,.2);}
+    .footer-logo-text {
+      font-family: var(--ff-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .7);
+      letter-spacing: -.3px;
+      text-align: left;
+      line-height: 1.2;
+    }
 
-/* ── MODAL ── */
-.modal-21 .modal-content{background:#fff;border:none;border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.2);}
-.modal-21 .modal-header{background:var(--forest);border-radius:18px 18px 0 0;border:none;padding:26px 30px 20px;position:relative;}
-.modal-21 .modal-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--forest-lt),var(--saffron));}
-.modal-21 .modal-title{font-family:var(--ff-display);font-size:22px;font-weight:700;color:#fff;letter-spacing:-.3px;}
-.modal-21 .modal-header p{color:rgba(255,255,255,.42);font-size:13px;margin-top:3px;}
-.modal-21 .btn-close{filter:invert(1) opacity(.55);}
-.modal-21 .modal-body{padding:26px 30px;}
-.modal-21 .modal-footer{padding:14px 30px 24px;border-top:1px solid var(--border);gap:10px;}
-.plan-pill{display:inline-flex;align-items:center;gap:7px;background:var(--forest-subtle);border:1px solid rgba(13,59,46,.14);border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--forest);margin-bottom:20px;}
-.m-lbl{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:7px;}
-.m-inp{width:100%;background:var(--paper);border:1.5px solid var(--border);border-radius:10px;color:var(--slate);padding:12px 16px;font-family:var(--ff-body);font-size:14px;transition:all .2s;}
-.m-inp:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(13,59,46,.08);background:#fff;}
-.m-inp::placeholder{color:#d1d5db;}
-.phone-row{display:flex;}
-.phone-pfx{background:var(--paper);border:1.5px solid var(--border);border-right:none;border-radius:10px 0 0 10px;padding:12px 13px;font-size:14px;font-weight:600;color:var(--forest);display:flex;align-items:center;}
-.phone-inp{border-radius:0 10px 10px 0!important;border-left:none!important;}
-#modal-error{background:#fef2f2;border:1px solid rgba(192,57,43,.2);color:var(--red);padding:10px 15px;border-radius:8px;font-size:13px;margin-bottom:14px;}
-.btn-proceed{flex:1;padding:13px 22px;background:var(--forest);color:#fff;border:none;border-radius:10px;font-family:var(--ff-body);font-size:14px;font-weight:600;cursor:pointer;transition:all .25s;box-shadow:0 2px 8px rgba(13,59,46,.3);display:flex;align-items:center;justify-content:center;gap:8px;}
-.btn-proceed:hover{background:var(--forest-mid);transform:translateY(-1px);box-shadow:0 4px 16px rgba(13,59,46,.35);}
-.btn-cancel{padding:13px 20px;background:var(--paper);border:1.5px solid var(--border);color:var(--muted);border-radius:10px;font-family:var(--ff-body);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;}
-.btn-cancel:hover{border-color:var(--muted);color:var(--slate);}
+    .footer-logo-text span {
+      display: block;
+      font-family: var(--ff-body);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .35);
+      margin-top: 1px;
+    }
 
-/* ── SUCCESS PAGE (full-screen premium) ── */
-#success-overlay{
-  position:fixed;inset:0;z-index:9999;
-  display:none;align-items:center;justify-content:center;
-  padding:20px;
-  background:linear-gradient(160deg,#0d3b2e 0%,#0f4535 50%,#112e1e 100%);
-}
-#success-overlay.show{display:flex;}
-#success-overlay::before{
-  content:'';position:absolute;inset:0;opacity:.04;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:200px 200px;pointer-events:none;
-}
-.success-card{
-  background:#fff;border-radius:24px;
-  width:100%;max-width:500px;
-  position:relative;overflow:hidden;
-  box-shadow:0 32px 80px rgba(0,0,0,.4),0 4px 16px rgba(0,0,0,.2);
-  animation:slideUp .5s cubic-bezier(.22,1,.36,1) both;
-}
-@keyframes slideUp{from{opacity:0;transform:translateY(32px);}to{opacity:1;transform:translateY(0);}}
-.success-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--forest-lt),var(--saffron));}
-.sc-header{background:var(--forest);padding:36px 36px 28px;text-align:center;position:relative;}
-.sc-header::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;}
-.sc-check{
-  width:72px;height:72px;
-  background:linear-gradient(135deg,var(--saffron),#f59e0b);
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  margin:0 auto 20px;font-size:30px;color:#fff;
-  box-shadow:0 8px 32px rgba(232,147,10,.45);
-  position:relative;z-index:1;
-  animation:popIn .5s .3s cubic-bezier(.22,1,.36,1) both;
-}
-@keyframes popIn{from{opacity:0;transform:scale(.5);}to{opacity:1;transform:scale(1);}}
-.sc-title{font-family:var(--ff-display);font-size:28px;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:6px;position:relative;z-index:1;}
-.sc-subtitle{font-size:14px;color:rgba(255,255,255,.55);line-height:1.5;position:relative;z-index:1;}
-.sc-body{padding:28px 36px 32px;}
-.sc-summary{background:var(--forest-subtle);border:1px solid rgba(13,59,46,.12);border-radius:14px;padding:18px 20px;margin-bottom:22px;}
-.sc-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(13,59,46,.08);font-size:13.5px;}
-.sc-row:last-child{border-bottom:none;}
-.sc-row-label{color:var(--muted);font-weight:500;}
-.sc-row-val{color:var(--ink);font-weight:700;}
-.sc-row-val.green{color:var(--forest);}
-.sc-row-val.amber{color:var(--saffron);}
-.sc-msg{text-align:center;font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px;}
-.sc-msg strong{color:var(--ink);}
-.sc-btns{display:flex;flex-direction:column;gap:12px;}
-.btn-wa-main{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  background:#16a34a;color:#fff;border:none;
-  padding:15px 24px;border-radius:12px;
-  font-family:var(--ff-body);font-size:15px;font-weight:700;
-  text-decoration:none;cursor:pointer;transition:all .25s;
-  box-shadow:0 4px 20px rgba(22,163,74,.35);letter-spacing:.01em;
-}
-.btn-wa-main:hover{background:#15803d;transform:translateY(-2px);box-shadow:0 8px 28px rgba(22,163,74,.45);color:#fff;}
-.btn-wa-main i{font-size:20px;}
-.btn-dismiss{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  padding:12px 24px;background:transparent;
-  border:1.5px solid var(--border);color:var(--muted);
-  border-radius:12px;font-family:var(--ff-body);
-  font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;
-}
-.btn-dismiss:hover{border-color:var(--muted);color:var(--slate);}
-.sc-note{text-align:center;font-size:12px;color:var(--subtle);margin-top:16px;display:flex;align-items:center;justify-content:center;gap:5px;}
+    /* ── NAVBAR ── */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 900;
+      transition: all .3s;
+    }
 
-/* ── PAGE GATE ── */
-#page-gate{position:fixed;inset:0;z-index:9998;background:var(--forest);display:flex;align-items:center;justify-content:center;padding:20px;transition:opacity .5s ease;}
-#page-gate .gate-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 10%,rgba(232,147,10,.16) 0%,transparent 55%),radial-gradient(ellipse 55% 60% at 10% 85%,rgba(21,87,64,.5) 0%,transparent 50%),linear-gradient(160deg,#0d3b2e 0%,#0f4535 40%,#112e1e 100%);}
-#page-gate .gate-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;}
-#page-gate.hidden{opacity:0;pointer-events:none;}
-.gate-box{background:#fff;border-radius:20px;width:100%;max-width:460px;position:relative;z-index:1;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.45);}
-.gate-header{background:var(--forest);padding:26px 30px 20px;position:relative;}
-.gate-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--forest-lt),var(--saffron));}
-.gate-logo{display:inline-flex;align-items:stretch;border-radius:7px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.2);}
-.gate-logo .gl-n{background:rgba(255,255,255,.12);color:#fff;font-family:var(--ff-display);font-weight:800;font-size:17px;padding:4px 10px;border:1px solid rgba(255,255,255,.1);border-right:none;border-radius:7px 0 0 7px;}
-.gate-logo .gl-w{background:var(--saffron);color:#fff;font-family:var(--ff-body);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px 4px 8px;border-radius:0 7px 7px 0;display:flex;align-items:center;}
-.gate-title{font-family:var(--ff-display);font-size:20px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-bottom:3px;}
-.gate-sub{font-size:13px;color:rgba(255,255,255,.45);}
-.gate-body{padding:24px 30px 28px;}
-.gate-field{margin-bottom:15px;}
-.gate-lbl{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:7px;}
-.gate-inp{width:100%;background:var(--paper);border:1.5px solid var(--border);border-radius:10px;color:var(--slate);padding:12px 15px;font-family:var(--ff-body);font-size:14px;transition:all .2s;}
-.gate-inp:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(13,59,46,.08);background:#fff;}
-.gate-inp::placeholder{color:#d1d5db;}
-.gate-phone-row{display:flex;}
-.gate-pfx{background:var(--paper);border:1.5px solid var(--border);border-right:none;border-radius:10px 0 0 10px;padding:12px 13px;font-size:14px;font-weight:600;color:var(--forest);display:flex;align-items:center;white-space:nowrap;}
-.gate-phone-inp{border-radius:0 10px 10px 0!important;border-left:none!important;}
-#gate-error{background:#fef2f2;border:1px solid rgba(192,57,43,.2);color:var(--red);padding:10px 15px;border-radius:8px;font-size:13px;margin-bottom:14px;display:none;}
-.gate-notice{font-size:12px;color:var(--subtle);margin-top:6px;display:flex;align-items:flex-start;gap:6px;}
-.gate-notice i{margin-top:1px;flex-shrink:0;color:var(--forest);}
-.btn-gate{width:100%;padding:13px;margin-top:16px;background:var(--forest);color:#fff;border:none;border-radius:10px;font-family:var(--ff-body);font-size:15px;font-weight:600;cursor:pointer;transition:all .25s;box-shadow:0 2px 8px rgba(13,59,46,.3);display:flex;align-items:center;justify-content:center;gap:10px;}
-.btn-gate:hover{background:var(--forest-mid);transform:translateY(-1px);box-shadow:0 4px 16px rgba(13,59,46,.35);}
-.gate-perks{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
-.perk{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:var(--subtle);}
-.perk i{font-size:12px;color:var(--forest);}
-.site-content{transition:filter .4s;}
-.site-content.blurred{filter:blur(6px);pointer-events:none;user-select:none;}
+    #navbar.scrolled {
+      background: rgba(255, 255, 255, .97);
+      box-shadow: 0 1px 0 var(--border), 0 2px 20px rgba(0, 0, 0, .06);
+      backdrop-filter: blur(20px);
+    }
 
-/* ── ANIMATIONS ── */
-.fade-up{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
-.fade-up.visible{opacity:1;transform:translateY(0);}
-.fd1{transition-delay:.1s;}.fd2{transition-delay:.2s;}.fd3{transition-delay:.3s;}
-.spinner-sm{width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .5s linear infinite;display:inline-block;margin-right:8px;}
-@keyframes spin{to{transform:rotate(360deg);}}
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      transition: padding .3s;
+    }
 
-/* ── RESPONSIVE ── */
-@media(max-width:992px){
-  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(13,59,46,.98);padding:14px;gap:2px;}
-  .nav-links.open{display:flex;}
-  .nav-links a{color:rgba(255,255,255,.78)!important;padding:10px 14px;}
-  .nav-toggle{display:block;}
-  .photo-frame{min-height:380px;}
-}
-@media(max-width:768px){
-  .contact-wrap{padding:32px 22px;}
-  .modal-21 .modal-body{padding:20px;}
-  .modal-21 .modal-header{padding:20px 20px 16px;}
-  .gate-body{padding:20px 22px 24px;}
-  .gate-header{padding:20px 22px 16px;}
-  .photo-frame{min-height:300px;}
-}
+    #navbar.scrolled .nav-inner {
+      padding: 13px 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, .8);
+      font-size: 13.5px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 7px 13px;
+      border-radius: 7px;
+      transition: all .2s;
+      letter-spacing: .01em;
+    }
+
+    #navbar.scrolled .nav-links a {
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, .12);
+    }
+
+    #navbar.scrolled .nav-links a:hover {
+      color: var(--forest);
+      background: var(--forest-subtle);
+    }
+
+    .btn-nav {
+      background: var(--saffron);
+      color: #fff !important;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+      letter-spacing: .01em;
+      box-shadow: 0 2px 8px rgba(232, 147, 10, .3);
+    }
+
+    .btn-nav:hover {
+      background: #d4830a;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(232, 147, 10, .4);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    #navbar.scrolled .nav-toggle {
+      color: var(--slate);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 100px 0 80px;
+      background: var(--forest);
+    }
+
+    /* Real photo layer — a person doing home yoga/workout */
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=2070') center/cover;
+      background-attachment: fixed;
+      animation: slowZoom 25s linear infinite alternate;
+    }
+
+    @keyframes slowZoom {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.05);
+      }
+    }
+
+    /* Dark overlay — keeps text readable, image is secondary */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, var(--forest) 0%, var(--forest) 50%, transparent 100%),
+        linear-gradient(180deg, rgba(15, 23, 42, .4) 0%, transparent 40%, rgba(15, 23, 42, .7) 100%);
+    }
+
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      opacity: .03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+
+    .hero-line {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, .02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .02) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .55);
+      margin-bottom: 24px;
+      background: rgba(255, 255, 255, .05);
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, .5);
+      }
+
+      50% {
+        box-shadow: 0 0 0 7px rgba(74, 222, 128, 0);
+      }
+    }
+
+    .hero-h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(42px, 5.5vw, 68px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      color: #fff;
+      margin-bottom: 16px;
+      text-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+
+    .hero-h1 em {
+      font-style: normal;
+      font-weight: 800;
+      background: linear-gradient(135deg, #f43f5e, #e11d48);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+      text-shadow: none;
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 18px);
+      font-weight: 400;
+      color: rgba(255, 255, 255, .95);
+      line-height: 1.75;
+      max-width: 560px;
+      margin: 24px 0 40px;
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--saffron);
+      color: #fff;
+      border: none;
+      padding: 16px 36px;
+      font-family: var(--ff-display);
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 8px 24px rgba(225, 29, 72, .3);
+      text-decoration: none;
+      letter-spacing: .02em;
+    }
+
+    .btn-hero:hover {
+      background: #be123c;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(225, 29, 72, .4);
+      color: #fff;
+    }
+
+    .btn-hero i {
+      font-size: 18px;
+      transition: transform .3s;
+    }
+
+    .btn-hero:hover i {
+      transform: translateX(3px);
+    }
+
+    .btn-hero-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(255, 255, 255, .08);
+      color: rgba(255, 255, 255, .82);
+      border: 1px solid rgba(255, 255, 255, .18);
+      padding: 15px 30px;
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .25s;
+      text-decoration: none;
+    }
+
+    .btn-hero-ghost:hover {
+      background: rgba(255, 255, 255, .13);
+      color: #fff;
+      border-color: rgba(255, 255, 255, .32);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .stat-val {
+      font-family: var(--ff-display);
+      font-size: 38px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .stat-lbl {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .38);
+      margin-top: 5px;
+    }
+
+    /* ── HERO CAROUSEL ── */
+    .hero-img-col {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-img-frame {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .45), 0 4px 16px rgba(0, 0, 0, .2);
+      border: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    /* Carousel track — slides sit side by side, we move them with transform */
+    .carousel-track {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/5;
+      /* same ratio as old single image */
+      overflow: hidden;
+      background: #0d3b2e;
+      /* dark fallback while loading */
+    }
+
+    .carousel-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .9s ease-in-out;
+      z-index: 0;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* Gradient overlay at bottom — same as before */
+    .hero-img-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 45%;
+      background: linear-gradient(0deg, rgba(15, 23, 42, .88) 0%, transparent 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Dot indicators */
+    .carousel-dots {
+      position: absolute;
+      bottom: 72px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 7px;
+      z-index: 3;
+    }
+
+    .cdot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .35);
+      border: 1px solid rgba(255, 255, 255, .2);
+      cursor: pointer;
+      transition: all .3s;
+    }
+
+    .cdot.active {
+      background: #fff;
+      transform: scale(1.2);
+    }
+
+    /* Floating card — bottom left */
+    .hero-float-card {
+      position: absolute;
+      bottom: 24px;
+      left: 20px;
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(12px);
+      border-radius: 14px;
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .2);
+      border: 1px solid rgba(255, 255, 255, .8);
+      min-width: 180px;
+      z-index: 4;
+    }
+
+    .hfc-icon {
+      font-size: 26px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .hfc-val {
+      font-family: var(--ff-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1;
+      letter-spacing: -.5px;
+    }
+
+    .hfc-lbl {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-top: 3px;
+    }
+
+    /* Floating badge — top right */
+    .hero-float-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(12px);
+      border-radius: 100px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .15);
+      border: 1px solid rgba(255, 255, 255, .8);
+      z-index: 4;
+    }
+
+    @media(max-width:992px) {
+      .hero-img-frame {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .carousel-track {
+        aspect-ratio: 3/2;
+      }
+    }
+
+    /* ── SHARED SECTION ── */
+    .sec {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sec-alt {
+      background: var(--paper);
+    }
+
+    .sec-overline {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--forest-lt);
+      margin-bottom: 14px;
+    }
+
+    .sec-overline::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: var(--saffron);
+      border-radius: 2px;
+    }
+
+    .sec-h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(32px, 5vw, 46px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .sec-h2 em {
+      font-style: normal;
+      color: var(--saffron);
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: radial-gradient(circle at top left, var(--forest-subtle) 0%, var(--paper) 60%);
+      padding: 120px 0;
+    }
+
+    .photo-frame {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--forest-subtle);
+      box-shadow: var(--shadow-lg);
+      min-height: 520px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    /* When owner adds their real photo — this class makes it fill the frame perfectly */
+    .owner-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      /* keeps face centred, not cut off at top */
+      display: block;
+    }
+
+    .photo-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .photo-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: rgba(13, 59, 46, .08);
+      border: 2px dashed rgba(13, 59, 46, .18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      color: rgba(13, 59, 46, .3);
+    }
+
+    .photo-hint {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(13, 59, 46, .4);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .photo-caption {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(13, 59, 46, .9) 0%, transparent 100%);
+      padding: 44px 22px 22px;
+    }
+
+    .photo-name {
+      font-family: var(--ff-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .photo-role {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .6);
+    }
+
+    .photo-chip {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, .95);
+      border-radius: 100px;
+      padding: 7px 13px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--forest);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+    }
+
+    .about-text {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--slate);
+      margin-bottom: 28px;
+    }
+
+    .about-chips {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .chip-green {
+      background: var(--paper);
+      color: var(--forest);
+      border: 1px solid var(--border);
+    }
+
+    .chip-amber {
+      background: var(--paper);
+      color: var(--saffron);
+      border: 1px solid var(--border);
+    }
+
+    .chip-purple {
+      background: var(--paper);
+      color: #5b21b6;
+      border: 1px solid var(--border);
+    }
+
+    /* ── HOW IT WORKS ── */
+    #how-it-works {
+      background: var(--forest-subtle);
+      padding: 120px 0;
+    }
+
+    .feat-card {
+      background: rgba(255, 255, 255, .8);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 1);
+      border-radius: var(--r-lg);
+      padding: 40px 32px;
+      height: 100%;
+      transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feat-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -100%;
+      bottom: auto;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--forest), var(--saffron));
+      transition: top .4s ease, opacity .4s ease;
+      opacity: 0;
+    }
+
+    .feat-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      background: #fff;
+    }
+
+    .feat-card:hover::before {
+      top: 0;
+      opacity: 1;
+    }
+
+    .feat-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .fi-g {
+      background: var(--forest-subtle);
+      color: var(--forest);
+    }
+
+    .fi-a {
+      background: var(--saffron-pale);
+      color: var(--saffron);
+    }
+
+    .fi-p {
+      background: var(--forest-pale);
+      color: var(--forest);
+    }
+
+    .fi-r {
+      background: var(--saffron-pale);
+      color: var(--saffron);
+    }
+
+    .feat-h {
+      font-family: var(--ff-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .feat-p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── PLANS ── */
+    #plans {
+      background: var(--forest);
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0;
+    }
+
+    #plans::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 100% 0%, rgba(225, 29, 72, .12) 0%, transparent 55%), radial-gradient(ellipse 50% 50% at 0% 100%, rgba(15, 23, 42, .5) 0%, transparent 55%);
+    }
+
+    #plans::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .plan-over {
+      color: rgba(255, 255, 255, .45) !important;
+    }
+
+    .plan-over::before {
+      background: var(--saffron) !important;
+    }
+
+    .plan-h2 {
+      color: #fff !important;
+    }
+
+    .plan-h2 em {
+      color: #f43f5e !important;
+      font-style: normal !important;
+      -webkit-text-fill-color: unset !important;
+    }
+
+    .plan-card {
+      border-radius: 18px;
+      padding: 32px 26px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: all .3s;
+    }
+
+    .plan-card.tier {
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .plan-card.tier:hover {
+      background: rgba(255, 255, 255, .08);
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, .18);
+    }
+
+    .plan-card.featured {
+      background: #fff;
+      border: none;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .2), 0 20px 60px rgba(0, 0, 0, .25);
+    }
+
+    .plan-card.featured:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, .25), 0 28px 70px rgba(0, 0, 0, .3);
+    }
+
+    .plan-popular {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--saffron);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 11px;
+      border-radius: 100px;
+      box-shadow: 0 2px 8px rgba(232, 147, 10, .4);
+    }
+
+    .plan-tier-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .plan-card.tier .plan-tier-label {
+      color: rgba(255, 255, 255, .4);
+    }
+
+    .plan-card.featured .plan-tier-label {
+      color: var(--forest);
+    }
+
+    .plan-tagline {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .plan-card.tier .plan-tagline {
+      color: rgba(255, 255, 255, .38);
+    }
+
+    .plan-card.featured .plan-tagline {
+      color: var(--muted);
+    }
+
+    .plan-price {
+      font-family: var(--ff-display);
+      font-size: 54px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+
+    .plan-card.tier .plan-price {
+      color: #fff;
+    }
+
+    .plan-card.featured .plan-price {
+      color: var(--ink);
+    }
+
+    .plan-price sub {
+      font-family: var(--ff-body);
+      font-size: 18px;
+      font-weight: 500;
+      vertical-align: super;
+      letter-spacing: 0;
+    }
+
+    .plan-price small {
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .plan-card.tier .plan-price sub,
+    .plan-card.tier .plan-price small {
+      color: rgba(255, 255, 255, .3);
+    }
+
+    .plan-card.featured .plan-price sub,
+    .plan-card.featured .plan-price small {
+      color: var(--muted);
+    }
+
+    .plan-sep {
+      margin: 18px 0;
+      border-color: rgba(255, 255, 255, .1);
+    }
+
+    .plan-card.featured .plan-sep {
+      border-color: var(--border);
+    }
+
+    .plan-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 26px;
+    }
+
+    .plan-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .05);
+    }
+
+    .plan-card.featured .plan-list li {
+      border-color: var(--border-soft);
+      color: var(--slate);
+    }
+
+    .plan-card.tier .plan-list li {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .plan-list li:last-child {
+      border-bottom: none;
+    }
+
+    .plan-list li i {
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .plan-list li.off {
+      opacity: .3;
+      text-decoration: line-through;
+    }
+
+    .btn-plan {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 10px;
+      font-family: var(--ff-body);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .25s;
+      letter-spacing: .01em;
+    }
+
+    .btn-plan-amber {
+      background: var(--saffron);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(232, 147, 10, .35);
+    }
+
+    .btn-plan-amber:hover {
+      background: #d4830a;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(232, 147, 10, .45);
+    }
+
+    .btn-plan-forest {
+      background: var(--forest);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(13, 59, 46, .4);
+    }
+
+    .btn-plan-forest:hover {
+      background: var(--forest-mid);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(13, 59, 46, .45);
+    }
+
+    .btn-plan-ghost {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, .2) !important;
+      color: rgba(255, 255, 255, .8);
+    }
+
+    .btn-plan-ghost:hover {
+      background: rgba(255, 255, 255, .08);
+      border-color: rgba(255, 255, 255, .38) !important;
+    }
+
+    /* ── TRANSFORMATIONS — Horizontal scroll gallery ── */
+    #transformations {
+      background: radial-gradient(circle at bottom right, var(--forest-subtle) 0%, var(--paper) 70%);
+    }
+
+    /* Outer scroll wrapper */
+    .tg-scroll {
+      overflow-x: auto;
+      overflow-y: visible;
+      padding: 8px 0 20px;
+      /* Hide scrollbar on Chrome/Safari but keep scroll working */
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+      cursor: grab;
+    }
+
+    .tg-scroll:active {
+      cursor: grabbing;
+    }
+
+    .tg-scroll::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .tg-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .tg-scroll::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px;
+    }
+
+    /* Inner flex row — does NOT wrap */
+    .tg-track {
+      display: flex;
+      gap: 18px;
+      width: max-content;
+      /* expands as wide as needed */
+      padding: 0 4px 4px;
+    }
+
+    /* Each card — fixed width, square image */
+    .tg-card {
+      width: 280px;
+      flex-shrink: 0;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s, box-shadow .3s, border-color .3s;
+    }
+
+    .tg-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(13, 59, 46, .18);
+    }
+
+    /* Image area — 1:1 square, no cropping, contain so the whole photo shows */
+    .tg-img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background: var(--forest-subtle);
+      position: relative;
+    }
+
+    .tg-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      /* ← contain = shows full image, no cropping */
+      object-position: center;
+      display: block;
+      transition: transform .4s ease;
+      background: #fff;
+    }
+
+    .tg-card:hover .tg-img img {
+      transform: scale(1.03);
+    }
+
+    /* Text below image */
+    .tg-body {
+      padding: 14px 16px 16px;
+    }
+
+    .tg-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .tg-detail {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .tg-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--forest-subtle);
+      color: var(--forest);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    /* Gallery nav arrows */
+    .tg-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .tg-arrow {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--forest);
+      cursor: pointer;
+      transition: all .2s;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+
+    .tg-arrow:hover {
+      background: var(--forest);
+      color: #fff;
+      border-color: var(--forest);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tg-arrow:disabled {
+      opacity: .35;
+      cursor: not-allowed;
+    }
+
+    .tg-arrow:disabled:hover {
+      background: var(--white);
+      color: var(--forest);
+      border-color: var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tg-counter {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--subtle);
+      min-width: 44px;
+      text-align: center;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      background: radial-gradient(circle at bottom left, var(--forest-subtle) 0%, var(--paper) 70%);
+      overflow: hidden;
+      padding: 120px 0;
+    }
+
+    .testi-scroll {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 12px 16px 24px;
+      margin: 0 -16px;
+    }
+
+    .testi-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testi-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+    }
+
+    .testi-track>.testi-col {
+      width: 380px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+
+    @media (max-width: 768px) {
+      .testi-track>.testi-col {
+        width: 320px;
+      }
+    }
+
+    .testi-card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+      height: 100%;
+      transition: all .4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testi-card::before {
+      content: '"';
+      position: absolute;
+      top: 12px;
+      right: 22px;
+      font-family: var(--ff-display);
+      font-size: 80px;
+      line-height: 1;
+      color: var(--border-soft);
+      z-index: 0;
+      transition: color .4s;
+    }
+
+    .testi-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: transparent;
+    }
+
+    .testi-card:hover::before {
+      color: var(--saffron-pale);
+    }
+
+    .stars {
+      color: var(--saffron);
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .testi-quote {
+      font-family: var(--ff-display);
+      font-style: italic;
+      font-size: 15px;
+      line-height: 1.78;
+      color: var(--slate);
+      margin: 12px 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .testi-av {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .av-g {
+      background: var(--forest);
+    }
+
+    .av-a {
+      background: var(--saffron);
+    }
+
+    .av-r {
+      background: var(--red);
+    }
+
+    .testi-name {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .testi-meta {
+      font-size: 12px;
+      color: var(--subtle);
+    }
+
+    /* ── CTA ── */
+    #cta {
+      background: var(--forest);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 100% 0%, rgba(225, 29, 72, .12) 0%, transparent 55%), radial-gradient(ellipse 50% 50% at 0% 100%, rgba(15, 23, 42, .5) 0%, transparent 55%);
+    }
+
+    #cta::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .cta-h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(32px, 5vw, 46px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .cta-h2 em {
+      font-style: normal;
+      color: #f43f5e;
+    }
+
+    .cta-p {
+      color: rgba(255, 255, 255, .45);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 500px;
+      margin-bottom: 32px;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--saffron);
+      color: #fff;
+      border: none;
+      padding: 16px 36px;
+      font-family: var(--ff-display);
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 8px 24px rgba(225, 29, 72, .3);
+      text-decoration: none;
+      letter-spacing: .02em;
+    }
+
+    .btn-cta:hover {
+      background: #be123c;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(225, 29, 72, .4);
+      color: #fff;
+    }
+
+    .btn-cta i {
+      font-size: 18px;
+      transition: transform .3s;
+    }
+
+    .btn-cta:hover i {
+      transform: translateX(3px);
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--paper);
+      padding-top: 60px;
+    }
+
+    .contact-wrap {
+      background: var(--forest);
+      border-radius: var(--r-lg);
+      padding: 56px 52px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba(232, 147, 10, .09) 0%, transparent 55%), radial-gradient(ellipse 50% 60% at 100% 0%, rgba(21, 87, 64, .4) 0%, transparent 50%);
+    }
+
+    .contact-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .contact-over {
+      color: rgba(255, 255, 255, .4) !important;
+    }
+
+    .contact-over::before {
+      background: var(--saffron) !important;
+    }
+
+    .ch {
+      font-family: var(--ff-display);
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .ch em {
+      font-style: normal;
+      color: #f43f5e;
+    }
+
+    .cdesc {
+      color: rgba(255, 255, 255, .42);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .c-insta-row {
+      text-decoration: none;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 10px;
+      padding: 10px 14px;
+      transition: all .2s;
+    }
+
+    .c-insta-row:hover {
+      background: rgba(255, 255, 255, .1);
+      border-color: rgba(255, 255, 255, .2);
+      color: rgba(255, 255, 255, .9);
+    }
+
+    .c-icon-insta {
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+      color: #fff !important;
+    }
+
+    .c-info-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, .6);
+      font-size: 14px;
+    }
+
+    .c-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .form-lbl {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .38);
+      margin-bottom: 8px;
+    }
+
+    .form-inp {
+      width: 100%;
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 10px;
+      color: #fff;
+      padding: 13px 16px;
+      font-family: var(--ff-body);
+      font-size: 14px;
+      transition: all .2s;
+    }
+
+    .form-inp:focus {
+      outline: none;
+      border-color: rgba(253, 211, 99, .5);
+      background: rgba(255, 255, 255, .1);
+      box-shadow: 0 0 0 3px rgba(253, 211, 99, .1);
+    }
+
+    .form-inp::placeholder {
+      color: rgba(255, 255, 255, .2);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      padding: 44px 0;
+      text-align: center;
+    }
+
+    .foot-links {
+      margin: 18px 0;
+    }
+
+    .foot-links a {
+      color: rgba(255, 255, 255, .32);
+      font-size: 13px;
+      text-decoration: none;
+      margin: 0 11px;
+      transition: color .2s;
+    }
+
+    .foot-links a:hover {
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .foot-copy {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .2);
+    }
+
+    /* ── MODAL ── */
+    .modal-21 .modal-content {
+      background: #fff;
+      border: none;
+      border-radius: 18px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .2);
+    }
+
+    .modal-21 .modal-header {
+      background: var(--forest);
+      border-radius: 18px 18px 0 0;
+      border: none;
+      padding: 26px 30px 20px;
+      position: relative;
+    }
+
+    .modal-21 .modal-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--forest-lt), var(--saffron));
+    }
+
+    .modal-21 .modal-title {
+      font-family: var(--ff-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -.3px;
+    }
+
+    .modal-21 .modal-header p {
+      color: rgba(255, 255, 255, .42);
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
+    .modal-21 .btn-close {
+      filter: invert(1) opacity(.55);
+    }
+
+    .modal-21 .modal-body {
+      padding: 26px 30px;
+    }
+
+    .modal-21 .modal-footer {
+      padding: 14px 30px 24px;
+      border-top: 1px solid var(--border);
+      gap: 10px;
+    }
+
+    .plan-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--forest-subtle);
+      border: 1px solid rgba(13, 59, 46, .14);
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 20px;
+    }
+
+    .m-lbl {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 7px;
+    }
+
+    .m-inp {
+      width: 100%;
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      color: var(--slate);
+      padding: 12px 16px;
+      font-family: var(--ff-body);
+      font-size: 14px;
+      transition: all .2s;
+    }
+
+    .m-inp:focus {
+      outline: none;
+      border-color: var(--forest);
+      box-shadow: 0 0 0 3px rgba(13, 59, 46, .08);
+      background: #fff;
+    }
+
+    .m-inp::placeholder {
+      color: #d1d5db;
+    }
+
+    .phone-row {
+      display: flex;
+    }
+
+    .phone-pfx {
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-right: none;
+      border-radius: 10px 0 0 10px;
+      padding: 12px 13px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--forest);
+      display: flex;
+      align-items: center;
+    }
+
+    .phone-inp {
+      border-radius: 0 10px 10px 0 !important;
+      border-left: none !important;
+    }
+
+    #modal-error {
+      background: #fef2f2;
+      border: 1px solid rgba(192, 57, 43, .2);
+      color: var(--red);
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .btn-proceed {
+      flex: 1;
+      padding: 13px 22px;
+      background: var(--forest);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-family: var(--ff-body);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .25s;
+      box-shadow: 0 2px 8px rgba(13, 59, 46, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-proceed:hover {
+      background: var(--forest-mid);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(13, 59, 46, .35);
+    }
+
+    .btn-cancel {
+      padding: 13px 20px;
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      color: var(--muted);
+      border-radius: 10px;
+      font-family: var(--ff-body);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .btn-cancel:hover {
+      border-color: var(--muted);
+      color: var(--slate);
+    }
+
+    /* ── SUCCESS PAGE (full-screen premium) ── */
+    #success-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: linear-gradient(160deg, #0d3b2e 0%, #0f4535 50%, #112e1e 100%);
+    }
+
+    #success-overlay.show {
+      display: flex;
+    }
+
+    #success-overlay::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: .04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3Cfilter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      pointer-events: none;
+    }
+
+    .success-card {
+      background: #fff;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, .4), 0 4px 16px rgba(0, 0, 0, .2);
+      animation: slideUp .5s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(32px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .success-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--forest-lt), var(--saffron));
+    }
+
+    .sc-header {
+      background: var(--forest);
+      padding: 36px 36px 28px;
+      text-align: center;
+      position: relative;
+    }
+
+    .sc-header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    .sc-check {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--saffron), #f59e0b);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 30px;
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(232, 147, 10, .45);
+      position: relative;
+      z-index: 1;
+      animation: popIn .5s .3s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(.5);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .sc-title {
+      font-family: var(--ff-display);
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.5px;
+      margin-bottom: 6px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sc-subtitle {
+      font-size: 14px;
+      color: rgba(255, 255, 255, .55);
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sc-body {
+      padding: 28px 36px 32px;
+    }
+
+    .sc-summary {
+      background: var(--forest-subtle);
+      border: 1px solid rgba(13, 59, 46, .12);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+    }
+
+    .sc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(13, 59, 46, .08);
+      font-size: 13.5px;
+    }
+
+    .sc-row:last-child {
+      border-bottom: none;
+    }
+
+    .sc-row-label {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .sc-row-val {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .sc-row-val.green {
+      color: var(--forest);
+    }
+
+    .sc-row-val.amber {
+      color: var(--saffron);
+    }
+
+    .sc-msg {
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .sc-msg strong {
+      color: var(--ink);
+    }
+
+    .sc-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-wa-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #16a34a;
+      color: #fff;
+      border: none;
+      padding: 15px 24px;
+      border-radius: 12px;
+      font-family: var(--ff-body);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all .25s;
+      box-shadow: 0 4px 20px rgba(22, 163, 74, .35);
+      letter-spacing: .01em;
+    }
+
+    .btn-wa-main:hover {
+      background: #15803d;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(22, 163, 74, .45);
+      color: #fff;
+    }
+
+    .btn-wa-main i {
+      font-size: 20px;
+    }
+
+    .btn-dismiss {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: var(--muted);
+      border-radius: 12px;
+      font-family: var(--ff-body);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .btn-dismiss:hover {
+      border-color: var(--muted);
+      color: var(--slate);
+    }
+
+    .sc-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--subtle);
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    /* ── PAGE GATE ── */
+    #page-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background: var(--forest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: opacity .5s ease;
+    }
+
+    #page-gate .gate-mesh {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 80% 10%, rgba(232, 147, 10, .16) 0%, transparent 55%), radial-gradient(ellipse 55% 60% at 10% 85%, rgba(21, 87, 64, .5) 0%, transparent 50%), linear-gradient(160deg, #0d3b2e 0%, #0f4535 40%, #112e1e 100%);
+    }
+
+    #page-gate .gate-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    #page-gate.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .gate-box {
+      background: #fff;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 460px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, .45);
+    }
+
+    .gate-header {
+      background: var(--forest);
+      padding: 26px 30px 20px;
+      position: relative;
+    }
+
+    .gate-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--forest-lt), var(--saffron));
+    }
+
+    .gate-logo {
+      display: inline-flex;
+      align-items: stretch;
+      border-radius: 7px;
+      overflow: hidden;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+    }
+
+    .gate-logo .gl-n {
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+      font-family: var(--ff-display);
+      font-weight: 800;
+      font-size: 17px;
+      padding: 4px 10px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-right: none;
+      border-radius: 7px 0 0 7px;
+    }
+
+    .gate-logo .gl-w {
+      background: var(--saffron);
+      color: #fff;
+      font-family: var(--ff-body);
+      font-weight: 700;
+      font-size: 11.5px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 4px 10px 4px 8px;
+      border-radius: 0 7px 7px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .gate-title {
+      font-family: var(--ff-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -.3px;
+      margin-bottom: 3px;
+    }
+
+    .gate-sub {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .45);
+    }
+
+    .gate-body {
+      padding: 24px 30px 28px;
+    }
+
+    .gate-field {
+      margin-bottom: 15px;
+    }
+
+    .gate-lbl {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 7px;
+    }
+
+    .gate-inp {
+      width: 100%;
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      color: var(--slate);
+      padding: 12px 15px;
+      font-family: var(--ff-body);
+      font-size: 14px;
+      transition: all .2s;
+    }
+
+    .gate-inp:focus {
+      outline: none;
+      border-color: var(--forest);
+      box-shadow: 0 0 0 3px rgba(13, 59, 46, .08);
+      background: #fff;
+    }
+
+    .gate-inp::placeholder {
+      color: #d1d5db;
+    }
+
+    .gate-phone-row {
+      display: flex;
+    }
+
+    .gate-pfx {
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-right: none;
+      border-radius: 10px 0 0 10px;
+      padding: 12px 13px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--forest);
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .gate-phone-inp {
+      border-radius: 0 10px 10px 0 !important;
+      border-left: none !important;
+    }
+
+    #gate-error {
+      background: #fef2f2;
+      border: 1px solid rgba(192, 57, 43, .2);
+      color: var(--red);
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-bottom: 14px;
+      display: none;
+    }
+
+    .gate-notice {
+      font-size: 12px;
+      color: var(--subtle);
+      margin-top: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .gate-notice i {
+      margin-top: 1px;
+      flex-shrink: 0;
+      color: var(--forest);
+    }
+
+    .btn-gate {
+      width: 100%;
+      padding: 13px;
+      margin-top: 16px;
+      background: var(--forest);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-family: var(--ff-body);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .25s;
+      box-shadow: 0 2px 8px rgba(13, 59, 46, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-gate:hover {
+      background: var(--forest-mid);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(13, 59, 46, .35);
+    }
+
+    .gate-perks {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .perk {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--subtle);
+    }
+
+    .perk i {
+      font-size: 12px;
+      color: var(--saffron);
+    }
+
+    .site-content {
+      transition: filter .4s;
+    }
+
+    .site-content.blurred {
+      filter: blur(6px);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .8s cubic-bezier(0.165, 0.84, 0.44, 1), transform .8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity .8s cubic-bezier(0.165, 0.84, 0.44, 1), transform .8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .slide-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .slide-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity .8s cubic-bezier(0.165, 0.84, 0.44, 1), transform .8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .slide-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .zoom-in {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity .8s cubic-bezier(0.165, 0.84, 0.44, 1), transform .8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .zoom-in.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .fd1 {
+      transition-delay: .15s;
+    }
+
+    .fd2 {
+      transition-delay: .3s;
+    }
+
+    .fd3 {
+      transition-delay: .45s;
+    }
+
+    .spinner-sm {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, .3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .5s linear infinite;
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:992px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(13, 59, 46, .98);
+        padding: 14px;
+        gap: 2px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        color: rgba(255, 255, 255, .78) !important;
+        padding: 10px 14px;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .photo-frame {
+        min-height: 380px;
+      }
+    }
+
+    @media(max-width:768px) {
+      .contact-wrap {
+        padding: 32px 22px;
+      }
+
+      .modal-21 .modal-body {
+        padding: 20px;
+      }
+
+      .modal-21 .modal-header {
+        padding: 20px 20px 16px;
+      }
+
+      .gate-body {
+        padding: 20px 22px 24px;
+      }
+
+      .gate-header {
+        padding: 20px 22px 16px;
+      }
+
+      .photo-frame {
+        min-height: 300px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<!-- ═══ WELCOME GATE ══════════════════════════════════════ -->
-<div id="page-gate">
-  <div class="gate-mesh"></div>
-  <div class="gate-dots"></div>
-  <div class="gate-box">
-    <div class="gate-header">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-        <img src="/static/images/logo.jpeg" alt="21 Days Weight Loss Center" class="gate-logo-img"/>
-        <div>
-          <div style="font-family:var(--ff-display);font-size:17px;font-weight:800;color:#fff;letter-spacing:-.3px;line-height:1.15;">21 Days Weight Loss Center</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.42);letter-spacing:.12em;text-transform:uppercase;margin-top:2px;">Since 2016</div>
+  <!-- ═══ WELCOME GATE ══════════════════════════════════════ -->
+  <div id="page-gate">
+    <div class="gate-mesh"></div>
+    <div class="gate-dots"></div>
+    <div class="gate-box">
+      <div class="gate-header">
+        <div style="display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <img src="/static/images/logo.jpeg" alt="21 Days Weight Loss Center" class="gate-logo-img"
+            style="height:84px; width:84px; object-fit:contain; background:#fff;" />
+        </div>
+        <div class="gate-title">Welcome! 🙏 Tell us about yourself</div>
+        <div class="gate-sub">Quick registration — takes 20 seconds</div>
+      </div>
+      <div class="gate-body">
+        <div id="gate-error"></div>
+        <div class="gate-field">
+          <label class="gate-lbl">Full Name *</label>
+          <input type="text" class="gate-inp" id="gate-name" placeholder="e.g. Rahul Sharma" autocomplete="name" />
+        </div>
+        <div class="gate-field">
+          <label class="gate-lbl">WhatsApp Number *</label>
+          <div class="gate-phone-row">
+            <div class="gate-pfx">🇮🇳 +91</div>
+            <input type="tel" class="gate-inp gate-phone-inp" id="gate-phone" placeholder="98765 43210" maxlength="10"
+              inputmode="numeric" />
+          </div>
+          <div class="gate-notice">
+            <i class="bi bi-whatsapp"></i>
+            Your coach will reach out on this number within 1 hour of joining.
+          </div>
+        </div>
+        <div class="gate-field">
+          <label class="gate-lbl">
+            <i class="bi bi-instagram" style="color:#e1306c;margin-right:4px;"></i>
+            Instagram Handle
+            <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional — so we can tag you!)</span>
+          </label>
+          <div style="position:relative;">
+            <span
+              style="position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:600;color:var(--subtle);">@</span>
+            <input type="text" class="gate-inp" id="gate-instagram" placeholder="your_handle" style="padding-left:30px;"
+              autocomplete="off" />
+          </div>
+        </div>
+        <div class="gate-field">
+          <label class="gate-lbl">Email Address <span
+              style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+          <input type="email" class="gate-inp" id="gate-email" placeholder="rahul@example.com" autocomplete="email" />
+        </div>
+        <button class="btn-gate" id="gate-submit">
+          <i class="bi bi-unlock-fill"></i> Enter &amp; Explore 21 Days
+        </button>
+        <div class="gate-perks">
+          <span class="perk"><i class="bi bi-check-circle-fill"></i> Free to browse</span>
+          <span class="perk"><i class="bi bi-check-circle-fill"></i> No spam ever</span>
+          <span class="perk"><i class="bi bi-check-circle-fill"></i> Coach contacts you</span>
         </div>
       </div>
-      <div class="gate-title">Welcome! 🙏 Tell us about yourself</div>
-      <div class="gate-sub">Quick registration — takes 20 seconds</div>
-    </div>
-    <div class="gate-body">
-      <div id="gate-error"></div>
-      <div class="gate-field">
-        <label class="gate-lbl">Full Name *</label>
-        <input type="text" class="gate-inp" id="gate-name" placeholder="e.g. Rahul Sharma" autocomplete="name"/>
-      </div>
-      <div class="gate-field">
-        <label class="gate-lbl">WhatsApp Number *</label>
-        <div class="gate-phone-row">
-          <div class="gate-pfx">🇮🇳 +91</div>
-          <input type="tel" class="gate-inp gate-phone-inp" id="gate-phone" placeholder="98765 43210" maxlength="10" inputmode="numeric"/>
-        </div>
-        <div class="gate-notice">
-          <i class="bi bi-whatsapp"></i>
-          Your coach will reach out on this number within 2 hours of joining.
-        </div>
-      </div>
-      <div class="gate-field">
-        <label class="gate-lbl">Email Address <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
-        <input type="email" class="gate-inp" id="gate-email" placeholder="rahul@example.com" autocomplete="email"/>
-      </div>
-      <div class="gate-field">
-        <label class="gate-lbl">
-          <i class="bi bi-instagram" style="color:#e1306c;margin-right:4px;"></i>
-          Instagram Handle
-          <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional — so we can tag you!)</span>
-        </label>
-        <div style="position:relative;">
-          <span style="position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:600;color:var(--subtle);">@</span>
-          <input type="text" class="gate-inp" id="gate-instagram" placeholder="your_handle"
-                 style="padding-left:30px;" autocomplete="off"/>
-        </div>
-      </div>
-      <button class="btn-gate" id="gate-submit">
-        <i class="bi bi-unlock-fill"></i> Enter &amp; Explore 21 Days
-      </button>
-      <div class="gate-perks">
-        <span class="perk"><i class="bi bi-check-circle-fill"></i> Free to browse</span>
-        <span class="perk"><i class="bi bi-check-circle-fill"></i> No spam ever</span>
-        <span class="perk"><i class="bi bi-check-circle-fill"></i> Coach contacts you</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ SITE CONTENT ══════════════════════════════════════ -->
-<div class="site-content blurred" id="site-content">
-
-<!-- NAVBAR -->
-<nav id="navbar">
-  <div class="container">
-    <div class="nav-inner">
-      <a class="logo" href="#">
-        <img src="/static/images/logo.jpeg" alt="21 Days Weight Loss Center" class="logo-img"/>
-        <div class="logo-text">
-          <span class="lt-main">21 Days</span>
-          <span class="lt-sub">Weight Loss Center</span>
-        </div>
-      </a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#plans">Plans</a></li>
-        <li><a href="#transformations">Results</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><button class="btn-nav" onclick="scrollToPlans()">Start Your 21 Days</button></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')">
-        <i class="bi bi-list"></i>
-      </button>
     </div>
   </div>
-</nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-photo"></div>
-  <div class="hero-bg"></div>
-  <div class="hero-grain"></div>
-  <div class="hero-line"></div>
-  <div class="container position-relative">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <div class="hero-eyebrow"><span class="live-dot"></span>India's Trusted Weight Loss Centre · Since 2016</div>
-        <h1 class="hero-h1">LOSE WEIGHT<br><em>IN JUST</em><br>21 DAYS</h1>
-        <p class="hero-sub">Science-backed habits, personalised Indian nutrition, and daily coaching — the only 21-day weight loss programme that actually delivers lasting results.</p>
-        <div class="hero-btns">
-          <button class="btn-hero" onclick="scrollToPlans()">Start My 21 Days <i class="bi bi-arrow-right-circle-fill"></i></button>
-          <a class="btn-hero-ghost" href="#transformations"><i class="bi bi-play-circle-fill"></i> See Results</a>
-        </div>
-        <div class="hero-stats">
-          <div><div class="stat-val">12K+</div><div class="stat-lbl">Lives Changed</div></div>
-          <div><div class="stat-val">21</div><div class="stat-lbl">Days to Habit</div></div>
-          <div><div class="stat-val">4.9★</div><div class="stat-lbl">Avg Rating</div></div>
+  <!-- ═══ SITE CONTENT ══════════════════════════════════════ -->
+  <div class="site-content blurred" id="site-content">
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <a class="logo" href="#">
+            <img src="/static/images/logo.jpeg" alt="21 Days Weight Loss Center" class="logo-img" />
+            <div class="logo-text">
+              <span class="lt-main">21 Days</span>
+              <span class="lt-sub">Weight Loss Center</span>
+            </div>
+          </a>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#plans">Plans</a></li>
+            <li><a href="#transformations">Results</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button class="btn-nav" onclick="scrollToPlans()">Start Your 21 Days</button></li>
+          </ul>
+          <button class="nav-toggle" id="nav-toggle"
+            onclick="document.getElementById('nav-links').classList.toggle('open')">
+            <i class="bi bi-list"></i>
+          </button>
         </div>
       </div>
-      <div class="col-lg-6 fade-up fd1">
-        <div class="hero-img-col">
-          <div class="hero-img-frame">
+    </nav>
 
-            <!--
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-img"></div>
+      <div class="hero-bg"></div>
+      <div class="hero-grain"></div>
+      <div class="hero-line"></div>
+      <div class="container position-relative">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="hero-eyebrow"><span class="live-dot"></span>India's Trusted Weight Loss Centre · Since 2016
+            </div>
+            <h1 class="hero-h1 fade-up">THE <em>SUSTAINABLE</em><br>WAY TO LOSE WEIGHT</h1>
+            <p class="hero-sub fade-up fd1">A 21-day natural weight loss program using home food and home workouts,
+              guided by effective and practical methods to help you achieve your ideal body shape.</p>
+            <div class="hero-btns fade-up fd2">
+              <button class="btn-hero" onclick="scrollToPlans()">Find Your Plan <i
+                  class="bi bi-arrow-right"></i></button>
+              <a class="btn-hero-ghost" href="#transformations"><i class="bi bi-play-circle-fill"></i> See Results</a>
+            </div>
+            <div class="hero-stats">
+              <div>
+                <div class="stat-val">12K+</div>
+                <div class="stat-lbl">Lives Changed</div>
+              </div>
+              <div>
+                <div class="stat-val">21</div>
+                <div class="stat-lbl">Days to Habit</div>
+              </div>
+              <div>
+                <div class="stat-val">4.9★</div>
+                <div class="stat-lbl">Avg Rating</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 fade-up fd1">
+            <div class="hero-img-col">
+
+              <!--
             ═══════════════════════════════════════════════════
             HERO PHOTO CAROUSEL
             Add your client/programme photos here.
@@ -738,222 +2700,271 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
             CURRENT: 5 slides with fallback Unsplash photos.
             ═══════════════════════════════════════════════════
             -->
-            <div class="carousel-track" id="heroCarousel">
+              <div class="hero-img-frame">
+                <div class="carousel-track" id="heroCarousel">
 
-              <!-- Slide 1 — ✏️ src="/static/images/hero1.jpeg" -->
-              <div class="carousel-slide active">
-                <img src="/static/images/hero1.jpeg" alt="21 Days member result"
-                     onerror="this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&q=80&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.3'"/>
+                  <!-- Slide 1 — ✏️ src="/static/images/hero1.jpeg" -->
+                  <div class="carousel-slide active">
+                    <img src="/static/images/hero1.jpeg" alt="21 Days member result"
+                      onerror="this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&q=80&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.3'" />
+                  </div>
+
+                  <!-- Slide 2 — ✏️ src="/static/images/hero2.jpeg" -->
+                  <div class="carousel-slide">
+                    <img src="/static/images/hero2.jpeg" alt="21 Days member result"
+                      onerror="this.src='https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=900&q=80&fit=crop&crop=top'" />
+                  </div>
+
+                  <!-- Slide 3 — ✏️ src="/static/images/hero3.jpeg" -->
+                  <div class="carousel-slide">
+                    <img src="/static/images/hero3.jpeg" alt="21 Days member result"
+                      onerror="this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=900&q=80&fit=crop&crop=top'" />
+                  </div>
+
+                  <!-- Slide 4 — ✏️ src="/static/images/hero4.jpeg" -->
+                  <div class="carousel-slide">
+                    <img src="/static/images/hero4.jpeg" alt="21 Days member result"
+                      onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80&fit=crop'" />
+                  </div>
+
+                  <!-- Slide 5 — ✏️ src="/static/images/hero5.jpeg" (optional, delete if only 4 photos) -->
+                  <div class="carousel-slide">
+                    <img src="/static/images/hero5.jpeg" alt="21 Days member result"
+                      onerror="this.src='https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=900&q=80&fit=crop'" />
+                  </div>
+
+                </div><!-- /carousel-track -->
+
+                <!-- Gradient overlay -->
+                <div class="hero-img-overlay"></div>
+
+                <!-- Dot indicators — auto-generated by JS, no need to edit -->
+                <div class="carousel-dots" id="carouselDots"></div>
+
+                <!-- Floating stat card -->
+                <div class="hero-float-card">
+                  <div class="hfc-icon">🔥</div>
+                  <div>
+                    <div class="hfc-val">12,000+</div>
+                    <div class="hfc-lbl">Lives Transformed</div>
+                  </div>
+                </div>
+
+                <div class="hero-float-badge">
+                  <i class="bi bi-patch-check-fill" style="color:var(--saffron);"></i>
+                  21-Day Guarantee
+                </div>
               </div>
 
-              <!-- Slide 2 — ✏️ src="/static/images/hero2.jpeg" -->
-              <div class="carousel-slide">
-                <img src="/static/images/hero2.jpeg" alt="21 Days member result"
-                     onerror="this.src='https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=900&q=80&fit=crop&crop=top'"/>
-              </div>
-
-              <!-- Slide 3 — ✏️ src="/static/images/hero3.jpeg" -->
-              <div class="carousel-slide">
-                <img src="/static/images/hero3.jpeg" alt="21 Days member result"
-                     onerror="this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=900&q=80&fit=crop&crop=top'"/>
-              </div>
-
-              <!-- Slide 4 — ✏️ src="/static/images/hero4.jpeg" -->
-              <div class="carousel-slide">
-                <img src="/static/images/hero4.jpeg" alt="21 Days member result"
-                     onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80&fit=crop'"/>
-              </div>
-
-              <!-- Slide 5 — ✏️ src="/static/images/hero5.jpeg" (optional, delete if only 4 photos) -->
-              <div class="carousel-slide">
-                <img src="/static/images/hero5.jpeg" alt="21 Days member result"
-                     onerror="this.src='https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=900&q=80&fit=crop'"/>
-              </div>
-
-            </div><!-- /carousel-track -->
-
-            <!-- Gradient overlay -->
-            <div class="hero-img-overlay"></div>
-
-            <!-- Dot indicators — auto-generated by JS, no need to edit -->
-            <div class="carousel-dots" id="carouselDots"></div>
-
-            <!-- Floating stat card -->
-            <div class="hero-float-card">
-              <div class="hfc-icon">🔥</div>
-              <div>
-                <div class="hfc-val">12,000+</div>
-                <div class="hfc-lbl">Lives Transformed</div>
-              </div>
             </div>
-
-            <!-- Floating badge -->
-            <div class="hero-float-badge">
-              <i class="bi bi-patch-check-fill" style="color:var(--saffron);"></i>
-              21-Day Guarantee
-            </div>
-
           </div>
         </div>
       </div>
-    </div>
   </div>
-</section>
+  </section>
 
-<!-- ABOUT -->
-<section id="about" class="sec">
-  <div class="container">
-    <div class="row align-items-stretch g-5 mb-5">
-      <div class="col-lg-5 fade-up">
-        <div class="photo-frame">
+  <!-- ABOUT -->
+  <section id="about" class="sec">
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 slide-right">
+          <div class="sec-overline">About 21 Days Weight Loss Center</div>
+          <h2 class="sec-h2" style="margin-bottom:20px;">TRUSTED WEIGHT LOSS <br><em>SINCE 2016</em></h2>
+          <p class="about-text">
+            For a decade, 21 Days Weight Loss Center has helped thousands of Indians lose weight safely,
+            naturally, and permanently from the comfort of their homes.
+          </p>
+          <p class="about-text">
+            Our fully online programme is built on live Zoom sessions and the science of habit formation. We believe in
+            strictly home-cooked Indian meal plans, daily online coaching, and absolutely no supplements.
+            <strong style="color:var(--forest);font-weight:700;">True transformation starts from the inside.</strong>
+          </p>
+          <div class="about-chips">
+            <span class="chip chip-green"><i class="bi bi-patch-check-fill"></i> Certified Coaches</span>
+            <span class="chip chip-amber"><i class="bi bi-shield-fill-check"></i> 30-Day Guarantee</span>
+            <span class="chip chip-purple"><i class="bi bi-people-fill"></i> Community Access</span>
+          </div>
+        </div>
+        <div class="col-lg-6 fade-up">
+          <div class="photo-frame">
 
-          <!-- ✏️ YOUR OWNER PHOTO — save your image as:  static/images/owner.jpeg
+            <!-- ✏️ YOUR OWNER PHOTO — save your image as:  static/images/owner.jpeg
                The line below will load it automatically. No Drive links needed. -->
-          <img src="/static/images/owner.jpeg" alt="Trainer photo" class="owner-photo"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <img src="/static/images/owner.jpeg" alt="Trainer photo" class="owner-photo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
 
-          <!-- Shown only if owner.jpg hasn't been uploaded yet -->
-          <div class="photo-inner" style="display:none;">
-            <div class="photo-icon"><i class="bi bi-person-fill"></i></div>
-            <div class="photo-hint">Upload your photo to<br><code style="font-size:11px;background:rgba(13,59,46,.1);padding:2px 6px;border-radius:4px;">static/images/owner.jpeg</code></div>
-          </div>
+            <!-- Shown only if owner.jpg hasn't been uploaded yet -->
+            <div class="photo-inner" style="display:none;">
+              <div class="photo-icon"><i class="bi bi-person-fill"></i></div>
+              <div class="photo-hint">Upload your photo to<br><code
+                  style="font-size:11px;background:rgba(13,59,46,.1);padding:2px 6px;border-radius:4px;">static/images/owner.jpeg</code>
+              </div>
+            </div>
 
-          <!-- ✏️ Edit badge text — change to your real certification if you have one -->
-          <div class="photo-chip"><i class="bi bi-patch-check-fill"></i> 10,000+ Members Transformed</div>
+            <!-- ✏️ Edit badge text — change to your real certification if you have one -->
+            <div class="photo-chip"><i class="bi bi-patch-check-fill"></i> 10,000+ Members Transformed</div>
 
-          <!-- ✏️ Edit your name and title -->
-          <div class="photo-caption">
-            <div class="photo-name">Mohammed Khalid</div>
-            <div class="photo-role">Founder, 21 Days Weight Loss Center · 8+ Years Experience</div>
+            <!-- ✏️ Edit your name and title -->
+            <div class="photo-caption">
+              <div class="photo-name">Mohammed Khalid</div>
+              <div class="photo-role">Founder, 21 Days Weight Loss Center · 10+ Years Experience</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-7 fade-up fd1 d-flex flex-column justify-content-center">
-        <div class="sec-overline">About 21 Days Weight Loss Center</div>
-        <h2 class="sec-h2" style="margin-bottom:20px;">TRUSTED WEIGHT LOSS<br><em>SINCE 2016</em></h2>
-        <p class="about-text">
-          For nearly a decade, 21 Days Weight Loss Center has helped thousands of Indians lose weight safely and permanently.
-          Our 21-day programme is built on the science of habit formation — the minimum time your brain needs to lock in a new automatic behaviour.
-          With personalised Indian meal plans, daily coaching, and a proven track record since 2016,
-          <strong style="color:var(--forest);font-weight:700;">your transformation starts on Day 1.</strong>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="sec">
+    <div class="container">
+      <div class="text-center mb-5 fade-up">
+        <div class="sec-overline" style="justify-content:center;">Simple & Effective</div>
+        <h2 class="sec-h2">HOW IT <em>WORKS</em></h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 zoom-in">
+          <div class="feat-card" style="display:flex; flex-direction:column;">
+            <img src="/static/images/daily_tasks.png" alt="Daily Guided Tasks"
+              style="width:100%; height:160px; object-fit:contain; margin-bottom:24px; mix-blend-mode:multiply;" />
+            <div class="feat-h">Daily Guided Tasks</div>
+            <div class="feat-p">Wake up each morning knowing exactly what to do. No guesswork, just action.</div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 zoom-in fd1">
+          <div class="feat-card" style="display:flex; flex-direction:column;">
+            <img src="/static/images/personal_coach.png" alt="Personal Coach"
+              style="width:100%; height:160px; object-fit:contain; margin-bottom:24px; mix-blend-mode:multiply;" />
+            <div class="feat-h">Personal Coach</div>
+            <div class="feat-p">Your dedicated coach checks in daily via WhatsApp to keep you on track.</div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 zoom-in fd2">
+          <div class="feat-card" style="display:flex; flex-direction:column;">
+            <img src="/static/images/indian_food.png" alt="Indian Home Food"
+              style="width:100%; height:160px; object-fit:contain; margin-bottom:24px; mix-blend-mode:multiply;" />
+            <div class="feat-h">Indian Home Food</div>
+            <div class="feat-p">No special diets or supplements. Just delicious home-cooked desi food guided by a
+              nutritionist.</div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 zoom-in fd3">
+          <div class="feat-card" style="display:flex; flex-direction:column;">
+            <img src="/static/images/proven_results.png" alt="Proven Results"
+              style="width:100%; height:160px; object-fit:contain; margin-bottom:24px; mix-blend-mode:multiply;" />
+            <div class="feat-h">Proven Results</div>
+            <div class="feat-p">12,000+ members have completed the challenge. Your transformation is next.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANS -->
+  <section id="plans" class="sec">
+    <div class="container position-relative" style="z-index:1;">
+      <div class="text-center mb-5 fade-up">
+        <div class="sec-overline plan-over" style="justify-content:center;">Pricing Plans</div>
+        <h2 class="sec-h2 plan-h2">PICK YOUR <em>PROGRAM</em></h2>
+        <p style="color:rgba(255,255,255,.38);max-width:420px;margin:14px auto 0;font-size:14.5px;">Every plan includes
+          our core weight loss philosophy. Choose your level of support.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <!-- Plan 1: Happy to Help -->
+        <div class="col-md-6 col-lg-3 fade-up fd1">
+          <div class="plan-card tier">
+            <div class="plan-tier-label">Happy to Help</div>
+            <div class="plan-tagline">Experience the magic</div>
+            <div class="plan-price" style="font-size:42px;"><sub>₹</sub>49<small>/1 day</small></div>
+            <hr class="plan-sep">
+            <ul class="plan-list">
+              <li><i class="bi bi-check-circle-fill" style="color:var(--border);"></i> 1 Live Class Session</li>
+              <li><i class="bi bi-check-circle-fill" style="color:var(--border);"></i> Meet the Community</li>
+              <li><i class="bi bi-check-circle-fill" style="color:var(--border);"></i> Q&A with Coach</li>
+              <li class="off"><i class="bi bi-x-circle-fill"></i> Personalized meal plan</li>
+              <li class="off"><i class="bi bi-x-circle-fill"></i> 1 on 1 coach call</li>
+            </ul>
+            <button class="btn-plan btn-plan-ghost" onclick="openRegistration('Happy to Help', 0, 'Free')">Try For
+              Free</button>
+          </div>
+        </div>
+        <!-- Plan 2: Kickstart -->
+        <div class="col-md-6 col-lg-3 fade-up fd2">
+          <div class="plan-card tier">
+            <div class="plan-tier-label">Kickstart</div>
+            <div class="plan-tagline">Perfect for beginners</div>
+            <div class="plan-price"><sub>₹</sub>199<small>/7 days</small></div>
+            <hr class="plan-sep">
+            <ul class="plan-list">
+              <li><i class="bi bi-check-circle-fill" style="color:#4ade80;"></i> 7 Day Live workout classes</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#4ade80;"></i> 7 Day Nutrition Education</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#4ade80;"></i> Group support</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#4ade80;"></i> 1 on 1 coach call</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#4ade80;"></i> Personalized meal plan</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#4ade80;"></i> Up to 2 kg weight loss</li>
+            </ul>
+            <button class="btn-plan btn-plan-ghost"
+              onclick="openRegistration('Kickstart', 19900, '₹199 / 7 days')">Start Kickstart</button>
+          </div>
+        </div>
+        <!-- Plan 3: Pro -->
+        <div class="col-md-6 col-lg-3 fade-up fd3">
+          <div class="plan-card featured">
+            <div class="plan-popular">🔥 Recommended</div>
+            <div class="plan-tier-label">Pro</div>
+            <div class="plan-tagline">For real transformations</div>
+            <div class="plan-price"><sub>₹</sub>499<small>/7 days</small></div>
+            <hr class="plan-sep">
+            <ul class="plan-list">
+              <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> 7 Day Live intense classes</li>
+              <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> 7 Day Nutrition Education</li>
+              <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> 2× weekly check-in</li>
+              <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> 1 on 1 coach call</li>
+              <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> Personalized meal plan</li>
+              <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> Up to 4 kg weight loss</li>
+            </ul>
+            <button class="btn-plan btn-plan-amber" onclick="openRegistration('Pro', 49900, '₹499 / 7 days')">Start
+              Pro</button>
+          </div>
+        </div>
+        <!-- Plan 4: Elite -->
+        <div class="col-md-6 col-lg-3 fade-up fd3">
+          <div class="plan-card tier" style="border-color: rgba(225,29,72,.3);">
+            <div class="plan-popular" style="background:#0f172a;">💎 Premium</div>
+            <div class="plan-tier-label" style="color:#ffb703;">Elite</div>
+            <div class="plan-tagline">Total transformation</div>
+            <div class="plan-price" style="font-size:46px;"><sub>₹</sub>2999<small>/mo</small></div>
+            <hr class="plan-sep">
+            <ul class="plan-list">
+              <li><i class="bi bi-check-circle-fill" style="color:#ffb703;"></i> Everything in Pro</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#ffb703;"></i> 4× weekly check-in</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#ffb703;"></i> Free health analysis <span
+                  style="font-size:11px;color:rgba(255,255,255,.5);">(₹999)</span></li>
+              <li><i class="bi bi-check-circle-fill" style="color:#ffb703;"></i> Guaranteed result</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#ffb703;"></i> Priority 24/7 Support</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#ffb703;"></i> Up to 8 kg weight loss</li>
+            </ul>
+            <button class="btn-plan btn-plan-forest"
+              onclick="openRegistration('Elite', 299900, '₹2,999 / 1 month')">Join Elite ⚡</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORMATIONS -->
+  <section id="transformations" class="sec">
+    <div class="container">
+      <div class="text-center mb-4 fade-up">
+        <div class="sec-overline" style="justify-content:center;">Real Results</div>
+        <h2 class="sec-h2">REAL <em>TRANSFORMATIONS</em></h2>
+        <p
+          style="color:var(--muted);font-size:15px;margin-top:12px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.7;">
+          Real members, real results. Every transformation below is from someone who completed the 21-day programme.
         </p>
-        <div class="about-chips">
-          <span class="chip chip-green"><i class="bi bi-patch-check-fill"></i> Certified Coaches</span>
-          <span class="chip chip-amber"><i class="bi bi-shield-fill-check"></i> 30-Day Guarantee</span>
-          <span class="chip chip-purple"><i class="bi bi-people-fill"></i> Community Access</span>
-        </div>
       </div>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3 fade-up fd1">
-        <div class="feat-card">
-          <div class="feat-icon fi-g"><i class="bi bi-calendar-check-fill"></i></div>
-          <div class="feat-h">Daily Guided Tasks</div>
-          <div class="feat-p">Wake up each morning knowing exactly what to do. No guesswork, just action.</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 fade-up fd2">
-        <div class="feat-card">
-          <div class="feat-icon fi-a"><i class="bi bi-person-heart"></i></div>
-          <div class="feat-h">Personal Coach</div>
-          <div class="feat-p">Your dedicated coach checks in daily via WhatsApp to keep you on track.</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 fade-up fd2">
-        <div class="feat-card">
-          <div class="feat-icon fi-p"><i class="bi bi-egg-fried"></i></div>
-          <div class="feat-h">Indian Meal Plans</div>
-          <div class="feat-p">Delicious desi food that fits your macros. Real food you actually love.</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 fade-up fd3">
-        <div class="feat-card">
-          <div class="feat-icon fi-r"><i class="bi bi-graph-up-arrow"></i></div>
-          <div class="feat-h">Proven Results</div>
-          <div class="feat-p">12,000+ members have completed the challenge. Your transformation is next.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- PLANS -->
-<section id="plans" class="sec">
-  <div class="container position-relative" style="z-index:1;">
-    <div class="text-center mb-5 fade-up">
-      <div class="sec-overline plan-over" style="justify-content:center;">Pricing Plans</div>
-      <h2 class="sec-h2 plan-h2">PICK YOUR <em>CHALLENGE</em></h2>
-      <p style="color:rgba(255,255,255,.38);max-width:420px;margin:14px auto 0;font-size:14.5px;">Every plan includes the full 21-day programme. Choose your level of support.</p>
-    </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-6 col-lg-4 fade-up fd1">
-        <div class="plan-card tier">
-          <div class="plan-tier-label">Starter</div>
-          <div class="plan-tagline">Perfect for beginners</div>
-          <div class="plan-price"><sub>₹</sub>100<small>7 day trial</small></div>
-          <hr class="plan-sep">
-          <ul class="plan-list">
-            <li><i class="bi bi-check-circle-fill" style="color:#4ade80;"></i> 7-Day Workout Plan</li>
-            <li><i class="bi bi-check-circle-fill" style="color:#4ade80;"></i> Basic Nutrition Guide</li>
-            <li><i class="bi bi-check-circle-fill" style="color:#4ade80;"></i> WhatsApp Group Support</li>
-            <li><i class="bi bi-check-circle-fill" style="color:#4ade80;"></i> Weekly Check-in</li>
-            <li class="off"><i class="bi bi-x-circle-fill"></i> 1-on-1 Video Calls</li>
-            <li class="off"><i class="bi bi-x-circle-fill"></i> Personalised Meal Plan</li>
-          </ul>
-          <button class="btn-plan btn-plan-ghost" onclick="openRegistration('7 Day Trial', 10000, '₹100 / 7-day trial')">Start My 7 Days</button>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 fade-up fd2">
-        <div class="plan-card featured">
-          <div class="plan-popular">🔥 Most Popular</div>
-          <div class="plan-tier-label">Pro</div>
-          <div class="plan-tagline">For real transformations</div>
-          <div class="plan-price"><sub>₹</sub>499<small>/7 days</small></div>
-          <hr class="plan-sep">
-          <ul class="plan-list">
-            <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> 7-Day Intense Plan</li>
-            <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> Personalised Meal Plan</li>
-            <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> Daily WhatsApp Coaching</li>
-            <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> 2× Weekly Check-in</li>
-            <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> Monthly Video Call</li>
-            
-          </ul>
-          <button class="btn-plan btn-plan-amber" onclick="openRegistration('7 Day Intense', 10000, '₹100 / 7-day intense')">Start My 7 Days Intense</button>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 fade-up fd3">
-        <div class="plan-card tier">
-          <div class="plan-tier-label">Elite</div>
-          <div class="plan-tagline">Total transformation</div>
-          <div class="plan-price"><sub>₹</sub>1500<small>/mo</small></div>
-          <hr class="plan-sep">
-          <ul class="plan-list">
-            <li><i class="bi bi-check-circle-fill" style="color:#fcd34d;"></i> Everything in Pro</li>
-            <li><i class="bi bi-check-circle-fill" style="color:#fcd34d;"></i> 4× Weekly Video Calls</li>
-            <li><i class="bi bi-check-circle-fill" style="color:#fcd34d;"></i> Daily Meal Planning</li>
-            <li><i class="bi bi-check-circle-fill" style="color:#fcd34d;"></i> Blood-work Analysis</li>
-            <li><i class="bi bi-check-circle-fill" style="color:#fcd34d;"></i> Priority 24/7 Support</li>
-            <li><i class="bi bi-check-circle-fill" style="color:#fcd34d;"></i> 30-Day Guarantee</li>
-          </ul>
-          <button class="btn-plan btn-plan-forest" onclick="openRegistration('1 Month Intense', 150000, '₹1,500 / 1 month')">Start My 21 Days ⚡</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRANSFORMATIONS -->
-<section id="transformations" class="sec">
-  <div class="container">
-    <div class="text-center mb-4 fade-up">
-      <div class="sec-overline" style="justify-content:center;">Real Results</div>
-      <h2 class="sec-h2">REAL <em>TRANSFORMATIONS</em></h2>
-      <p style="color:var(--muted);font-size:15px;margin-top:12px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.7;">
-        Real members, real results. Every transformation below is from someone who completed the 21-day programme.
-      </p>
-    </div>
-
-    <!--
+      <!--
       HOW TO ADD YOUR 7 PHOTOS:
         1. Save your images to  static/images/  folder
         2. Name them: client1.jpeg  client2.jpeg  ... client7.jpeg
@@ -962,545 +2973,763 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:
         ✏️ The images show at full square size — no cropping, no alignment issues
     -->
 
-    <div class="tg-scroll" id="tgScroll">
-      <div class="tg-track" id="tgTrack">
+      <div class="tg-scroll" id="tgScroll">
+        <div class="tg-track" id="tgTrack">
 
-        <!-- ── Card 1 ── ✏️ Edit name / result below -->
-        <div class="tg-card">
-          <div class="tg-img">
-            <img src="/static/images/client1.jpeg" alt="Transformation"
-                 onerror="this.style.display='none'"/>
-          </div>
-          <div class="tg-body">
-            <div class="tg-name">Dr. Jay Patel</div>         <!-- ✏️ Name -->
-            <div class="tg-detail">Lost weight &amp; gained confidence</div>  <!-- ✏️ Result -->
-            <div class="tg-chip"><i class="bi bi-award-fill"></i> Pro Plan</div>
-          </div>
-        </div>
-
-        <!-- ── Card 2 ── ✏️ Edit name / result below -->
-        <div class="tg-card">
-          <div class="tg-img">
-            <img src="/static/images/client2.jpeg" alt="Transformation"
-                 onerror="this.style.display='none'"/>
-          </div>
-          <div class="tg-body">
-            <div class="tg-name">Client 2</div>              <!-- ✏️ Name -->
-            <div class="tg-detail">Transformation result</div>    <!-- ✏️ Result -->
-            <div class="tg-chip"><i class="bi bi-award-fill"></i> Pro Plan</div>
-          </div>
-        </div>
-
-        <!-- ── Card 3 ── ✏️ Edit name / result below -->
-        <div class="tg-card">
-          <div class="tg-img">
-            <img src="/static/images/client3.jpeg" alt="Transformation"
-                 onerror="this.style.display='none'"/>
-          </div>
-          <div class="tg-body">
-            <div class="tg-name">Client 3</div>
-            <div class="tg-detail">Transformation result</div>
-            <div class="tg-chip"><i class="bi bi-award-fill"></i> Elite Plan</div>
-          </div>
-        </div>
-
-        <!-- ── Card 4 ── ✏️ Edit name / result below -->
-        <div class="tg-card">
-          <div class="tg-img">
-            <img src="/static/images/client4.jpeg" alt="Transformation"
-                 onerror="this.style.display='none'"/>
-          </div>
-          <div class="tg-body">
-            <div class="tg-name">Client 4</div>
-            <div class="tg-detail">Transformation result</div>
-            <div class="tg-chip"><i class="bi bi-award-fill"></i> Starter Plan</div>
-          </div>
-        </div>
-
-        <!-- ── Card 5 ── ✏️ Edit name / result below -->
-        <div class="tg-card">
-          <div class="tg-img">
-            <img src="/static/images/client5.jpeg" alt="Transformation"
-                 onerror="this.style.display='none'"/>
-          </div>
-          <div class="tg-body">
-            <div class="tg-name">Client 5</div>
-            <div class="tg-detail">Transformation result</div>
-            <div class="tg-chip"><i class="bi bi-award-fill"></i> Pro Plan</div>
-          </div>
-        </div>
-
-        <!-- ── Card 6 ── ✏️ Edit name / result below -->
-        <div class="tg-card">
-          <div class="tg-img">
-            <img src="/static/images/client6.jpeg" alt="Transformation"
-                 onerror="this.style.display='none'"/>
-          </div>
-          <div class="tg-body">
-            <div class="tg-name">Client 6</div>
-            <div class="tg-detail">Transformation result</div>
-            <div class="tg-chip"><i class="bi bi-award-fill"></i> Elite Plan</div>
-          </div>
-        </div>
-
-        <!-- ── Card 7 ── ✏️ Edit name / result below -->
-        <div class="tg-card">
-          <div class="tg-img">
-            <img src="/static/images/client7.jpeg" alt="Transformation"
-                 onerror="this.style.display='none'"/>
-          </div>
-          <div class="tg-body">
-            <div class="tg-name">Client 7</div>
-            <div class="tg-detail">Transformation result</div>
-            <div class="tg-chip"><i class="bi bi-award-fill"></i> Pro Plan</div>
-          </div>
-        </div>
-
-        <!-- ── Card 8 ── ✏️ Edit name / result below -->
-        <div class="tg-card">
-          <div class="tg-img">
-            <img src="/static/images/client8.jpeg" alt="Transformation"
-                 onerror="this.style.display='none'"/>
-          </div>
-          <div class="tg-body">
-            <div class="tg-name">Client 7</div>
-            <div class="tg-detail">Transformation result</div>
-            <div class="tg-chip"><i class="bi bi-award-fill"></i> Pro Plan</div>
-          </div>
-        </div>
-
-        <!-- ── Card 9 ── ✏️ Edit name / result below -->
-        <div class="tg-card">
-          <div class="tg-img">
-            <img src="/static/images/client9.jpeg" alt="Transformation"
-                 onerror="this.style.display='none'"/>
-          </div>
-          <div class="tg-body">
-            <div class="tg-name">Client 7</div>
-            <div class="tg-detail">Transformation result</div>
-            <div class="tg-chip"><i class="bi bi-award-fill"></i> Pro Plan</div>
-          </div>
-        </div>
-
-      </div><!-- /tg-track -->
-    </div><!-- /tg-scroll -->
-
-    <!-- Gallery nav arrows -->
-    <div class="tg-nav fade-up">
-      <button class="tg-arrow" id="tgPrev" onclick="tgScroll(-1)" aria-label="Previous">
-        <i class="bi bi-chevron-left"></i>
-      </button>
-      <span class="tg-counter" id="tgCounter">1 / 9</span>
-      <button class="tg-arrow" id="tgNext" onclick="tgScroll(1)" aria-label="Next">
-        <i class="bi bi-chevron-right"></i>
-      </button>
-    </div>
-
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="sec">
-  <div class="container">
-    <div class="text-center mb-5 fade-up">
-      <div class="sec-overline" style="justify-content:center;">Testimonials</div>
-      <h2 class="sec-h2">WHAT THEY <em>SAY</em></h2>
-    </div>
-    <div class="row g-4">
-      {% set reviews = [
-        ("R","Rahul Sharma","Pro Member · Mumbai","av-g","I was sceptical at first — 21 days felt too short. But by day 10 I had already lost 4 kg and my energy was through the roof. The daily tasks and WhatsApp support made it feel effortless!"),
-        ("P","Priya Mehta","Elite Member · Bengaluru","av-a","The Indian meal plan was a total game-changer. My coach adjusted it every single week. I finally found a programme that fits my lifestyle instead of forcing me to change everything overnight."),
-        ("A","Arjun Kumar","Starter Member · Delhi","av-r","Even on the Starter plan the guidance was incredible. The community group alone is worth it — everyone motivates each other. Completed my 21 days and signed up for another round immediately!"),
-      ] %}
-      {% for init, name, meta, av, text in reviews %}
-      <div class="col-md-4 fade-up fd{{ loop.index }}">
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <div class="testi-quote">"{{ text }}"</div>
-          <div class="testi-author">
-            <div class="testi-av {{ av }}">{{ init }}</div>
-            <div><div class="testi-name">{{ name }}</div><div class="testi-meta">{{ meta }}</div></div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="sec">
-  <div class="container">
-    <div class="contact-wrap position-relative">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-5 fade-up position-relative" style="z-index:1;">
-          <div class="sec-overline contact-over">Get In Touch</div>
-          <div class="ch">ANY <em>QUESTIONS?</em></div>
-          <p class="cdesc">Our team replies within 2 hours on WhatsApp.<br>Ready to start? Join over 12,000 members!</p>
-          <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px;">
-            <div class="c-info-row">
-              <div class="c-icon"><i class="bi bi-whatsapp" style="color:#4ade80;font-size:16px;"></i></div>
-              WhatsApp: +91 8123100537
+          <!-- ── Card 0 ── ✏️ Edit name / result below -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client0.jpeg" alt="Transformation" onerror="this.style.display='none'" />
             </div>
-            <div class="c-info-row">
-              <div class="c-icon"><i class="bi bi-envelope-fill" style="color:#93c5fd;font-size:15px;"></i></div>
-              <a href="mailto:21daysweightlosscenter@gmail.com"
-                 style="color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;"
-                 onmouseover="this.style.color='rgba(255,255,255,.9)'"
-                 onmouseout="this.style.color='rgba(255,255,255,.6)'">
-                21daysweightlosscenter@gmail.com
-              </a>
+            <div class="tg-body">
+              <div class="tg-name">Mohammed Khalid</div> <!-- ✏️ Name -->
+              <div class="tg-detail">Gained 14kgs &amp; gained confidence</div> <!-- ✏️ Result -->
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> Pro Plan</div>
             </div>
-            <!-- ✏️ EDIT: Replace @your_instagram_handle with your real Instagram username -->
-            <a href="https://www.instagram.com/21daysweightlosscenter?igsh=emFqbmRtbjJzNGk4&utm_source=qr" target="_blank" rel="noopener"
-               class="c-info-row c-insta-row">
-              <div class="c-icon c-icon-insta">
-                <i class="bi bi-instagram" style="font-size:16px;"></i>
-              </div>
-              <span>@21daysweightlosscenter</span>
-              <i class="bi bi-arrow-up-right" style="font-size:11px;opacity:.6;margin-left:auto;"></i>
-            </a>
           </div>
-        </div>
-        <div class="col-lg-7 fade-up fd1 position-relative" style="z-index:1;">
-          <form id="contact-form">
-            <div class="row g-3">
-              <div class="col-md-6"><label class="form-lbl">Your Name</label><input type="text" class="form-inp" placeholder="Rahul Sharma" required/></div>
-              <div class="col-md-6"><label class="form-lbl">Phone Number</label><input type="tel" class="form-inp" placeholder="98765 43210" required/></div>
-              <div class="col-12"><label class="form-lbl">Message</label><textarea class="form-inp" rows="4" placeholder="Tell us your goals..."></textarea></div>
-              <div class="col-12"><button type="submit" class="btn-hero w-100" style="justify-content:center;border:none;">Send Message <i class="bi bi-send-fill"></i></button></div>
+          <!-- ── Card 1 ── ✏️ Edit name / result below -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client1.jpeg" alt="Transformation" onerror="this.style.display='none'" />
             </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="tg-body">
+              <div class="tg-name">Client 1</div> <!-- ✏️ Name -->
+              <div class="tg-detail">Gained weight &amp; gained confidence</div> <!-- ✏️ Result -->
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> Pro Plan</div>
+            </div>
+          </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <a class="footer-logo-wrap" href="#">
-      <img src="/static/images/logo.jpeg" alt="21 Days Weight Loss Center" class="footer-logo-img"/>
-      <div class="footer-logo-text">
-        21 Days Weight Loss Center
-        <span>Since 2016 · India</span>
-      </div>
-    </a>
-    <div class="foot-links">
-      <a href="#about">About</a><a href="#plans">Plans</a>
-      <a href="#transformations">Results</a><a href="#testimonials">Reviews</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="foot-copy">
-      &copy; {{ now.year if now else 2024 }} 21 Days. All rights reserved. &nbsp;·&nbsp; Secure payments by Razorpay.
-      &nbsp;·&nbsp;<a href="/admin" style="color:rgba(255,255,255,.12);text-decoration:none;font-size:11px;" tabindex="-1">admin</a>
-    </div>
-  </div>
-</footer>
+          <!-- ── Card 2 ── ✏️ Edit name / result below -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client2.jpeg" alt="Transformation" onerror="this.style.display='none'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-name">Client 2</div> <!-- ✏️ Name -->
+              <div class="tg-detail">Gained 12kgs &amp; gained confidence</div> <!-- ✏️ Result -->
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> Elite Plan</div>
+            </div>
+          </div>
 
-<!-- REGISTRATION MODAL -->
-<div class="modal fade modal-21" id="registerModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div><h5 class="modal-title">Join 21 Days</h5><p>Enter your details to proceed to payment</p></div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class="plan-pill" id="selected-plan-display"><i class="bi bi-lightning-charge-fill"></i><span id="plan-name-display">Pro Plan</span> — <span id="plan-price-display">₹5,999/mo</span></div>
-        <div id="modal-error" style="display:none;"></div>
-        <div style="margin-bottom:18px;"><label class="m-lbl">Full Name *</label><input type="text" class="m-inp" id="reg-name" placeholder="Rahul Sharma"/></div>
-        <div style="margin-bottom:18px;"><label class="m-lbl">Email Address</label><input type="email" class="m-inp" id="reg-email" placeholder="rahul@example.com (optional)"/></div>
-        <div style="margin-bottom:8px;">
-          <label class="m-lbl">WhatsApp Number *</label>
-          <div class="phone-row"><div class="phone-pfx">🇮🇳 +91</div><input type="tel" class="m-inp phone-inp" id="reg-phone" placeholder="98765 43210" maxlength="10"/></div>
-          <p style="font-size:12px;color:var(--subtle);margin-top:6px;">Your coach will contact you on this number</p>
-        </div>
-      </div>
-      <div class="modal-footer"><button class="btn-cancel" data-bs-dismiss="modal">Cancel</button><button class="btn-proceed" id="proceed-to-pay">Proceed to Payment <i class="bi bi-arrow-right"></i></button></div>
-    </div>
-  </div>
-</div>
+          <!-- ── Card 3 ── ✏️ Edit name / result below -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client3.jpeg" alt="Transformation" onerror="this.style.display='none'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-name">Client 3</div>
+              <div class="tg-detail">Lost 10kgs &amp; gained confidence</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> Elite Plan</div>
+            </div>
+          </div>
 
-<!-- SUCCESS PAGE (full-screen premium) -->
-<div id="success-overlay">
-  <div class="success-card">
-    <div class="sc-header">
-      <div class="sc-check">✓</div>
-      <div class="sc-title">Payment Successful! 🎉</div>
-      <div class="sc-subtitle">Welcome to your transformation journey</div>
-    </div>
-    <div class="sc-body">
-      <div class="sc-summary">
-        <div class="sc-row">
-          <span class="sc-row-label">Name</span>
-          <span class="sc-row-val" id="sc-name">—</span>
-        </div>
-        <div class="sc-row">
-          <span class="sc-row-label">Plan Enrolled</span>
-          <span class="sc-row-val amber" id="sc-plan">—</span>
-        </div>
-        <div class="sc-row">
-          <span class="sc-row-label">Amount Paid</span>
-          <span class="sc-row-val green" id="sc-amount">—</span>
-        </div>
-        <div class="sc-row">
-          <span class="sc-row-label">Payment ID</span>
-          <span class="sc-row-val" id="success-payment-id" style="font-size:12px;font-family:'Courier New',monospace;">—</span>
-        </div>
-      </div>
-      <p class="sc-msg">
-        <strong>Our team will contact you shortly on WhatsApp.</strong><br>
-        Tap the button below to connect directly with your coach and get started today.
-      </p>
-      <div class="sc-btns">
-        <a id="whatsapp-btn" href="#" target="_blank" rel="noopener" class="btn-wa-main">
-          <i class="bi bi-whatsapp"></i>
-          Connect on WhatsApp Now
-        </a>
-        <button onclick="dismissSuccess()" class="btn-dismiss">
-          Continue Browsing
+          <!-- ── Card 4 ── ✏️ Edit name / result below -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client4.jpeg" alt="Transformation" onerror="this.style.display='none'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-name">Client 4</div>
+              <div class="tg-detail">Lost 8kgs &amp; recovered from health issues</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> Starter Plan</div>
+            </div>
+          </div>
+
+          <!-- ── Card 5 ── ✏️ Edit name / result below -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client5.jpeg" alt="Transformation" onerror="this.style.display='none'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-name">Client 5</div>
+              <div class="tg-detail">Lost weight &amp; gained confidence</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> Pro Plan</div>
+            </div>
+          </div>
+
+          <!-- ── Card 6 ── ✏️ Edit name / result below -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client6.jpeg" alt="Transformation" onerror="this.style.display='none'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-name">Client 6</div>
+              <div class="tg-detail">Lost 6kgs &amp; gained confidence</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> Elite Plan</div>
+            </div>
+          </div>
+
+          <!-- ── Card 7 ── ✏️ Edit name / result below -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client7.jpeg" alt="Transformation" onerror="this.style.display='none'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-name">Client 7</div>
+              <div class="tg-detail">Transformation into clear skin</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> Pro Plan</div>
+            </div>
+          </div>
+
+          <!-- ── Card 8 ── ✏️ Edit name / result below -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client8.jpeg" alt="Transformation" onerror="this.style.display='none'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-name">Client 8</div>
+              <div class="tg-detail">Transformation into clear skin</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> Pro Plan</div>
+            </div>
+          </div>
+
+          <!-- ── Card 9 ── ✏️ Edit name / result below -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client9.jpeg" alt="Transformation" onerror="this.style.display='none'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-name">Client 9</div>
+              <div class="tg-detail">Transformation into clear skin</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> Pro Plan</div>
+            </div>
+          </div>
+
+        </div><!-- /tg-track -->
+      </div><!-- /tg-scroll -->
+
+      <!-- Gallery nav arrows -->
+      <div class="tg-nav fade-up">
+        <button class="tg-arrow" id="tgPrev" onclick="tgScroll(-1)" aria-label="Previous">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <span class="tg-counter" id="tgCounter">1 / 9</span>
+        <button class="tg-arrow" id="tgNext" onclick="tgScroll(1)" aria-label="Next">
+          <i class="bi bi-chevron-right"></i>
         </button>
       </div>
-      <div class="sc-note">
-        <i class="bi bi-shield-check-fill" style="color:var(--green);font-size:13px;"></i>
-        Payment secured by Razorpay · Your data is safe
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="sec">
+    <div class="container">
+      <div class="d-flex align-items-end justify-content-between mb-5 fade-up">
+        <div>
+          <div class="sec-overline">Testimonials</div>
+          <h2 class="sec-h2" style="margin-bottom:0;">WHAT THEY <em>SAY</em></h2>
+        </div>
+        <div class="tg-nav" style="margin-top:0;">
+          <button class="tg-arrow" onclick="testiScroll(-1)" aria-label="Previous"><i
+              class="bi bi-chevron-left"></i></button>
+          <button class="tg-arrow" onclick="testiScroll(1)" aria-label="Next"><i
+              class="bi bi-chevron-right"></i></button>
+        </div>
+      </div>
+
+      <div class="testi-scroll" id="testi-scroll">
+        <div class="testi-track">
+          {% set reviews = [
+          ("R","Rahul Sharma","Pro Member · Mumbai","av-g","I was sceptical at first — 21 days felt too short. But by
+          day 10 I had already lost 4 kg and my energy was through the roof. The daily tasks and WhatsApp support made
+          it feel effortless!"),
+          ("P","Priya Mehta","Elite Member · Bengaluru","av-a","The Indian meal plan was a total game-changer. My coach
+          adjusted it every single week. I finally found a programme that fits my lifestyle instead of forcing me to
+          change everything overnight."),
+          ("S","Sneha Patil","Elite Member · Pune","av-p","I struggled with weight for years. The home workouts are so
+          easy to follow, and eating normal Indian food meant I never felt restricted. Highly recommend!"),
+          ("A","Arjun Kumar","Starter Member · Delhi","av-r","Even on the Starter plan the guidance was incredible. The
+          community group alone is worth it — everyone motivates each other. Completed my 21 days and signed up for
+          another round immediately!"),
+          ("M","Manish Singh","Pro Member · Noida","av-a","My doctor recommended I lose weight for my health. This
+          21-day program built habits I still use today. Truly a life-changing experience.")
+          ] %}
+          {% for init, name, meta, av, text in reviews %}
+          <div class="testi-col fade-up fd{{ loop.index }}">
+            <div class="testi-card">
+              <div class="stars">★★★★★</div>
+              <div class="testi-quote">"{{ text }}"</div>
+              <div class="testi-author">
+                <div class="testi-av {{ av }}">{{ init }}</div>
+                <div>
+                  <div class="testi-name">{{ name }}</div>
+                  <div class="testi-meta">{{ meta }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="sec" style="background:var(--paper);">
+    <div class="container">
+      <div class="text-center mb-5 fade-up">
+        <div class="sec-overline" style="justify-content:center;">Got Questions?</div>
+        <h2 class="sec-h2">FREQUENTLY ASKED <em>QUESTIONS</em></h2>
+      </div>
+      <div class="row justify-content-center fade-up fd1">
+        <div class="col-lg-8">
+          <div class="accordion" id="faqAccordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item"
+              style="border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq1"
+                  style="font-weight:600;font-size:15.5px;color:var(--ink);box-shadow:none;padding:18px 22px;">
+                  Do you conduct offline sessions/classes?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--muted);font-size:14.5px;padding:0 22px 20px;">
+                  No, our program is fully online. You can join the live sessions from anywhere via Zoom.
+                </div>
+              </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="accordion-item"
+              style="border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq2"
+                  style="font-weight:600;font-size:15.5px;color:var(--ink);box-shadow:none;padding:18px 22px;">
+                  Do you sell any supplements?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--muted);font-size:14.5px;padding:0 22px 20px;">
+                  No, we absolutely do not sell or recommend any supplements. Our focus is 100% on natural, sustainable
+                  weight loss.
+                </div>
+              </div>
+            </div>
+            <!-- FAQ 3 -->
+            <div class="accordion-item"
+              style="border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq3"
+                  style="font-weight:600;font-size:15.5px;color:var(--ink);box-shadow:none;padding:18px 22px;">
+                  How many sessions/classes per day?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--muted);font-size:14.5px;padding:0 22px 20px;">
+                  We usually hold 2 classes per day, but this depends on your chosen plan and our personalized
+                  recommendations for you.
+                </div>
+              </div>
+            </div>
+            <!-- FAQ 4 -->
+            <div class="accordion-item"
+              style="border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq4"
+                  style="font-weight:600;font-size:15.5px;color:var(--ink);box-shadow:none;padding:18px 22px;">
+                  Do we need special diet plans?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--muted);font-size:14.5px;padding:0 22px 20px;">
+                  No, you will only rely on home-cooked Indian food properly guided by our verified nutritionists.
+                </div>
+              </div>
+            </div>
+            <!-- FAQ 5 -->
+            <div class="accordion-item"
+              style="border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq5"
+                  style="font-weight:600;font-size:15.5px;color:var(--ink);box-shadow:none;padding:18px 22px;">
+                  Is there any office to visit?
+                </button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--muted);font-size:14.5px;padding:0 22px 20px;">
+                  No, the program is fully online. Complete support is available via direct messages and our customer
+                  support team over WhatsApp.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section id="final-cta" class="sec" style="background:var(--forest); color: white;">
+    <div class="container">
+      <div class="row justify-content-center text-center fade-up">
+        <div class="col-lg-8">
+          <h2 class="sec-h2" style="color: white; margin-bottom: 24px;">YOUR TRANSFORMATION<br><em
+              style="color:var(--saffron);">AWAITS YOU</em></h2>
+          <p style="font-size:18px; color:rgba(255,255,255,.7); margin-bottom: 32px;">Every day you wait is a day lost.
+            Join thousands of individuals who chose health, energy, and confidence.</p>
+          <button class="btn-hero" onclick="scrollToPlans()" style="box-shadow:0 8px 32px rgba(225,29,72,.4);">Start
+            Your Journey Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="sec">
+    <div class="container">
+      <div class="contact-wrap position-relative">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5 fade-up position-relative" style="z-index:1;">
+            <div class="sec-overline contact-over">Get In Touch</div>
+            <div class="ch">ANY <em>QUESTIONS?</em></div>
+            <p class="cdesc">Our team replies within 1 hour on WhatsApp.<br>Ready to start? Join over 12,000 members!
+            </p>
+            <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px;">
+              <div class="c-info-row">
+                <div class="c-icon"><i class="bi bi-whatsapp" style="color:#4ade80;font-size:16px;"></i></div>
+                WhatsApp: +91 8123100537
+              </div>
+              <div class="c-info-row">
+                <div class="c-icon"><i class="bi bi-envelope-fill" style="color:#93c5fd;font-size:15px;"></i></div>
+                <a href="mailto:21daysweightlosscenter@gmail.com"
+                  style="color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;"
+                  onmouseover="this.style.color='rgba(255,255,255,.9)'"
+                  onmouseout="this.style.color='rgba(255,255,255,.6)'">
+                  21daysweightlosscenter@gmail.com
+                </a>
+              </div>
+              <!-- ✏️ EDIT: Replace @your_instagram_handle with your real Instagram username -->
+              <a href="https://www.instagram.com/21daysweightlosscenter?igsh=emFqbmRtbjJzNGk4&utm_source=qr"
+                target="_blank" rel="noopener" class="c-info-row c-insta-row">
+                <div class="c-icon c-icon-insta">
+                  <i class="bi bi-instagram" style="font-size:16px;"></i>
+                </div>
+                <span>@21daysweightlosscenter</span>
+                <i class="bi bi-arrow-up-right" style="font-size:11px;opacity:.6;margin-left:auto;"></i>
+              </a>
+
+              <!-- YouTube Channel Link -->
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="c-info-row c-insta-row"
+                style="margin-top:4px;">
+                <div class="c-icon" style="background:#ff0000;color:#fff;border:none;">
+                  <i class="bi bi-youtube" style="font-size:16px;"></i>
+                </div>
+                <span>Watch our Videos on YouTube</span>
+                <i class="bi bi-arrow-up-right" style="font-size:11px;opacity:.6;margin-left:auto;"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-7 fade-up fd1 position-relative" style="z-index:1;">
+            <form id="contact-form">
+              <div class="row g-3">
+                <div class="col-md-6"><label class="form-lbl">Your Name</label><input type="text" class="form-inp"
+                    placeholder="Rahul Sharma" required /></div>
+                <div class="col-md-6"><label class="form-lbl">Phone Number</label><input type="tel" class="form-inp"
+                    placeholder="98765 43210" required /></div>
+                <div class="col-12"><label class="form-lbl">Message</label><textarea class="form-inp" rows="4"
+                    placeholder="Tell us your goals..."></textarea></div>
+                <div class="col-12"><button type="submit" class="btn-hero w-100"
+                    style="justify-content:center;border:none;">Send Message <i class="bi bi-send-fill"></i></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <a class="footer-logo-wrap" href="#">
+        <img src="/static/images/logo.jpeg" alt="21 Days Weight Loss Center" class="footer-logo-img" />
+        <div class="footer-logo-text">
+          21 Days Weight Loss Center
+          <span>Since 2016 · India</span>
+        </div>
+      </a>
+      <div class="foot-links">
+        <a href="#about">About</a><a href="#plans">Plans</a>
+        <a href="#transformations">Results</a><a href="#testimonials">Reviews</a>
+        <a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      </div>
+
+      <div style="font-size:12px;color:rgba(255,255,255,.4);margin:24px 0 16px;">
+        <strong>TERMS & CONDITIONS</strong><br />
+        By enrolling in any 21 Days Weight Loss Center program, you agree that <strong>No refunds are available</strong>
+        under any circumstances. Results vary per individual depending on consistency and adherence.
+      </div>
+
+      <div class="foot-copy">
+        &copy; {{ now.year if now else 2024 }} 21 Days. All rights reserved. &nbsp;·&nbsp; Secure payments by Razorpay.
+        &nbsp;·&nbsp;<a href="/admin" style="color:rgba(255,255,255,.12);text-decoration:none;font-size:11px;"
+          tabindex="-1">admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- REGISTRATION MODAL -->
+  <div class="modal fade modal-21" id="registerModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title">Join 21 Days</h5>
+            <p>Enter your details to proceed to payment</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="plan-pill" id="selected-plan-display"><i class="bi bi-lightning-charge-fill"></i><span
+              id="plan-name-display">Pro Plan</span> — <span id="plan-price-display">₹5,999/mo</span></div>
+          <div id="modal-error" style="display:none;"></div>
+          <div style="margin-bottom:18px;"><label class="m-lbl">Full Name *</label><input type="text" class="m-inp"
+              id="reg-name" placeholder="Rahul Sharma" /></div>
+          <div style="margin-bottom:18px;"><label class="m-lbl">Email Address</label><input type="email" class="m-inp"
+              id="reg-email" placeholder="rahul@example.com (optional)" /></div>
+          <div style="margin-bottom:8px;">
+            <label class="m-lbl">WhatsApp Number *</label>
+            <div class="phone-row">
+              <div class="phone-pfx">🇮🇳 +91</div><input type="tel" class="m-inp phone-inp" id="reg-phone"
+                placeholder="98765 43210" maxlength="10" />
+            </div>
+            <p style="font-size:12px;color:var(--subtle);margin-top:6px;">Your coach will contact you on this number</p>
+          </div>
+        </div>
+        <div class="modal-footer"><button class="btn-cancel" data-bs-dismiss="modal">Cancel</button><button
+            class="btn-proceed" id="proceed-to-pay">Proceed to Payment <i class="bi bi-arrow-right"></i></button></div>
       </div>
     </div>
   </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  let currentPlan = '', currentAmount = 0, currentUserId = null;
-  const RAZORPAY_KEY = "{{ razorpay_key }}";
+  <!-- SUCCESS PAGE (full-screen premium) -->
+  <div id="success-overlay">
+    <div class="success-card">
+      <div class="sc-header">
+        <div class="sc-check">✓</div>
+        <div class="sc-title">Payment Successful! 🎉</div>
+        <div class="sc-subtitle">Welcome to your transformation journey</div>
+      </div>
+      <div class="sc-body">
+        <div class="sc-summary">
+          <div class="sc-row">
+            <span class="sc-row-label">Name</span>
+            <span class="sc-row-val" id="sc-name">—</span>
+          </div>
+          <div class="sc-row">
+            <span class="sc-row-label">Plan Enrolled</span>
+            <span class="sc-row-val amber" id="sc-plan">—</span>
+          </div>
+          <div class="sc-row">
+            <span class="sc-row-label">Amount Paid</span>
+            <span class="sc-row-val green" id="sc-amount">—</span>
+          </div>
+          <div class="sc-row">
+            <span class="sc-row-label">Payment ID</span>
+            <span class="sc-row-val" id="success-payment-id"
+              style="font-size:12px;font-family:'Courier New',monospace;">—</span>
+          </div>
+        </div>
+        <p class="sc-msg">
+          <strong>Our team will contact you shortly on WhatsApp.</strong><br>
+          Tap the button below to connect directly with your coach and get started today.
+        </p>
+        <div class="sc-btns">
+          <a id="whatsapp-btn" href="#" target="_blank" rel="noopener" class="btn-wa-main">
+            <i class="bi bi-whatsapp"></i>
+            Connect on WhatsApp Now
+          </a>
+          <button onclick="dismissSuccess()" class="btn-dismiss">
+            Continue Browsing
+          </button>
+        </div>
+        <div class="sc-note">
+          <i class="bi bi-shield-check-fill" style="color:var(--green);font-size:13px;"></i>
+          Payment secured by Razorpay · Your data is safe
+        </div>
+      </div>
+    </div>
+  </div>
 
-  if (sessionStorage.getItem('21d_registered')) { unlockPage(true); }
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let currentPlan = '', currentAmount = 0, currentUserId = null;
+    const RAZORPAY_KEY = "{{ razorpay_key }}";
 
-  document.getElementById('gate-submit').addEventListener('click', handleGateSubmit);
-  ['gate-name','gate-phone','gate-email','gate-instagram'].forEach(id => {
-    document.getElementById(id).addEventListener('keydown', e => { if(e.key==='Enter') handleGateSubmit(); });
-  });
+    // --- SMART USER MEMORY ---
+    if (localStorage.getItem('21d_registered')) { unlockPage(true); }
 
-  async function handleGateSubmit() {
-    const name=document.getElementById('gate-name').value.trim();
-    const phone=document.getElementById('gate-phone').value.trim();
-    const email=document.getElementById('gate-email').value.trim();
-    const instagram=document.getElementById('gate-instagram').value.trim().replace(/^@/,'');
-    const btn=document.getElementById('gate-submit');
-    const errEl=document.getElementById('gate-error');
-    errEl.style.display='none';
-    if(!name){showGateErr('Please enter your full name.');return;}
-    if(!phone||!/^\d{10}$/.test(phone)){showGateErr('Please enter a valid 10-digit WhatsApp number.');return;}
-    btn.innerHTML='<span class="spinner-sm"></span> Saving your details...';
-    btn.disabled=true;
-    try{
-      const res=await fetch('/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,phone,email,instagram,plan:'Visitor'})});
-      const data=await res.json();
-      if(!res.ok){showGateErr(data.error||'Something went wrong. Try again.');return;}
-      currentUserId=data.user_id;
-      sessionStorage.setItem('21d_registered','1');
-      sessionStorage.setItem('21d_uid',data.user_id);
-      sessionStorage.setItem('21d_name',name);
-      sessionStorage.setItem('21d_phone',phone);
-      sessionStorage.setItem('21d_email',email);
-      sessionStorage.setItem('21d_instagram',instagram);
-      unlockPage(false);
-    }catch(e){showGateErr('Network error. Please try again.');}
-    finally{btn.innerHTML='<i class="bi bi-unlock-fill"></i> Enter &amp; Explore 21 Days';btn.disabled=false;}
-  }
+    document.getElementById('gate-submit').addEventListener('click', handleGateSubmit);
+    ['gate-name', 'gate-phone', 'gate-email', 'gate-instagram'].forEach(id => {
+      document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') handleGateSubmit(); });
+    });
 
-  function showGateErr(msg){
-    const el=document.getElementById('gate-error');
-    el.textContent=msg;el.style.display='block';
-    const btn=document.getElementById('gate-submit');
-    btn.innerHTML='<i class="bi bi-unlock-fill"></i> Enter &amp; Explore 21 Days';btn.disabled=false;
-  }
+    async function handleGateSubmit() {
+      const name = document.getElementById('gate-name').value.trim();
+      const phone = document.getElementById('gate-phone').value.trim();
+      const email = document.getElementById('gate-email').value.trim();
+      const instagram = document.getElementById('gate-instagram').value.trim().replace(/^@/, '');
+      const btn = document.getElementById('gate-submit');
+      const errEl = document.getElementById('gate-error');
+      errEl.style.display = 'none';
+      if (!name) { showGateErr('Please enter your full name.'); return; }
+      if (!phone || !/^\d{10}$/.test(phone)) { showGateErr('Please enter a valid 10-digit WhatsApp number.'); return; }
+      btn.innerHTML = '<span class="spinner-sm"></span> Saving your details...';
+      btn.disabled = true;
+      try {
+        const res = await fetch('/api/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, phone, email, instagram, plan: 'Visitor' }) });
+        const data = await res.json();
+        if (!res.ok) { showGateErr(data.error || 'Something went wrong. Try again.'); return; }
+        currentUserId = data.user_id;
+        localStorage.setItem('21d_registered', '1');
+        localStorage.setItem('21d_uid', data.user_id);
+        localStorage.setItem('21d_name', name);
+        localStorage.setItem('21d_phone', phone);
+        localStorage.setItem('21d_email', email);
+        localStorage.setItem('21d_instagram', instagram);
+        unlockPage(false);
+      } catch (e) { showGateErr('Network error. Please try again.'); }
+      finally { btn.innerHTML = '<i class="bi bi-unlock-fill"></i> Enter &amp; Explore 21 Days'; btn.disabled = false; }
+    }
 
-  function unlockPage(instant){
-    const gate=document.getElementById('page-gate');
-    const content=document.getElementById('site-content');
-    if(instant){gate.style.display='none';}
-    else{gate.classList.add('hidden');setTimeout(()=>{gate.style.display='none';},500);}
-    content.classList.remove('blurred');
-    if(!currentUserId&&sessionStorage.getItem('21d_uid')){currentUserId=parseInt(sessionStorage.getItem('21d_uid'));}
-  }
+    function showGateErr(msg) {
+      const el = document.getElementById('gate-error');
+      el.textContent = msg; el.style.display = 'block';
+      const btn = document.getElementById('gate-submit');
+      btn.innerHTML = '<i class="bi bi-unlock-fill"></i> Enter &amp; Explore 21 Days'; btn.disabled = false;
+    }
 
-  window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);});
+    function unlockPage(instant) {
+      const gate = document.getElementById('page-gate');
+      const content = document.getElementById('site-content');
+      if (instant) { gate.style.display = 'none'; }
+      else { gate.classList.add('hidden'); setTimeout(() => { gate.style.display = 'none'; }, 500); }
+      content.classList.remove('blurred');
+      if (!currentUserId && localStorage.getItem('21d_uid')) { currentUserId = parseInt(localStorage.getItem('21d_uid')); }
+    }
 
-  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
-  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+    window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50); });
 
-  function scrollToPlans(){document.getElementById('plans').scrollIntoView({behavior:'smooth'});}
+    const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up, .slide-left, .slide-right, .zoom-in').forEach(el => obs.observe(el));
 
-  function openRegistration(planName, amountPaise, priceLabel){
-    currentPlan=planName; currentAmount=amountPaise;
-    document.getElementById('plan-name-display').textContent = planName;
-    document.getElementById('plan-price-display').textContent = priceLabel || ('₹' + (amountPaise/100).toLocaleString('en-IN'));
-    document.getElementById('modal-error').style.display='none';
-    document.getElementById('reg-name').value=sessionStorage.getItem('21d_name')||'';
-    document.getElementById('reg-email').value=sessionStorage.getItem('21d_email')||'';
-    document.getElementById('reg-phone').value=sessionStorage.getItem('21d_phone')||'';
-    new bootstrap.Modal(document.getElementById('registerModal')).show();
-  }
+    function scrollToPlans() { document.getElementById('plans').scrollIntoView({ behavior: 'smooth' }); }
 
-  document.getElementById('proceed-to-pay').addEventListener('click',async()=>{
-    const name=document.getElementById('reg-name').value.trim();
-    const email=document.getElementById('reg-email').value.trim();
-    const phone=document.getElementById('reg-phone').value.trim();
-    const btn=document.getElementById('proceed-to-pay');
-    document.getElementById('modal-error').style.display='none';
-    if(!name){showErr('Please enter your full name.');return;}
-    if(!phone||!/^\d{10}$/.test(phone)){showErr('Please enter a valid 10-digit mobile number.');return;}
-    btn.innerHTML='<span class="spinner-sm"></span> Processing...';btn.disabled=true;
-    try{
-      const r1=await fetch('/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,email,phone,plan:currentPlan})});
-      const d1=await r1.json();
-      if(!r1.ok){showErr(d1.error||'Registration failed.');return;}
-      currentUserId=d1.user_id;sessionStorage.setItem('21d_uid',currentUserId);
-      const r2=await fetch('/api/create-order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({user_id:currentUserId,amount:currentAmount,plan:currentPlan})});
-      const d2=await r2.json();
-      if(!r2.ok){showErr(d2.error||'Could not create order.');return;}
-      bootstrap.Modal.getInstance(document.getElementById('registerModal')).hide();
-      openRazorpay(d2,name,email,phone);
-    }catch(err){showErr('Network error. Please try again.');}
-    finally{btn.innerHTML='Proceed to Payment <i class="bi bi-arrow-right"></i>';btn.disabled=false;}
-  });
+    function testiScroll(dir) {
+      const s = document.getElementById('testi-scroll');
+      const scrollAmt = window.innerWidth < 768 ? 344 : 404;
+      s.scrollBy({ left: dir * scrollAmt, behavior: 'smooth' });
+    }
 
-  function showErr(msg){
-    const el=document.getElementById('modal-error');el.textContent=msg;el.style.display='block';
-    const btn=document.getElementById('proceed-to-pay');btn.innerHTML='Proceed to Payment <i class="bi bi-arrow-right"></i>';btn.disabled=false;
-  }
+    async function openRegistration(planName, amountPaise, priceLabel) {
+      currentPlan = planName; currentAmount = amountPaise;
 
-  function openRazorpay(orderData,name,email,phone){
-    const rzp=new Razorpay({key:RAZORPAY_KEY,amount:orderData.amount,currency:orderData.currency,name:'21 Days Weight Loss Center',description:currentPlan+' Plan',order_id:orderData.order_id,prefill:{name,email,contact:'+91'+phone},theme:{color:'#0d3b2e'},handler:async(response)=>{await verifyPayment(response);}});
-    rzp.on('payment.failed',resp=>{alert('Payment failed: '+resp.error.description);});
-    rzp.open();
-  }
+      // Auto-login capability: If we know the user is from localStorage, skip the registration form and go DIRECTLY to payment!
+      if (localStorage.getItem('21d_uid')) {
+        const uid = localStorage.getItem('21d_uid');
+        const name = localStorage.getItem('21d_name');
+        const email = localStorage.getItem('21d_email') || '';
+        const phone = localStorage.getItem('21d_phone');
 
-  async function verifyPayment(response){
-    try{
-      const res=await fetch('/api/verify-payment',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({
-          razorpay_order_id:  response.razorpay_order_id,
-          razorpay_payment_id:response.razorpay_payment_id,
-          razorpay_signature: response.razorpay_signature,
-          user_id:            currentUserId
-        })
+        // Update DB with the new plan silently, then create razorpay order
+        try {
+          const r1 = await fetch('/api/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email, phone, plan: currentPlan }) });
+          if (!r1.ok) throw new Error("Silent update failed");
+
+          const r2 = await fetch('/api/create-order', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_id: uid, amount: amountPaise, plan: currentPlan }) });
+          const d2 = await r2.json();
+          if (!r2.ok) throw new Error(d2.error || 'Could not create order');
+          openRazorpay(d2, name, email, phone);
+        } catch (err) {
+          console.error("Smart checkout error:", err);
+          // Fallback to manual form if needed
+          showManualRegistration(planName, priceLabel);
+        }
+        return;
+      }
+
+      // Otherwise show the modal
+      showManualRegistration(planName, priceLabel);
+    }
+
+    function showManualRegistration(planName, priceLabel) {
+      document.getElementById('plan-name-display').textContent = planName;
+      document.getElementById('plan-price-display').textContent = priceLabel || ('₹' + (currentAmount / 100).toLocaleString('en-IN'));
+      document.getElementById('modal-error').style.display = 'none';
+      document.getElementById('reg-name').value = localStorage.getItem('21d_name') || '';
+      document.getElementById('reg-email').value = localStorage.getItem('21d_email') || '';
+      document.getElementById('reg-phone').value = localStorage.getItem('21d_phone') || '';
+      new bootstrap.Modal(document.getElementById('registerModal')).show();
+    }
+
+    document.getElementById('proceed-to-pay').addEventListener('click', async () => {
+      const name = document.getElementById('reg-name').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const phone = document.getElementById('reg-phone').value.trim();
+      const btn = document.getElementById('proceed-to-pay');
+      document.getElementById('modal-error').style.display = 'none';
+      if (!name) { showErr('Please enter your full name.'); return; }
+      if (!phone || !/^\d{10}$/.test(phone)) { showErr('Please enter a valid 10-digit mobile number.'); return; }
+      btn.innerHTML = '<span class="spinner-sm"></span> Processing...'; btn.disabled = true;
+      try {
+        const r1 = await fetch('/api/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email, phone, plan: currentPlan }) });
+        const d1 = await r1.json();
+        if (!r1.ok) { showErr(d1.error || 'Registration failed.'); return; }
+        currentUserId = d1.user_id; localStorage.setItem('21d_uid', currentUserId);
+        localStorage.setItem('21d_name', name);
+        localStorage.setItem('21d_phone', phone);
+        if (email) localStorage.setItem('21d_email', email);
+
+        const r2 = await fetch('/api/create-order', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_id: currentUserId, amount: currentAmount, plan: currentPlan }) });
+        const d2 = await r2.json();
+        if (!r2.ok) { showErr(d2.error || 'Could not create order.'); return; }
+        bootstrap.Modal.getInstance(document.getElementById('registerModal')).hide();
+        openRazorpay(d2, name, email, phone);
+      } catch (err) { showErr('Network error. Please try again.'); }
+      finally { btn.innerHTML = 'Proceed to Payment <i class="bi bi-arrow-right"></i>'; btn.disabled = false; }
+    });
+
+    function showErr(msg) {
+      const el = document.getElementById('modal-error'); el.textContent = msg; el.style.display = 'block';
+      const btn = document.getElementById('proceed-to-pay'); btn.innerHTML = 'Proceed to Payment <i class="bi bi-arrow-right"></i>'; btn.disabled = false;
+    }
+
+    function openRazorpay(orderData, name, email, phone) {
+      const rzp = new Razorpay({ key: RAZORPAY_KEY, amount: orderData.amount, currency: orderData.currency, name: '21 Days Weight Loss Center', description: currentPlan + ' Plan', order_id: orderData.order_id, prefill: { name, email, contact: '+91' + phone }, theme: { color: '#0d3b2e' }, handler: async (response) => { await verifyPayment(response); } });
+      rzp.on('payment.failed', resp => { alert('Payment failed: ' + resp.error.description); });
+      rzp.open();
+    }
+
+    async function verifyPayment(response) {
+      try {
+        const res = await fetch('/api/verify-payment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_signature: response.razorpay_signature,
+            user_id: currentUserId
+          })
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          // Populate all success card fields
+          document.getElementById('sc-name').textContent = data.user_name || localStorage.getItem('21d_name') || '—';
+          document.getElementById('sc-plan').textContent = data.plan_name || currentPlan || '—';
+          document.getElementById('sc-amount').textContent = data.amount_inr || '—';
+          document.getElementById('success-payment-id').textContent = data.payment_id || '—';
+          // Set WhatsApp button URL
+          if (data.whatsapp) document.getElementById('whatsapp-btn').href = data.whatsapp;
+          // Show the premium success page
+          document.getElementById('success-overlay').classList.add('show');
+          // Auto-open WhatsApp after 1.5s so user reads the confirmation first
+          if (data.whatsapp) { setTimeout(() => { window.open(data.whatsapp, '_blank'); }, 1500); }
+        } else { alert('Verification failed: ' + (data.error || 'Unknown error')); }
+      } catch (err) { alert('Network error during verification. Contact support.'); }
+    }
+
+    function dismissSuccess() {
+      document.getElementById('success-overlay').classList.remove('show');
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       HERO CAROUSEL — auto-slides every 3.5 seconds
+       Crossfade, dot indicators, pauses on hover
+    ═══════════════════════════════════════════════════════ */
+    (function initCarousel() {
+      const track = document.getElementById('heroCarousel');
+      const dotsEl = document.getElementById('carouselDots');
+      if (!track || !dotsEl) return;
+
+      const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+      if (slides.length < 2) return;
+
+      let current = 0;
+      let timer = null;
+      const SPEED = 3500;   // ← change this number (milliseconds) to speed up or slow down
+
+      // Build dot indicators automatically
+      slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'cdot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => { goTo(i); resetTimer(); });
+        dotsEl.appendChild(dot);
       });
-      const data=await res.json();
-      if(res.ok&&data.success){
-        // Populate all success card fields
-        document.getElementById('sc-name').textContent   = data.user_name  || sessionStorage.getItem('21d_name') || '—';
-        document.getElementById('sc-plan').textContent   = data.plan_name  || currentPlan || '—';
-        document.getElementById('sc-amount').textContent = data.amount_inr || '—';
-        document.getElementById('success-payment-id').textContent = data.payment_id || '—';
-        // Set WhatsApp button URL
-        if(data.whatsapp) document.getElementById('whatsapp-btn').href=data.whatsapp;
-        // Show the premium success page
-        document.getElementById('success-overlay').classList.add('show');
-        // Auto-open WhatsApp after 1.5s so user reads the confirmation first
-        if(data.whatsapp){ setTimeout(()=>{ window.open(data.whatsapp,'_blank'); }, 1500); }
-      }else{alert('Verification failed: '+(data.error||'Unknown error'));}
-    }catch(err){alert('Network error during verification. Contact support.');}
-  }
 
-  function dismissSuccess(){
-    document.getElementById('success-overlay').classList.remove('show');
-  }
+      function goTo(index) {
+        slides[current].classList.remove('active');
+        dotsEl.children[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dotsEl.children[current].classList.add('active');
+      }
+      function next() { goTo(current + 1); }
+      function resetTimer() { clearInterval(timer); timer = setInterval(next, SPEED); }
 
-  /* ═══════════════════════════════════════════════════════
-     HERO CAROUSEL — auto-slides every 3.5 seconds
-     Crossfade, dot indicators, pauses on hover
-  ═══════════════════════════════════════════════════════ */
-  (function initCarousel() {
-    const track  = document.getElementById('heroCarousel');
-    const dotsEl = document.getElementById('carouselDots');
-    if (!track || !dotsEl) return;
+      resetTimer();
 
-    const slides   = Array.from(track.querySelectorAll('.carousel-slide'));
-    if (slides.length < 2) return;
+      // Pause auto-play when user hovers over the image
+      const frame = track.closest('.hero-img-frame');
+      if (frame) {
+        frame.addEventListener('mouseenter', () => clearInterval(timer));
+        frame.addEventListener('mouseleave', resetTimer);
+      }
+    })();
 
-    let current  = 0;
-    let timer    = null;
-    const SPEED  = 3500;   // ← change this number (milliseconds) to speed up or slow down
+    /* ── TRANSFORMATION GALLERY — arrow nav ── */
+    (function () {
+      const el = document.getElementById('tgScroll');
+      const track = document.getElementById('tgTrack');
+      const counter = document.getElementById('tgCounter');
+      const btnPrev = document.getElementById('tgPrev');
+      const btnNext = document.getElementById('tgNext');
+      if (!el || !track) return;
 
-    // Build dot indicators automatically
-    slides.forEach((_, i) => {
-      const dot = document.createElement('span');
-      dot.className = 'cdot' + (i === 0 ? ' active' : '');
-      dot.addEventListener('click', () => { goTo(i); resetTimer(); });
-      dotsEl.appendChild(dot);
+      const cards = track.querySelectorAll('.tg-card');
+      const total = cards.length;
+      const GAP = 18;        // matches CSS gap
+      let current = 0;
+
+      function cardW() { return cards[0] ? cards[0].offsetWidth + GAP : 298; }
+
+      function update() {
+        el.scrollTo({ left: current * cardW(), behavior: 'smooth' });
+        if (counter) counter.textContent = (current + 1) + ' / ' + total;
+        if (btnPrev) btnPrev.disabled = current === 0;
+        if (btnNext) btnNext.disabled = current >= total - 1;
+      }
+
+      window.tgScroll = function (dir) {
+        current = Math.max(0, Math.min(total - 1, current + dir));
+        update();
+      };
+
+      // Also allow touch/mouse drag — just updates current on scroll end
+      el.addEventListener('scrollend', () => {
+        current = Math.round(el.scrollLeft / cardW());
+        if (counter) counter.textContent = (current + 1) + ' / ' + total;
+        if (btnPrev) btnPrev.disabled = current === 0;
+        if (btnNext) btnNext.disabled = current >= total - 1;
+      });
+
+      update();  // set initial state
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      alert("Thanks! We'll reach out to you on WhatsApp within 2 hours. 🙌");
+      e.target.reset();
     });
-
-    function goTo(index) {
-      slides[current].classList.remove('active');
-      dotsEl.children[current].classList.remove('active');
-      current = (index + slides.length) % slides.length;
-      slides[current].classList.add('active');
-      dotsEl.children[current].classList.add('active');
-    }
-    function next()       { goTo(current + 1); }
-    function resetTimer() { clearInterval(timer); timer = setInterval(next, SPEED); }
-
-    resetTimer();
-
-    // Pause auto-play when user hovers over the image
-    const frame = track.closest('.hero-img-frame');
-    if (frame) {
-      frame.addEventListener('mouseenter', () => clearInterval(timer));
-      frame.addEventListener('mouseleave', resetTimer);
-    }
-  })();
-
-  /* ── TRANSFORMATION GALLERY — arrow nav ── */
-  (function(){
-    const el      = document.getElementById('tgScroll');
-    const track   = document.getElementById('tgTrack');
-    const counter = document.getElementById('tgCounter');
-    const btnPrev = document.getElementById('tgPrev');
-    const btnNext = document.getElementById('tgNext');
-    if(!el || !track) return;
-
-    const cards   = track.querySelectorAll('.tg-card');
-    const total   = cards.length;
-    const GAP     = 18;        // matches CSS gap
-    let   current = 0;
-
-    function cardW(){ return cards[0] ? cards[0].offsetWidth + GAP : 298; }
-
-    function update(){
-      el.scrollTo({ left: current * cardW(), behavior:'smooth' });
-      if(counter) counter.textContent = (current+1) + ' / ' + total;
-      if(btnPrev) btnPrev.disabled = current === 0;
-      if(btnNext) btnNext.disabled = current >= total - 1;
-    }
-
-    window.tgScroll = function(dir){
-      current = Math.max(0, Math.min(total-1, current + dir));
-      update();
-    };
-
-    // Also allow touch/mouse drag — just updates current on scroll end
-    el.addEventListener('scrollend', ()=>{
-      current = Math.round(el.scrollLeft / cardW());
-      if(counter) counter.textContent = (current+1) + ' / ' + total;
-      if(btnPrev) btnPrev.disabled = current === 0;
-      if(btnNext) btnNext.disabled = current >= total - 1;
-    });
-
-    update();  // set initial state
-  })();
-
-    document.getElementById('contact-form').addEventListener('submit',e=>{
-    e.preventDefault();
-    alert("Thanks! We'll reach out to you on WhatsApp within 2 hours. 🙌");
-    e.target.reset();
-  });
-</script>
-</div><!-- /site-content -->
+  </script>
+  </div><!-- /site-content -->
 </body>
+
 </html>
