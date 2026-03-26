@@ -47,7 +47,7 @@ class User(db.Model):
     id         = db.Column(db.Integer, primary_key=True)
     name       = db.Column(db.String(120), nullable=False)
     email      = db.Column(db.String(200), nullable=True)
-    phone      = db.Column(db.String(20), nullable=False)
+    phone      = db.Column(db.String(20), nullable=False, unique=True)
     plan       = db.Column(db.String(80), nullable=True)
     instagram  = db.Column(db.String(120), nullable=True)
     # "registered" = lead who filled the form; "paid" = completed payment
