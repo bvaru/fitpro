@@ -172,7 +172,7 @@ def register():
 
 @app.route("/api/create-order", methods=["POST"])
 def create_order():
-    data    = request.get_json()
+    data    = request.get_json() or {}
     user_id = data.get("user_id")
     amount  = data.get("amount")   # in paise
     plan    = data.get("plan", "")
@@ -180,15 +180,23 @@ def create_order():
     if not user_id or not amount:
         return jsonify({"error": "user_id and amount are required."}), 400
 
-    user = User.query.get(user_id)
+    try:
+        amount = int(amount)
+    except (TypeError, ValueError):
+        return jsonify({"error": "Enter a valid payment amount."}), 400
+
+    if amount <= 0:
+        return jsonify({"error": "Enter a valid payment amount."}), 400
+
+    user = db.session.get(User, user_id)
     if not user:
         return jsonify({"error": "User not found."}), 404
 
     try:
         order = rzp_client.order.create({
-            "amount":   int(amount),
+            "amount":   amount,
             "currency": "INR",
-            "receipt":  f"receipt_uid_{user_id}",
+            "receipt":  f"receipt_uid_{user_id}_{int(datetime.utcnow().timestamp())}",
             "notes":    {"plan": plan, "user_id": str(user_id)},
         })
     except Exception as e:
@@ -196,7 +204,7 @@ def create_order():
 
     payment = Payment(
         user_id  = user_id,
-        amount   = int(amount),
+        amount   = amount,
         status   = "created",
         order_id = order["id"],
         plan_name= plan,
@@ -218,7 +226,7 @@ def create_order():
 @app.route("/api/verify-payment", methods=["POST"])
 def verify_payment():
     import urllib.parse
-    data               = request.get_json()
+    data               = request.get_json() or {}
     razorpay_order_id  = data.get("razorpay_order_id")
     razorpay_payment_id= data.get("razorpay_payment_id")
     razorpay_signature = data.get("razorpay_signature")
@@ -235,21 +243,25 @@ def verify_payment():
         hashlib.sha256,
     ).hexdigest()
 
+    pmt = Payment.query.filter_by(order_id=razorpay_order_id).order_by(Payment.created_at.desc()).first()
+    if not pmt:
+        return jsonify({"error": "Payment order not found."}), 404
+
+    if user_id and str(pmt.user_id) != str(user_id):
+        return jsonify({"error": "Payment user mismatch."}), 400
+
     if not hmac.compare_digest(expected, razorpay_signature):
-        pmt = Payment.query.filter_by(order_id=razorpay_order_id).first()
-        if pmt:
-            pmt.status = "failed"
-            db.session.commit()
+        pmt.status = "failed"
+        db.session.commit()
         return jsonify({"error": "Payment verification failed."}), 400
 
     # ── Update payment record ─────────────────────────────────────────────────
-    pmt = Payment.query.filter_by(order_id=razorpay_order_id).first()
-    if pmt:
+    if pmt.status != "paid":
         pmt.status     = "paid"
         pmt.payment_id = razorpay_payment_id
 
     # ── Mark user as paid ─────────────────────────────────────────────────────
-    user = User.query.get(user_id)
+    user = db.session.get(User, pmt.user_id)
     if user:
         user.status = "paid"
         if pmt and pmt.plan_name:
