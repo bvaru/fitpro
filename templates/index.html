@@ -87,6 +87,21 @@
       z-index: 1;
     }
 
+    body,
+    body :not(i, img, video, svg, path, script, style, input, textarea) {
+      text-transform: uppercase;
+    }
+
+    input,
+    textarea,
+    button,
+    select,
+    option,
+    input::placeholder,
+    textarea::placeholder {
+      text-transform: uppercase;
+    }
+
     .sec-alt {
       background: var(--paper);
     }
@@ -1380,51 +1395,78 @@
       padding: 0 4px 4px;
     }
 
-    /* Each card — fixed width, square image */
+    /* Each card — fixed width, portrait-friendly image frame */
     .tg-card {
-      width: 280px;
+      width: 300px;
       flex-shrink: 0;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(255, 244, 247, .94));
+      border: 1px solid rgba(200, 31, 69, .12);
+      border-radius: 18px;
       overflow: hidden;
       box-shadow: var(--shadow-sm);
       transition: transform .3s, box-shadow .3s, border-color .3s;
+      position: relative;
+    }
+
+    .tg-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 3px;
+      background: linear-gradient(90deg, rgba(200, 31, 69, .85), rgba(30, 75, 142, .5));
+      z-index: 2;
     }
 
     .tg-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-lg);
-      border-color: rgba(13, 59, 46, .18);
+      border-color: rgba(200, 31, 69, .2);
     }
 
-    /* Image area — 1:1 square, no cropping, contain so the whole photo shows */
+    /* Image area — portrait frame, no cropping, contain so the whole photo shows */
     .tg-img {
-      width: 100%;
+      width: calc(100% - 28px);
       aspect-ratio: 1/1;
       overflow: hidden;
-      background: var(--forest-subtle);
+      background:
+        radial-gradient(circle at 16% 18%, rgba(200, 31, 69, .08) 0%, transparent 26%),
+        linear-gradient(180deg, #fff9fb 0%, #f6f1f7 100%);
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+      margin: 20px 14px 0;
+      padding: 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(200, 31, 69, .08);
     }
 
     .tg-img img {
       width: 100%;
       height: 100%;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
-      /* ← contain = shows full image, no cropping */
       object-position: center;
       display: block;
       transition: transform .4s ease;
-      background: #fff;
+      background: transparent;
+      padding: 0;
     }
 
     .tg-card:hover .tg-img img {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
     /* Text below image */
     .tg-body {
-      padding: 14px 16px 16px;
+      padding: 14px 14px 16px;
+      margin-top: auto;
+      display: flex;
+      align-items: stretch;
     }
 
     .tg-name {
@@ -1442,14 +1484,26 @@
     .tg-chip {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      background: var(--forest-subtle);
+      justify-content: center;
+      gap: 0;
+      width: 100%;
+      min-height: 54px;
+      background: linear-gradient(180deg, rgba(255, 250, 252, .98), rgba(255, 242, 246, .96));
       color: var(--forest);
-      border-radius: 6px;
-      padding: 3px 10px;
-      font-size: 11px;
-      font-weight: 600;
-      margin-top: 8px;
+      border: 1px solid rgba(200, 31, 69, .14);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      margin-top: 0;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, .04);
+      text-align: center;
+      line-height: 1.35;
+    }
+
+    .tg-chip i {
+      display: none;
     }
 
     /* Gallery nav arrows */
@@ -2786,13 +2840,13 @@
         <div id="gate-error"></div>
         <div class="gate-field">
           <label class="gate-lbl">Full Name *</label>
-          <input type="text" class="gate-inp" id="gate-name" placeholder="e.g. JOSEPH VIJAY" autocomplete="name" />
+          <input type="text" class="gate-inp" id="gate-name" placeholder="e.g. Vijay" autocomplete="name" />
         </div>
         <div class="gate-field">
           <label class="gate-lbl">WhatsApp Number *</label>
           <div class="gate-phone-row">
             <div class="gate-pfx">🇮🇳 +91</div>
-            <input type="tel" class="gate-inp gate-phone-inp" id="gate-phone" placeholder="81231 00***" maxlength="10"
+            <input type="tel" class="gate-inp gate-phone-inp" id="gate-phone" placeholder="987*******" maxlength="10"
               inputmode="numeric" />
           </div>
           <div class="gate-notice">
@@ -2804,7 +2858,7 @@
           <label class="gate-lbl">
             <i class="bi bi-instagram" style="color:#e1306c;margin-right:4px;"></i>
             Instagram Handle
-            <span style="font-weight:400;text-transform:none;letter-spacing:0;">(Better Communication)</span>
+              <span style="font-weight:400;letter-spacing:0;">(Better Communication)</span>
           </label>
           <div style="position:relative;">
             <span
@@ -2815,7 +2869,7 @@
         </div>
         <div class="gate-field">
           <label class="gate-lbl">Email Address <span
-              style="font-weight:400;text-transform:none;letter-spacing:0;"></span></label>
+              style="font-weight:400;letter-spacing:0;"></span></label>
           <input type="email" class="gate-inp" id="gate-email" placeholder="rahul@example.com" autocomplete="email" />
         </div>
         <button class="btn-gate" id="gate-submit">
@@ -3322,7 +3376,7 @@
         <!-- Plan 7: GOLD -->
         <div class="col-md-6 col-lg-4 fade-up fd1">
           <div class="plan-card tier d-flex flex-column h-100" style="border-color: rgba(250,204,21,.5);">
-            <div class="plan-popular" style="background:#facc15; color:#422006;">10% offer</div>
+            <div class="plan-popular" style="background:#facc15; color:#422006;">10% off on coaching service</div>
             <div class="plan-tier-label" style="color:#facc15;">GOLD</div>
             <div class="plan-tagline">Ultimate transformation</div>
             <span class="plan-price-old"><span class="rupee">₹</span>19,793.4</span>
@@ -3341,7 +3395,7 @@
         <!-- Plan 8: DIAMOND -->
         <div class="col-md-6 col-lg-4 fade-up fd2">
           <div class="plan-card tier d-flex flex-column h-100" style="border-color: rgba(96,165,250,.6);">
-            <div class="plan-popular" style="background:linear-gradient(135deg,#eff6ff,#dbeafe); color:#0f172a;">15% OFFER</div>
+            <div class="plan-popular" style="background:linear-gradient(135deg,#eff6ff,#dbeafe); color:#0f172a;">15% OFF on coaching service</div>
             <div class="plan-tier-label" style="color:#60a5fa;">DIAMOND</div>
             <div class="plan-tagline">Complete lifestyle change</div>
             <span class="plan-price-old"><span class="rupee">₹</span>41,397.7</span>
@@ -3453,136 +3507,218 @@
         </p>
       </div>
 
-      <!--
-      HOW TO ADD YOUR 7 PHOTOS:
-        1. Save your images to  static/images/  folder
-        2. Name them: client1.jpeg  client2.jpeg  ... client7.jpeg
-           (or change the src="" in each card below to match your filenames)
-        3. Edit the name and result text in each card's tg-body section
-        ✏️ The images show at full square size — no cropping, no alignment issues
-    -->
-
       <div class="tg-scroll" id="tgScroll">
         <div class="tg-track" id="tgTrack">
 
           <!-- Card 1: Founder -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client0.jpeg" alt="Founder Transformation" onerror="this.src='/static/images/client0.jpeg'" style="object-fit:cover;" />
+              <img src="/static/images/client0.jpeg" alt="Founder Transformation" onerror="this.src='/static/images/client5.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-name">Founder's Story</div>
-              <div class="tg-detail">"Started my own transformation journey. Created this simple effective Indian home plan."</div>
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> Gained 17kg &bull; Plan: WEIGHT GAIN</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: WEIGHT GAIN</div>
             </div>
           </div>
 
-          <!-- Card 2: Weight Loss -->
+          <!-- Card 2: Fat Loss -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client5.jpeg" alt="Transformation" onerror="this.src='/static/images/client2.jpeg'" />
+              <img src="/static/images/client3.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-detail">"Lost 17kg in just three rounds of 21 days using the guided home workouts and Indian meals."</div>
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> Lost 17kg &bull; Plan: PRO</div>
-            </div>
-          </div>
-          
-          <!-- Card 3: Weight loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client4.jpeg" alt="Transformation" onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-detail">"Lost 17kg by healthy eating habits and became active again. Only with home cooked food and daily workout sessions."</div>
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> Lost 17kg &bull; Plan: PREMIUM</div>
-            </div>
-          </div>
-          
-          <!-- Card 4: Weight loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client6.jpeg" alt="Transformation" onerror="this.src='/static/images/client6.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-detail">"From XXL to L in just three rounds of 21 days. The Zoom sessions are so motivating!"</div>
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> Lost 10 kgs &bull; Plan: PREMIUM</div>
-            </div>
-          </div>
-          
-          <!-- Card 5: Child -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/child.jpeg" alt="Transformation" onerror="this.src='/static/images/client6.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-detail">"A healthy, home based fat loss transformation and improved healthy lifestyle"</div>
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> Lost weight & improved health &bull; Plan: KICKSTART</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
             </div>
           </div>
 
-          <!-- Skin-->
+          <!-- Card  Fat Loss -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client7.jpeg" alt="Transformation" onerror="this.style.display='none'" />
+              <img src="/static/images/client4.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-detail">"The skin detox plan worked wonders for my chronic acne. My face is clear and glowing after years!"</div>
-              <div class="tg-chip"><i class="bi bi-stars"></i> Cleared chronic acne &amp; glowing skin</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
             </div>
           </div>
 
-          <!-- ── Card 8 ── -->
+          <!-- Card Fat Loss -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client8.jpeg" alt="Transformation" onerror="this.style.display='none'" />
+              <img src="/static/images/client5.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-detail">"I joined for weight loss but stayed for the skin results. My skin became clearer and healthier than ever before."</div>
-              <div class="tg-chip"><i class="bi bi-stars"></i> Reduced pigmentation &amp; brightened skin</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: PRO</div>
             </div>
           </div>
 
-          <!-- ── Card 9 ── -->
+          <!-- Card Fat Loss -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client9.jpeg" alt="Transformation" onerror="this.style.display='none'" />
+              <img src="/static/images/client6.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-detail">"I had tried many products before, but nothing worked. This program fixed my skin from inside with proper nutrition."</div>
-              <div class="tg-chip"><i class="bi bi-stars"></i> Hydrated, younger-looking skin</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: PREMIUM</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client13.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client14.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client15.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client16.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client17.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client18.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: PREMIUM</div>
+            </div>
+          </div>
+
+          <!-- Card 3: Child -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/child.jpeg" alt="Child Transformation" onerror="this.src='/static/images/client6.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: KICKSTART</div>
+            </div>
+          </div>
+
+          <!-- Card 4: Skin -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client7.jpeg" alt="Skin Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN PROGRAM</div>
+            </div>
+          </div>
+
+          <!-- Skin -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client8.jpeg" alt="Skin Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN PROGRAM</div>
+            </div>
+          </div>
+
+          <!-- Skin -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client9.jpeg" alt="Skin Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN PROGRAM</div>
+            </div>
+          </div>
+
+          <!-- Skin -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client10.jpeg" alt="Skin Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN PROGRAM</div>
+            </div>
+          </div>
+
+          <!-- Skin -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client11.jpeg" alt="Skin Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN PROGRAM</div>
+            </div>
+          </div>
+
+          <!-- Skin -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client12.jpeg" alt="Skin Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN PROGRAM</div>
             </div>
           </div>
 
           <!-- Card 5: Weight Gain -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client1.jpeg" alt="Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+              <img src="/static/images/client1.jpeg" alt="Weight Gain Transformation" onerror="this.src='/static/images/client2.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-detail">"Gaining healthy weight was hard until the coach showed me the right meal portions."</div>
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> Gained 13kg &bull; Plan: WEIGHT GAIN</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: WEIGHT GAIN</div>
             </div>
           </div>
 
-          <!-- Card 6: Weight Gain -->
+          <!-- Card 5: Weight Gain -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client2.jpeg" alt="Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+              <img src="/static/images/client2.jpeg" alt="Weight Gain Transformation" onerror="this.src='/static/images/client2.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-detail">"Gaining healthy weight and muscle strength from home food and healthy habits transformed my body."</div>
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> Gained 18kg &bull; Plan: WEIGHT GAIN</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: WEIGHT GAIN</div>
             </div>
           </div>
-</div><!-- /tg-scroll -->
+
+        </div><!-- /tgTrack -->
+      </div><!-- /tg-scroll -->
 
       <!-- Gallery nav arrows -->
       <div class="tg-nav fade-up">
         <button class="tg-arrow" id="tgPrev" onclick="tgScroll(-1)" aria-label="Previous">
           <i class="bi bi-chevron-left"></i>
         </button>
-        <span class="tg-counter" id="tgCounter">1 / 9</span>
+        <span class="tg-counter" id="tgCounter">1 / 5</span>
         <button class="tg-arrow" id="tgNext" onclick="tgScroll(1)" aria-label="Next">
           <i class="bi bi-chevron-right"></i>
         </button>
@@ -3590,7 +3726,6 @@
 
     </div>
   </section>
-
   <!-- TESTIMONIALS -->
   <section id="testimonials" class="sec">
     <div class="container">
@@ -3940,7 +4075,7 @@
                 <div class="c-icon c-icon-insta">
                   <i class="bi bi-instagram" style="font-size:16px;"></i>
                 </div>
-                <span>@21daysweightlosscenter</span>
+                <span>@21daysweightlosscentre</span>
                 <i class="bi bi-arrow-up-right" style="font-size:11px;opacity:.6;margin-left:auto;"></i>
               </a>
 
@@ -3959,9 +4094,9 @@
             <form id="contact-form">
               <div class="row g-3">
                 <div class="col-md-6"><label class="form-lbl">Your Name</label><input type="text" class="form-inp"
-                    placeholder="JOSEPH VIJAY" required /></div>
+                    placeholder="Vijay" required /></div>
                 <div class="col-md-6"><label class="form-lbl">Phone Number</label><input type="tel" class="form-inp"
-                    placeholder="81231 00***" required /></div>
+                    placeholder="987*******" required /></div>
                 <div class="col-12"><label class="form-lbl">Message (If you are in any medication, please mention)</label><textarea class="form-inp" rows="4"
                     placeholder="Tell us your goals..."></textarea></div>
                 <div class="col-12"><button type="submit" class="btn-hero w-100"
@@ -4369,3 +4504,4 @@
 </body>
 
 </html>
+
