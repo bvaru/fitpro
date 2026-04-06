@@ -17,6 +17,8 @@
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:var(--ff-b);min-height:100vh;display:flex;background:var(--surface);-webkit-font-smoothing:antialiased;}
+body,body :not(i,img,video,svg,path,script,style,input,textarea){text-transform:uppercase;}
+input,textarea,button,select,option,input::placeholder,textarea::placeholder{ text-transform:uppercase; }
 
 /* LEFT */
 .left{width:480px;flex-shrink:0;background:var(--forest);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 52px;}
