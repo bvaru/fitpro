@@ -23,6 +23,8 @@
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:var(--ff-b);color:var(--slate);background:var(--surface);min-height:100vh;-webkit-font-smoothing:antialiased;}
+body,body :not(i,img,video,svg,path,script,style,input,textarea){text-transform:uppercase;}
+input,textarea,button,select,option,input::placeholder,textarea::placeholder{ text-transform:uppercase; }
 
 /* SIDEBAR */
 .sb{position:fixed;top:0;left:0;bottom:0;width:var(--sb);background:var(--forest);display:flex;flex-direction:column;z-index:200;}
