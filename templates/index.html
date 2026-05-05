@@ -1144,7 +1144,9 @@
     }
 
     @keyframes sparkleBadge {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: scale(1) rotate(0deg);
         opacity: .9;
       }
@@ -1574,8 +1576,7 @@
       scroll-behavior: smooth;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
-      padding: 12px 16px 24px;
-      margin: 0 -16px;
+      padding: 12px 0 24px;
     }
 
     .testi-scroll::-webkit-scrollbar {
@@ -1585,19 +1586,41 @@
     .testi-track {
       display: flex;
       gap: 24px;
-      width: max-content;
     }
 
     .testi-track>.testi-col {
-      width: 380px;
+      width: calc((100% - 48px) / 3);
       flex-shrink: 0;
       scroll-snap-align: start;
     }
 
+    @media (max-width: 991px) {
+      .testi-track>.testi-col {
+        width: calc((100% - 24px) / 2);
+      }
+    }
+
     @media (max-width: 768px) {
       .testi-track>.testi-col {
-        width: 320px;
+        width: 100%;
       }
+    }
+
+    .testi-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(13, 40, 87, 0.2);
+      margin: 0 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .testi-dot.active {
+      background: var(--forest);
+      width: 24px;
+      border-radius: 4px;
     }
 
     .testi-card {
@@ -2818,6 +2841,531 @@
         min-height: 300px;
       }
     }
+
+    /* ADDED COSMETIC STYLES - REFINED PREMIUM THEME */
+
+    /* Premium Dynamic Background (Deep Blue Gradient) */
+    body {
+      background: #0f1c3f !important;
+      color: #e2e8f0 !important;
+    }
+
+    #hero,
+    #how-it-works,
+    #transformations,
+    #contact,
+    #final-cta {
+      background: linear-gradient(135deg, #0b1536 0%, #14285c 100%) !important;
+    }
+
+    #about,
+    #plans,
+    #testimonials,
+    #faq,
+    #page-gate,
+    #success-overlay {
+      background: linear-gradient(135deg, #111f42 0%, #1a326e 100%) !important;
+    }
+
+    /* Completely hide background orbs/grain to ensure a clean, uniform color without white mixing */
+    .hero-orb,
+    .hero-grain {
+      display: none !important;
+    }
+
+    /* Fix Hero Carousel Visibility */
+    .hero-img-col {
+      display: flex !important;
+      visibility: visible !important;
+    }
+
+    .carousel-track {
+      min-height: 400px !important;
+      position: relative !important;
+      display: block !important;
+      aspect-ratio: 4/5 !important;
+      background: transparent !important;
+    }
+
+    .carousel-slide {
+      position: absolute !important;
+      inset: 0 !important;
+      opacity: 0 !important;
+      transition: opacity 0.9s ease-in-out !important;
+      z-index: 0 !important;
+    }
+
+    .carousel-slide.active {
+      opacity: 1 !important;
+      z-index: 2 !important;
+    }
+
+    /* Text Colors - White and Light Grey */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .sec-h2,
+    .hero-h1,
+    .sec-overline,
+    .plan-price,
+    .ch,
+    .testi-name,
+    .about-text,
+    .feat-h,
+    .tg-name,
+    .gate-title,
+    .sc-title {
+      color: #ffffff !important;
+    }
+
+    p,
+    .plan-tagline,
+    .cdesc,
+    .testi-quote,
+    .feat-p,
+    .gate-sub,
+    .sc-subtitle,
+    .sc-msg,
+    .tg-detail {
+      color: #e2e8f0 !important;
+    }
+
+    /* Hero Section Color Balance - Keep it simple and readable */
+    #hero {
+      position: relative;
+    }
+
+    .hero-sub {
+      color: #e2e8f0 !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    #hero .sec-overline {
+      color: #ffffff !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-lbl {
+      color: #cbd5e1 !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-val {
+      color: #ffffff !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Fix Contact Visibility (WhatsApp, Email, etc.) */
+    .c-info-row,
+    .c-info-row span,
+    .c-info-row a {
+      color: #ffffff !important;
+      font-weight: 500 !important;
+    }
+
+    .c-info-row a:hover {
+      color: #cbd5e1 !important;
+      text-decoration: underline !important;
+    }
+
+    .c-icon {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+
+    /* Accent Color - Red */
+    em,
+    .sec-h2 em,
+    .hero-h1 em,
+    .ch em {
+      color: #f43f5e !important;
+      /* Slightly brighter red for pop */
+      font-style: normal !important;
+      background: none !important;
+      -webkit-text-fill-color: currentColor !important;
+    }
+
+    /* Premium Glass Cards */
+    .plan-card,
+    .feat-card,
+    .testi-card,
+    .contact-wrap,
+    .tg-card {
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 18px !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+    }
+
+    /* Hover States - Soft Lift */
+    .plan-card:hover,
+    .feat-card:hover,
+    .testi-card:hover,
+    .tg-card:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+      background: rgba(255, 255, 255, 0.06) !important;
+      border-color: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    /* Featured Plan Card Specifics */
+    .plan-card.featured {
+      border: 1px solid rgba(244, 63, 94, 0.8) !important;
+      /* Subtle red border */
+      box-shadow: 0 16px 40px rgba(244, 63, 94, 0.15) !important;
+      /* Soft red glow */
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+      animation: none !important;
+    }
+
+    .plan-card.featured:hover {
+      box-shadow: 0 24px 48px rgba(244, 63, 94, 0.25) !important;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%) !important;
+    }
+
+    /* Plans Card Internal Styling */
+    .plan-price {
+      font-size: 56px !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      margin: 16px 0 !important;
+      letter-spacing: -1px !important;
+    }
+
+    .plan-price sub,
+    .plan-price small {
+      color: #94a3b8 !important;
+      font-size: 18px !important;
+      font-weight: 500 !important;
+    }
+
+    .plan-price-old {
+      color: rgba(255, 255, 255, 0.5) !important;
+      text-decoration: line-through !important;
+      font-size: 20px !important;
+    }
+
+    .plan-sep {
+      border-color: rgba(255, 255, 255, 0.1) !important;
+      margin: 20px 0 !important;
+    }
+
+    .plan-list li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+      color: #e2e8f0 !important;
+      padding: 14px 0 !important;
+    }
+
+    .plan-list li:last-child {
+      border-bottom: none !important;
+    }
+
+    .plan-list li i {
+      color: #f43f5e !important;
+    }
+
+    /* Join Buttons */
+    .btn-plan {
+      width: 100% !important;
+      background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%) !important;
+      color: #ffffff !important;
+      border: none !important;
+      border-radius: 12px !important;
+      padding: 16px !important;
+      font-weight: 700 !important;
+      font-size: 16px !important;
+      letter-spacing: 0.5px !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3) !important;
+    }
+
+    .btn-plan:hover {
+      background: linear-gradient(135deg, #e11d48 0%, #be123c 100%) !important;
+      transform: translateY(-3px) !important;
+      box-shadow: 0 8px 20px rgba(225, 29, 72, 0.4) !important;
+    }
+
+    /* Recommended Badge */
+    .plan-popular {
+      background: #f43f5e !important;
+      color: #ffffff !important;
+      border: none !important;
+      padding: 6px 16px !important;
+      border-radius: 100px !important;
+      font-size: 12px !important;
+      font-weight: 700 !important;
+      letter-spacing: 1px !important;
+      animation: none !important;
+      box-shadow: 0 4px 12px rgba(244, 63, 94, 0.4) !important;
+      text-transform: uppercase !important;
+    }
+
+    .plan-popular::before {
+      display: none !important;
+    }
+
+    /* Remove Silver Spotlight overrides */
+    .plan-card.silver-spotlight {
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      background: rgba(255, 255, 255, 0.03) !important;
+      box-shadow: none !important;
+    }
+
+    .plan-card.silver-spotlight:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    /* Inputs & Forms */
+    .form-inp,
+    .gate-inp,
+    .gate-pfx,
+    #page-gate .gate-box,
+    .c-insta-row {
+      background: rgba(255, 255, 255, 0.06) !important;
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 10px !important;
+    }
+
+    .form-inp:focus,
+    .gate-inp:focus {
+      border-color: rgba(244, 63, 94, 0.5) !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.1) !important;
+    }
+
+    .form-inp::placeholder,
+    .gate-inp::placeholder {
+      color: rgba(255, 255, 255, 0.4) !important;
+    }
+
+    /* General Buttons */
+    .btn-nav,
+    .btn-hero,
+    .btn-cta,
+    .btn-wa-main,
+    .btn-gate {
+      background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%) !important;
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3) !important;
+      border-radius: 12px !important;
+      font-weight: 600 !important;
+    }
+
+    .btn-nav:hover,
+    .btn-hero:hover,
+    .btn-cta:hover,
+    .btn-wa-main:hover,
+    .btn-gate:hover {
+      background: linear-gradient(135deg, #e11d48 0%, #be123c 100%) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 20px rgba(225, 29, 72, 0.4) !important;
+    }
+
+    /* Navigation - Fix Logo Text */
+    #navbar:not(.scrolled) .nav-links a,
+    #navbar:not(.scrolled) .logo-text .lt-main {
+      color: #ffffff !important;
+    }
+
+    #navbar:not(.scrolled) .logo-text .lt-sub {
+      color: #cbd5e1 !important;
+    }
+
+    #navbar.scrolled {
+      background: rgba(11, 21, 54, 0.95) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+    }
+
+    #navbar.scrolled .nav-links a,
+    #navbar.scrolled .logo-text .lt-main {
+      color: #ffffff !important;
+    }
+
+    #navbar.scrolled .logo-text .lt-sub {
+      color: #cbd5e1 !important;
+    }
+
+    .nav-links a.active-link {
+      background: rgba(255, 255, 255, 0.1) !important;
+      color: #ffffff !important;
+    }
+
+    #navbar.scrolled .nav-links a.active-link {
+      background: rgba(244, 63, 94, 0.15) !important;
+      color: #f43f5e !important;
+    }
+
+    /* Fix How It Works Icons */
+    #how-it-works .fi-g,
+    #how-it-works .fi-a,
+    #how-it-works .fi-p,
+    #how-it-works .fi-r {
+      background: rgba(244, 63, 94, 0.1) !important;
+      color: #f43f5e !important;
+      border: 1px solid rgba(244, 63, 94, 0.2) !important;
+    }
+
+    /* Reviews Equal Height Cards & Fixed Stars */
+    .testi-track {
+      display: flex !important;
+      align-items: stretch !important;
+    }
+
+    .testi-col {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .testi-card {
+      display: flex !important;
+      flex-direction: column !important;
+      flex: 1 !important;
+      height: 100% !important;
+    }
+
+    .stars {
+      display: flex !important;
+      flex-direction: row !important;
+      gap: 4px !important;
+      margin-bottom: 12px !important;
+    }
+
+    .testi-quote {
+      display: -webkit-box !important;
+      -webkit-line-clamp: 5 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      flex: 1 !important;
+      margin-bottom: 16px !important;
+    }
+
+    .testi-author {
+      margin-top: auto !important;
+      flex-shrink: 0 !important;
+    }
+
+    /* Scroll to Top Button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+      color: white;
+      border: none;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(244, 63, 94, 0.4);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+      z-index: 1000;
+    }
+
+    .scroll-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+      box-shadow: 0 6px 16px rgba(244, 63, 94, 0.5);
+    }
+
+    /* Uniform site background refinement */
+    body,
+    #hero,
+    #about,
+    #how-it-works,
+    #plans,
+    #transformations,
+    #testimonials,
+    #faq,
+    #final-cta,
+    #contact {
+      background: #0f1c3f !important;
+    }
+
+    #hero .hero-bg,
+    #hero .hero-orb,
+    #hero .hero-grain,
+    #hero .hero-line {
+      display: none !important;
+    }
+
+    #plans::before,
+    #plans::after {
+      background: none !important;
+      background-image: none !important;
+    }
+
+    #hero .hero-eyebrow {
+      color: #ffffff !important;
+      background: rgba(7, 55, 125, .72) !important;
+      border-color: rgba(147, 197, 253, .42) !important;
+      box-shadow: 0 8px 24px rgba(3, 25, 64, .18);
+    }
+
+    #hero .hero-h1,
+    #hero .hero-h1 em,
+    #hero .stat-val {
+      color: #ffffff !important;
+      -webkit-text-fill-color: currentColor !important;
+      text-shadow: 0 2px 12px rgba(3, 25, 64, .22);
+    }
+
+    #hero .hero-sub {
+      color: #eaf4ff !important;
+    }
+
+    #hero .stat-lbl {
+      color: #dbeafe !important;
+    }
+
+    #hero .hero-stats {
+      border-top-color: rgba(191, 219, 254, .38) !important;
+    }
+
+    #hero .btn-hero {
+      background: #062f6f !important;
+      color: #ffffff !important;
+      box-shadow: 0 14px 30px rgba(3, 25, 64, .28) !important;
+    }
+
+    #hero .btn-hero:hover {
+      background: #05275d !important;
+      box-shadow: 0 18px 36px rgba(3, 25, 64, .34) !important;
+    }
+
+    #hero .btn-hero-ghost {
+      background: rgba(7, 55, 125, .54) !important;
+      color: #ffffff !important;
+      border-color: rgba(191, 219, 254, .44) !important;
+    }
+
+    #hero .btn-hero-ghost:hover {
+      background: rgba(5, 39, 93, .72) !important;
+      color: #ffffff !important;
+      border-color: rgba(219, 234, 254, .62) !important;
+    }
   </style>
 </head>
 
@@ -2858,7 +3406,7 @@
           <label class="gate-lbl">
             <i class="bi bi-instagram" style="color:#e1306c;margin-right:4px;"></i>
             Instagram Handle
-              <span style="font-weight:400;letter-spacing:0;">(Better Communication)</span>
+            <span style="font-weight:400;letter-spacing:0;">(Better Communication)</span>
           </label>
           <div style="position:relative;">
             <span
@@ -2868,8 +3416,7 @@
           </div>
         </div>
         <div class="gate-field">
-          <label class="gate-lbl">Email Address <span
-              style="font-weight:400;letter-spacing:0;"></span></label>
+          <label class="gate-lbl">Email Address <span style="font-weight:400;letter-spacing:0;"></span></label>
           <input type="email" class="gate-inp" id="gate-email" placeholder="rahul@example.com" autocomplete="email" />
         </div>
         <button class="btn-gate" id="gate-submit">
@@ -2905,7 +3452,7 @@
             <li><a href="#transformations">Results</a></li>
             <li><a href="#testimonials">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><button class="btn-nav" onclick="scrollToPlans()">Start Your 21DWLC</button></li>
+            <li><button class="btn-nav" onclick="scrollToPlans()">Start Now</button></li>
           </ul>
           <button class="nav-toggle" id="nav-toggle"
             onclick="document.getElementById('nav-links').classList.toggle('open')">
@@ -2928,7 +3475,8 @@
           <div class="col-lg-6">
             <div class="hero-eyebrow"><span class="live-dot"></span>India's Trusted Weight Loss Centre · Since 2016
             </div>
-            <h1 class="hero-h1 fade-up">Lose <br><em>3-5kg in 21Days</em><br>without gym or without missing your favorite food</h1>
+            <h1 class="hero-h1 fade-up">Lose <br><em>3-5kg in 21Days</em><br>without gym or without missing your
+              favorite food</h1>
             <p class="hero-sub fade-up fd1">A 21-day natural weight loss program using home food and home workouts,
               guided by effective and practical methods to help you achieve your ideal body shape.</p>
             <div class="hero-btns fade-up fd2">
@@ -3009,13 +3557,13 @@
                   </div>
 
                   <!-- Slide 6-->
-                   <div class="carousel-slide">
+                  <div class="carousel-slide">
                     <img src="/static/images/hero6.jpeg" alt="21 Days member result"
                       onerror="this.src='https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=900&q=80&fit=crop'" />
                   </div>
 
                   <!-- Slide 7-->
-                   <div class="carousel-slide">
+                  <div class="carousel-slide">
                     <img src="/static/images/hero7.jpeg" alt="21 Days member result"
                       onerror="this.src='https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=900&q=80&fit=crop'" />
                   </div>
@@ -3058,11 +3606,18 @@
           <div class="sec-overline">About 21DWLC</div>
           <h2 class="sec-h2" style="margin-bottom:20px;">TRUSTED WEIGHT LOSS CENTRE <em>SINCE 2016</em></h2>
           <p class="about-text">
-            Our mission is to inspire and support 10,000 people to transform from fat to fit by 2026. For more than 10+ years, 21DWLC has helped thousands of Indians lose weight safely, naturally, from the comfort of their home.
+            Our mission is to inspire and support people to transform from fat to fit. For more than 10+ years, Our
+            Fully Online and Physical Program has helped thousands of Indians lose weight safely, naturally, from the
+            comfort of their home.
           </p>
           <p class="about-text">
-            Our fully online program is an exciting journey that combines live sessions with scientifically designed strategies to help you break old habits and embrace a healthier lifestyle. We’re thrilled to offer thoughtfully planned home-cooked Indian meal plans, energetic daily live workouts, insightful guidance on nutritious foods, and support to strengthen your mind and body—completely personalized and without any products or supplements. 
-            <strong style="color:var(--forest);font-weight:700;">Real transformation starts right in your own kitchen!</strong>
+            Our fully online program is an exciting journey that combines live sessions with scientifically designed
+            strategies to help you break old habits and embrace a healthier lifestyle. We’re thrilled to offer
+            thoughtfully planned home-cooked Indian meal plans, energetic daily live workouts, insightful guidance on
+            nutritious foods, and support to strengthen your mind and body—completely personalized and without any
+            products or supplements.
+            <strong style="color:var(--forest);font-weight:700;">Real transformation starts right in your own
+              kitchen!</strong>
           </p>
           <div class="about-chips">
             <span class="chip chip-green"><i class="bi bi-patch-check-fill"></i> Certified Coach</span>
@@ -3110,19 +3665,24 @@
       align-items: center;
       margin: 0 -12px;
     }
+
     .hiw-track {
       display: flex;
       gap: 20px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* IE and Edge */
       padding: 24px 12px;
       scroll-behavior: smooth;
     }
+
     .hiw-track::-webkit-scrollbar {
       display: none;
     }
+
     .hiw-card {
       flex: 0 0 calc(33.333% - 14px);
       max-width: 320px;
@@ -3139,23 +3699,27 @@
       align-items: center;
       text-align: center;
     }
+
     .hiw-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-md);
       border-color: rgba(225, 29, 72, 0.15);
     }
+
     .hiw-image {
       width: 100%;
       height: 160px;
       object-fit: cover;
       border-radius: 12px;
       margin-bottom: 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
       transition: transform 0.3s ease;
     }
+
     .hiw-card:hover .hiw-image {
       transform: scale(1.03);
     }
+
     .hiw-h {
       font-family: var(--ff-display);
       font-size: 19px;
@@ -3163,11 +3727,13 @@
       color: var(--ink);
       margin-bottom: 12px;
     }
+
     .hiw-p {
       font-size: 14.5px;
       color: var(--slate);
       line-height: 1.6;
     }
+
     .hiw-btn {
       position: absolute;
       top: 50%;
@@ -3184,24 +3750,42 @@
       justify-content: center;
       cursor: pointer;
       z-index: 2;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
+
     .hiw-btn:hover {
       background: var(--forest);
       color: #fff;
       border-color: var(--forest);
     }
-    .hiw-prev { left: -24px; }
-    .hiw-next { right: -24px; }
+
+    .hiw-prev {
+      left: -24px;
+    }
+
+    .hiw-next {
+      right: -24px;
+    }
 
     @media (max-width: 992px) {
-      .hiw-card { flex: 0 0 calc(50% - 10px); }
+      .hiw-card {
+        flex: 0 0 calc(50% - 10px);
+      }
     }
+
     @media (max-width: 768px) {
-      .hiw-card { flex: 0 0 100%; }
-      .hiw-prev { left: -10px; }
-      .hiw-next { right: -10px; }
+      .hiw-card {
+        flex: 0 0 100%;
+      }
+
+      .hiw-prev {
+        left: -10px;
+      }
+
+      .hiw-next {
+        right: -10px;
+      }
     }
   </style>
 
@@ -3210,53 +3794,65 @@
       <div class="text-center mb-5 fade-up">
         <div class="sec-overline" style="justify-content:center;">Simple & Effective</div>
         <h2 class="sec-h2">HOW IT <em>WORKS</em></h2>
-        <p style="color:var(--muted);max-width:700px;margin:16px auto 0;font-size:15px;line-height:1.8;">A clear daily system built around home workouts, Indian food, nutrition education, and guided evening health talks so members always know the next step.</p>
+        <p style="color:var(--muted);max-width:700px;margin:16px auto 0;font-size:15px;line-height:1.8;">A clear daily
+          system built around home workouts, Indian food, nutrition education, and guided evening health talks so
+          members always know the next step.</p>
       </div>
-      
+
       <div class="hiw-carousel-wrap fade-up">
         <button class="hiw-btn hiw-prev" id="hiw-prev-btn"><i class="bi bi-chevron-left"></i></button>
         <div class="hiw-track" id="hiw-track">
-          <!-- CARD 1 -->
-          <div class="hiw-card">
-            <img src="/static/images/daily_tasks.png" class="hiw-image" alt="Daily Tasks" />
-            <div class="hiw-h">Daily Accountability</div>
-            <div class="hiw-p">Wake up each morning knowing exactly what to do. No guesswork, just action.</div>
-          </div>
-          <!-- CARD 2 -->
-          <div class="hiw-card">
-            <img src="/static/images/personal_coach.png" class="hiw-image" alt="Personal Coach" />
-            <div class="hiw-h">Personal Coach</div>
-            <div class="hiw-p">Your dedicated coach checks in daily via WhatsApp to keep you on track.</div>
-          </div>
-          <!-- CARD 3 -->
-          <div class="hiw-card">
-            <img src="/static/images/indian_food.png" class="hiw-image" alt="Indian Home Food" />
-            <div class="hiw-h">Indian Food</div>
-            <div class="hiw-p">No special diets. Follow a simple Indian home-food structure designed to fit real family meals.</div>
-          </div>
           <!-- CARD 4 -->
           <div class="hiw-card">
             <img src="/static/images/no_products.png" class="hiw-image" alt="No Supplements" />
             <div class="hiw-h">No Supplements</div>
             <div class="hiw-p">100% natural weight loss. Achieve your goals without artificial pills or powders.</div>
           </div>
+
           <!-- CARD 5 -->
           <div class="hiw-card">
             <img src="/static/images/home_workout.png" class="hiw-image" alt="Home Workout" />
             <div class="hiw-h">Home Workout</div>
-            <div class="hiw-p">Daily live class from 6:00 AM to 6:30 AM with effective, equipment-free sessions you can do safely at home.</div>
+            <div class="hiw-p">Daily live class from 6 AM to 6:30 AM with effective, equipment-free sessions you can do
+              safely at home.</div>
           </div>
-          <!-- CARD 6 -->
-          <div class="hiw-card">
-            <img src="/static/images/nutrition_education.png" class="hiw-image" alt="Nutrition Education" />
-            <div class="hiw-h">Nutrition Education</div>
-            <div class="hiw-p">Learn the why behind every meal so your results stay sustainable even after the program ends.</div>
-          </div>
+
           <!-- CARD 7 -->
           <div class="hiw-card">
             <img src="/static/images/health_talk.png" class="hiw-image" alt="Health Talk" />
             <div class="hiw-h">Health Talk</div>
-            <div class="hiw-p">Daily live class from 8:00 PM to 8:30 PM focused on mindset, food education, and habit correction for long-term health.</div>
+            <div class="hiw-p">Daily live class from 8 PM to 8:30 PM focused on mindset, food education, and habit
+              correction for long-term health.</div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="hiw-card">
+            <img src="/static/images/personal_coach.png" class="hiw-image" alt="Personal Coach" />
+            <div class="hiw-h">Personal Coach</div>
+            <div class="hiw-p">Your dedicated coach checks in daily via WhatsApp to keep you on track.</div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="hiw-card">
+            <img src="/static/images/indian_food.png" class="hiw-image" alt="Indian Home Food" />
+            <div class="hiw-h">Indian Food</div>
+            <div class="hiw-p">No special diets. Follow a simple Indian home-food structure designed to fit real family
+              meals.</div>
+          </div>
+
+          <!-- CARD 1 -->
+          <div class="hiw-card">
+            <img src="/static/images/daily_tasks.png" class="hiw-image" alt="Daily Tasks" />
+            <div class="hiw-h">Daily Accountability</div>
+            <div class="hiw-p">Wake up each morning knowing exactly what to do. No guesswork, just action.</div>
+          </div>
+
+          <!-- CARD 6 -->
+          <div class="hiw-card">
+            <img src="/static/images/nutrition_education.png" class="hiw-image" alt="Nutrition Education" />
+            <div class="hiw-h">Nutrition Education</div>
+            <div class="hiw-p">Learn the why behind every meal so your results stay sustainable even after the program
+              ends.</div>
           </div>
         </div>
         <button class="hiw-btn hiw-next" id="hiw-next-btn"><i class="bi bi-chevron-right"></i></button>
@@ -3268,7 +3864,7 @@
       const track = document.getElementById("hiw-track");
       const prevBtn = document.getElementById("hiw-prev-btn");
       const nextBtn = document.getElementById("hiw-next-btn");
-      if(track && prevBtn && nextBtn) {
+      if (track && prevBtn && nextBtn) {
         prevBtn.addEventListener("click", () => {
           let scrollAmount = document.querySelector('.hiw-card').offsetWidth + 20;
           track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
@@ -3287,9 +3883,10 @@
       <div class="text-center mb-5 fade-up">
         <div class="sec-overline plan-over" style="justify-content:center;">Pricing Plans</div>
         <h2 class="sec-h2 plan-h2">PICK YOUR <em>PROGRAM</em></h2>
-        <p style="color:rgba(13,40,87,.6);max-width:420px;margin:14px auto 0;font-size:14.5px;">Already 12,000+ lives transformed since 2016. Next is you.</p>
+        <p style="color:rgba(13,40,87,.6);max-width:420px;margin:14px auto 0;font-size:14.5px;">Already 12,000+ lives
+          transformed since 2016. Next is you.</p>
       </div>
-            <div class="row g-4 justify-content-center">
+      <div class="row g-4 justify-content-center">
 
 
         <!-- ===== WEIGHT LOSS ===== -->
@@ -3309,7 +3906,8 @@
               <li><i class="bi bi-check-circle-fill" style="color:#4ade80;"></i> 7 Day Live workout classes</li>
               <li><i class="bi bi-check-circle-fill" style="color:#4ade80;"></i> 7 Day Right Food Education</li>
             </ul>
-            <button class="btn-plan btn-plan-ghost" onclick="openRegistration('WEIGHT LOSS: Kickstart', 49900, '₹499')">Start Kickstart</button>
+            <button class="btn-plan btn-plan-ghost"
+              onclick="openRegistration('WEIGHT LOSS: Kickstart', 49900, '₹499')">Join Kickstart</button>
           </div>
         </div>
 
@@ -3326,9 +3924,9 @@
               <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> 21 days live workout</li>
               <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> 21 days right food education</li>
               <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> Personalized meal plan</li>
-              <li><i class="bi bi-check-circle-fill" style="color:var(--forest);"></i> 21DWLC Secret tips</li>
             </ul>
-            <button class="btn-plan btn-plan-amber" onclick="openRegistration('WEIGHT LOSS: PRO', 199900, '₹1999 / 21 days')">Start PRO Now</button>
+            <button class="btn-plan btn-plan-amber"
+              onclick="openRegistration('WEIGHT LOSS: PRO', 199900, '₹1999 / 21 days')">Join PRO</button>
           </div>
         </div>
 
@@ -3344,8 +3942,10 @@
               <li><i class="bi bi-check-circle-fill" style="color:#f43f5e;"></i> Everything in Pro</li>
               <li><i class="bi bi-check-circle-fill" style="color:#f43f5e;"></i> Priority support 24x7</li>
               <li><i class="bi bi-check-circle-fill" style="color:#f43f5e;"></i> Advanced Fat loss plan</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#f43f5e;"></i> 21DWLC Secret tips</li>
             </ul>
-            <button class="btn-plan btn-plan-forest" onclick="openRegistration('WEIGHT LOSS: PREMIUM', 299900, '₹2999 / 30 days')">Join PREMIUM</button>
+            <button class="btn-plan btn-plan-forest"
+              onclick="openRegistration('WEIGHT LOSS: PREMIUM', 299900, '₹2999 / 30 days')">Join PREMIUM</button>
           </div>
         </div>
 
@@ -3357,8 +3957,10 @@
 
         <!-- Plan 6: SILVER -->
         <div class="col-md-6 col-lg-4 fade-up">
-          <div class="plan-card tier silver-spotlight d-flex flex-column h-100" style="border-color: rgba(148,163,184,.6);">
-            <div class="plan-popular" style="background:linear-gradient(135deg,#f8fbff,#e0f2fe); color:#0f172a;">RECOMMENDED</div>
+          <div class="plan-card tier silver-spotlight d-flex flex-column h-100"
+            style="border-color: rgba(148,163,184,.6);">
+            <div class="plan-popular" style="background:linear-gradient(135deg,#f8fbff,#e0f2fe); color:#0f172a;">
+              RECOMMENDED</div>
             <div class="plan-tier-label" style="color:#94a3b8;">SILVER</div>
             <div class="plan-tagline">3 months commitment</div>
             <div class="plan-price" style="font-size:46px;"><sub>₹</sub>8997<small>/3 months</small></div>
@@ -3366,17 +3968,18 @@
             <ul class="plan-list flex-grow-1">
               <li><i class="bi bi-check-circle-fill" style="color:#94a3b8;"></i> Up to 15kgs weight loss</li>
               <li><i class="bi bi-check-circle-fill" style="color:#94a3b8;"></i> Everything in premium</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#94a3b8;"></i> Weekly training + feedback</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#94a3b8;"></i> Special gift</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#94a3b8;"></i> 1-on-1 coach call</li>
             </ul>
-            <button class="btn-plan btn-plan-ghost" style="border-color:#bfdbfe !important;background:linear-gradient(135deg,#e2e8f0,#bfdbfe);color:#0f172a;box-shadow:0 16px 36px rgba(96,165,250,.25);" onclick="openRegistration('ADVANCED: SILVER', 899700, '₹8997 / 3 months')">Join SILVER</button>
+            <button class="btn-plan btn-plan-ghost"
+              style="border-color:#bfdbfe !important;background:linear-gradient(135deg,#e2e8f0,#bfdbfe);color:#0f172a;box-shadow:0 16px 36px rgba(96,165,250,.25);"
+              onclick="openRegistration('ADVANCED: SILVER', 899700, '₹8997 / 3 months')">Join SILVER</button>
           </div>
         </div>
 
         <!-- Plan 7: GOLD -->
         <div class="col-md-6 col-lg-4 fade-up fd1">
           <div class="plan-card tier d-flex flex-column h-100" style="border-color: rgba(250,204,21,.5);">
-            <div class="plan-popular" style="background:#facc15; color:#422006;">10% off on coaching service</div>
+            <div class="plan-popular" style="background:#facc15; color:#422006;">10% off on coaching fee</div>
             <div class="plan-tier-label" style="color:#facc15;">GOLD</div>
             <div class="plan-tagline">Ultimate transformation</div>
             <span class="plan-price-old"><span class="rupee">₹</span>19,793.4</span>
@@ -3385,17 +3988,20 @@
             <ul class="plan-list flex-grow-1">
               <li><i class="bi bi-check-circle-fill" style="color:#facc15;"></i> Up to 30 kg weight loss</li>
               <li><i class="bi bi-check-circle-fill" style="color:#facc15;"></i> Everything in silver</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#facc15;"></i> 21DWLC advanced weight loss secret tips</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#facc15;"></i> Health checkup (6 times)</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#facc15;"></i> 21DWLC advanced weight loss secret tips
+              </li>
+              <li><i class="bi bi-check-circle-fill" style="color:#facc15;"></i> Health checkup</li>
             </ul>
-            <button class="btn-plan btn-plan-ghost" style="border-color:#facc15 !important;" onclick="openRegistration('ADVANCED: GOLD', 1799400, '₹17,994')">Join GOLD</button>
+            <button class="btn-plan btn-plan-ghost" style="border-color:#facc15 !important;"
+              onclick="openRegistration('ADVANCED: GOLD', 1799400, '₹17,994')">Join GOLD</button>
           </div>
         </div>
 
         <!-- Plan 8: DIAMOND -->
         <div class="col-md-6 col-lg-4 fade-up fd2">
           <div class="plan-card tier d-flex flex-column h-100" style="border-color: rgba(96,165,250,.6);">
-            <div class="plan-popular" style="background:linear-gradient(135deg,#eff6ff,#dbeafe); color:#0f172a;">15% OFF on coaching service</div>
+            <div class="plan-popular" style="background:linear-gradient(135deg,#eff6ff,#dbeafe); color:#0f172a;">15% OFF
+              on coaching fee</div>
             <div class="plan-tier-label" style="color:#60a5fa;">DIAMOND</div>
             <div class="plan-tagline">Complete lifestyle change</div>
             <span class="plan-price-old"><span class="rupee">₹</span>41,397.7</span>
@@ -3404,11 +4010,14 @@
             <ul class="plan-list flex-grow-1">
               <li><i class="bi bi-check-circle-fill" style="color:#60a5fa;"></i> Up to 60 kg weight loss</li>
               <li><i class="bi bi-check-circle-fill" style="color:#60a5fa;"></i> Everything in gold</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#60a5fa;"></i> Personally trained by a senior Health & Wellness Coach</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#60a5fa;"></i> Personally trained by a senior Health &
+                Wellness Coach</li>
               <li><i class="bi bi-check-circle-fill" style="color:#60a5fa;"></i> 2 VIP passes</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#60a5fa;"></i> Ideal weight diet plan for lifetime</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#60a5fa;"></i> Ideal weight diet plan for lifetime
+              </li>
             </ul>
-            <button class="btn-plan btn-plan-ghost" style="border-color:#60a5fa !important;" onclick="openRegistration('ADVANCED: DIAMOND', 3598800, '₹35,998')">Join DIAMOND</button>
+            <button class="btn-plan btn-plan-ghost" style="border-color:#60a5fa !important;"
+              onclick="openRegistration('ADVANCED: DIAMOND', 3598800, '₹35,998')">Join DIAMOND</button>
           </div>
         </div>
 
@@ -3422,15 +4031,17 @@
         <div class="col-md-6 col-lg-6 fade-up">
           <div class="plan-card tier d-flex flex-column h-100" style="border-color: rgba(244,114,182,.5);">
             <div class="plan-tier-label" style="color:#f472b6;">SKIN PROGRAM</div>
-            <div class="plan-tagline">Glowing health</div>
+            <div class="plan-tagline">Skin improvement</div>
             <div class="plan-price" style="font-size:46px;"><sub>₹</sub>999</div>
             <hr class="plan-sep">
             <ul class="plan-list flex-grow-1">
               <li><i class="bi bi-check-circle-fill" style="color:#f472b6;"></i> Skin improvement secret tips</li>
               <li><i class="bi bi-check-circle-fill" style="color:#f472b6;"></i> 30 days of right food education</li>
               <li><i class="bi bi-check-circle-fill" style="color:#f472b6;"></i> 4x weekly check-in</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#f472b6;"></i> 30 days personalized diet plan</li>
             </ul>
-            <button class="btn-plan btn-plan-ghost" style="border-color:#f472b6 !important;" onclick="openRegistration('SKIN PROGRAM', 99900, '₹999')">Join Skin Program</button>
+            <button class="btn-plan btn-plan-ghost" style="border-color:#f472b6 !important;"
+              onclick="openRegistration('SKIN PROGRAM', 99900, '₹999')">Join Skin</button>
           </div>
         </div>
 
@@ -3449,7 +4060,8 @@
               <li><i class="bi bi-check-circle-fill" style="color:#a78bfa;"></i> Advanced weight gain plan</li>
               <li><i class="bi bi-check-circle-fill" style="color:#a78bfa;"></i> Priority support 24x7</li>
             </ul>
-            <button class="btn-plan btn-plan-ghost" style="border-color:#a78bfa !important;" onclick="openRegistration('WEIGHT GAIN', 299900, '₹2999')">Start Weight Gain</button>
+            <button class="btn-plan btn-plan-ghost" style="border-color:#a78bfa !important;"
+              onclick="openRegistration('WEIGHT GAIN', 299900, '₹2999')">Join Weight Gain</button>
           </div>
         </div>
 
@@ -3469,9 +4081,11 @@
             <ul class="plan-list flex-grow-1">
               <li><i class="bi bi-check-circle-fill" style="color:var(--border);"></i> Information session</li>
               <li><i class="bi bi-check-circle-fill" style="color:var(--border);"></i> Understand more about 21DWLC</li>
-              <li><i class="bi bi-check-circle-fill" style="color:var(--border);"></i> See live results and choose your next step</li>
+              <li><i class="bi bi-check-circle-fill" style="color:var(--border);"></i> See live results and choose your
+                next step</li>
             </ul>
-            <button class="btn-plan btn-plan-ghost" onclick="openRegistration('NEW LAUNCH: Information session', 4900, '₹49')">Start for ₹49</button>
+            <button class="btn-plan btn-plan-ghost"
+              onclick="openRegistration('NEW LAUNCH: Information session', 4900, '₹49')">JOin for ₹49</button>
           </div>
         </div>
 
@@ -3480,15 +4094,17 @@
           <div class="plan-card tier d-flex flex-column h-100">
             <div class="plan-popular">NEW LAUNCH</div>
             <div class="plan-tier-label">Meet New Friends</div>
-            <div class="plan-tagline">Outdoor fun & health</div>
+            <div class="plan-tagline">Outdoor fun</div>
             <div class="plan-price"><sub>₹</sub>100</div>
             <hr class="plan-sep">
             <ul class="plan-list flex-grow-1">
               <li><i class="bi bi-check-circle-fill" style="color:var(--border);"></i> Outdoor group workout</li>
               <li><i class="bi bi-check-circle-fill" style="color:var(--border);"></i> Fun games</li>
-              <li><i class="bi bi-check-circle-fill" style="color:var(--border);"></i> 1-on-1 Free health counselling (999)</li>
+              <li><i class="bi bi-check-circle-fill" style="color:var(--border);"></i> 1-on-1 Free health counselling
+                (₹999)</li>
             </ul>
-            <button class="btn-plan btn-plan-ghost" onclick="openRegistration('NEW LAUNCH: Meet new friends', 10000, '₹100')">Join for ₹100</button>
+            <button class="btn-plan btn-plan-ghost"
+              onclick="openRegistration('NEW LAUNCH: Meet new friends', 10000, '₹100')">Join for ₹100</button>
           </div>
         </div>
       </div>
@@ -3510,60 +4126,24 @@
       <div class="tg-scroll" id="tgScroll">
         <div class="tg-track" id="tgTrack">
 
-          <!-- Card 1: Founder -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client0.jpeg" alt="Founder Transformation" onerror="this.src='/static/images/client5.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: WEIGHT GAIN</div>
-            </div>
-          </div>
+
 
           <!-- Card 2: Fat Loss -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client3.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
+              <img src="/static/images/client3.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: DIAMOND</div>
             </div>
           </div>
 
           <!-- Card  Fat Loss -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client4.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
-            </div>
-          </div>
-
-          <!-- Card Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client5.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: PRO</div>
-            </div>
-          </div>
-
-          <!-- Card Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client6.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: PREMIUM</div>
-            </div>
-          </div>
-
-          <!-- Card Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client13.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
+              <img src="/static/images/client4.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
             </div>
             <div class="tg-body">
               <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
@@ -3573,7 +4153,30 @@
           <!-- Card Fat Loss -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client14.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
+              <img src="/static/images/client5.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: DIAMOND</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client6.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: DIAMOND</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client13.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
             </div>
             <div class="tg-body">
               <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
@@ -3583,7 +4186,8 @@
           <!-- Card Fat Loss -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client15.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
+              <img src="/static/images/client14.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
             </div>
             <div class="tg-body">
               <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
@@ -3593,7 +4197,30 @@
           <!-- Card Fat Loss -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client16.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
+              <img src="/static/images/client15.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: DIAMOND</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client16.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client17.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
             </div>
             <div class="tg-body">
               <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
@@ -3603,110 +4230,121 @@
           <!-- Card Fat Loss -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client17.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
+              <img src="/static/images/client18.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
-            </div>
-          </div>
-
-          <!-- Card Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client18.jpeg" alt="Fat Loss Transformation" onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: PREMIUM</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
             </div>
           </div>
 
           <!-- Card 3: Child -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/child.jpeg" alt="Child Transformation" onerror="this.src='/static/images/client6.jpeg'" />
+              <img src="/static/images/child.jpeg" alt="Child Transformation"
+                onerror="this.src='/static/images/client6.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: KICKSTART</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: PREMIUM</div>
             </div>
           </div>
 
           <!-- Card 4: Skin -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client7.jpeg" alt="Skin Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+              <img src="/static/images/client7.jpeg" alt="Skin Transformation"
+                onerror="this.src='/static/images/client8.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN PROGRAM</div>
+              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN</div>
             </div>
           </div>
 
           <!-- Skin -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client8.jpeg" alt="Skin Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+              <img src="/static/images/client8.jpeg" alt="Skin Transformation"
+                onerror="this.src='/static/images/client8.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN PROGRAM</div>
+              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN</div>
             </div>
           </div>
 
           <!-- Skin -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client9.jpeg" alt="Skin Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+              <img src="/static/images/client9.jpeg" alt="Skin Transformation"
+                onerror="this.src='/static/images/client8.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN PROGRAM</div>
+              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN</div>
             </div>
           </div>
 
           <!-- Skin -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client10.jpeg" alt="Skin Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+              <img src="/static/images/client10.jpeg" alt="Skin Transformation"
+                onerror="this.src='/static/images/client8.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN PROGRAM</div>
+              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN</div>
             </div>
           </div>
 
           <!-- Skin -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client11.jpeg" alt="Skin Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+              <img src="/static/images/client11.jpeg" alt="Skin Transformation"
+                onerror="this.src='/static/images/client8.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN PROGRAM</div>
+              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN</div>
             </div>
           </div>
 
           <!-- Skin -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client12.jpeg" alt="Skin Transformation" onerror="this.src='/static/images/client8.jpeg'" />
+              <img src="/static/images/client12.jpeg" alt="Skin Transformation"
+                onerror="this.src='/static/images/client8.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN PROGRAM</div>
+              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN</div>
+            </div>
+          </div>
+
+          <!-- Card 1: Founder -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client0.jpeg" alt="Founder Transformation"
+                onerror="this.src='/static/images/client5.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
             </div>
           </div>
 
           <!-- Card 5: Weight Gain -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client1.jpeg" alt="Weight Gain Transformation" onerror="this.src='/static/images/client2.jpeg'" />
+              <img src="/static/images/client1.jpeg" alt="Weight Gain Transformation"
+                onerror="this.src='/static/images/client2.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: WEIGHT GAIN</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
             </div>
           </div>
 
           <!-- Card 5: Weight Gain -->
           <div class="tg-card">
             <div class="tg-img">
-              <img src="/static/images/client2.jpeg" alt="Weight Gain Transformation" onerror="this.src='/static/images/client2.jpeg'" />
+              <img src="/static/images/client2.jpeg" alt="Weight Gain Transformation"
+                onerror="this.src='/static/images/client2.jpeg'" />
             </div>
             <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: WEIGHT GAIN</div>
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
             </div>
           </div>
 
@@ -3734,163 +4372,192 @@
           <div class="sec-overline">Testimonials</div>
           <h2 class="sec-h2" style="margin-bottom:0;">WHAT OUR <em>HEROES SAY</em></h2>
         </div>
-        <div class="tg-nav" style="margin-top:0;">
-          <button class="tg-arrow" onclick="testiScroll(-1)" aria-label="Previous"><i
-              class="bi bi-chevron-left"></i></button>
-          <button class="tg-arrow" onclick="testiScroll(1)" aria-label="Next"><i
-              class="bi bi-chevron-right"></i></button>
-        </div>
       </div>
 
-      <div class="testi-scroll" id="testi-scroll">
+      <div class="testi-scroll" id="testiScrollContainer">
         <div class="testi-track" id="testiTrack">
           <!-- T1 -->
-          <div class="testi-col">
-            <div class="testi-card">
+          <div class="testi-col d-flex flex-column">
+            <div class="testi-card d-flex flex-column h-100">
               <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
               </div>
-              <div class="testi-quote">"The best 21 days! I lost 4 kgs and learned so much about food. Thank you Khalid sir. Highly recommend PRO."</div>
-              <div class="testi-author">
-                <div class="testi-av av-g">A</div>
-                <div class="testi-name">Aditi S.</div>
-                <div class="testi-meta">Lost 4kg &bull; Plan: PRO</div>
-              </div>
-            </div>
-          </div>
-          <!-- T2 -->
-          <div class="testi-col">
-            <div class="testi-card" style="box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-color:var(--saffron);">
-              <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-              </div>
-              <div class="testi-quote">"My energy is through the roof. The daily live sessions conducted by M D Khalid sir is incredible."</div>
-              <div class="testi-author">
-                <div class="testi-av av-r">V</div>
-                <div class="testi-name">Vikram M.</div>
-                <div class="testi-meta">Lost 5kg &bull; Plan: PREMIUM</div>
-              </div>
-            </div>
-          </div>
-          <!-- T3 -->
-          <div class="testi-col">
-            <div class="testi-card">
-              <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-              </div>
-              <div class="testi-quote">"The skin program actually works. The detox drinks totally cleared my skin."</div>
-              <div class="testi-author">
-                <div class="testi-av av-a">M</div>
-                <div class="testi-name">Meera P.</div>
-                <div class="testi-meta">Clear Skin &bull; Plan: SKIN PROGRAM</div>
-              </div>
-            </div>
-          </div>
-          <!-- T4 -->
-          <div class="testi-col">
-            <div class="testi-card">
-              <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-              </div>
-              <div class="testi-quote">"I never thought gaining weight naturally was possible. Highly recommended."</div>
-              <div class="testi-author">
-                <div class="testi-av av-g">K</div>
-                <div class="testi-name">Karan R.</div>
-                <div class="testi-meta">Gained 6kg &bull; Plan: WEIGHT GAIN</div>
-              </div>
-            </div>
-          </div>
-          <!-- T5 -->
-          <div class="testi-col">
-            <div class="testi-card">
-              <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-              </div>
-              <div class="testi-quote">"It was easy to lose inches without starving, thanks to the effective Indian diet plan from Khalid sir!"</div>
-              <div class="testi-author">
-                <div class="testi-av av-r">R</div>
-                <div class="testi-name">Rohit K.</div>
+              <div class="testi-quote flex-grow-1">"Lost 3 kg in just 7 days without any supplements! Simple home food +
+                guidance = real results. Thank you Khalid sir!"</div>
+              <div class="testi-author mt-auto flex-shrink-0">
+                <div class="testi-av av-g">F</div>
+                <div class="testi-name">Farha</div>
                 <div class="testi-meta">Lost 3kg &bull; Plan: KICKSTART</div>
               </div>
             </div>
           </div>
-          <!-- T6 -->
-          <div class="testi-col">
-            <div class="testi-card">
+          <!-- T2 -->
+          <div class="testi-col d-flex flex-column">
+            <div class="testi-card d-flex flex-column h-100"
+              style="box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-color:var(--saffron);">
               <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
               </div>
-              <div class="testi-quote">"21 days completely changed my routine. Feeling lighter and more confident."</div>
-              <div class="testi-author">
+              <div class="testi-quote flex-grow-1">"I never believed weight loss could be this easy. Daily support and
+                motivation helped me stay consistent. Highly recommended. Thanks Khalid sir for your support!"</div>
+              <div class="testi-author mt-auto flex-shrink-0">
+                <div class="testi-av av-r">J</div>
+                <div class="testi-name">Joshua</div>
+                <div class="testi-meta">Lost 8kg &bull; Plan: PRO</div>
+              </div>
+            </div>
+          </div>
+          <!-- T3 -->
+          <div class="testi-col d-flex flex-column">
+            <div class="testi-card d-flex flex-column h-100">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <div class="testi-quote flex-grow-1">"No gym, no diet stress, no powders. Just proper guidance by Khalid
+                sir. I feel more energetic and confident now. Thank you, sir!"</div>
+              <div class="testi-author mt-auto flex-shrink-0">
                 <div class="testi-av av-a">S</div>
-                <div class="testi-name">Sneha T.</div>
-                <div class="testi-meta">Lost 5kg &bull; Plan: PRO</div>
+                <div class="testi-name">Swathi</div>
+                <div class="testi-meta">Lost 6kg &bull; Plan: PREMIUM</div>
+              </div>
+            </div>
+          </div>
+          <!-- T4 -->
+          <div class="testi-col d-flex flex-column">
+            <div class="testi-card d-flex flex-column h-100">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <div class="testi-quote flex-grow-1">"Best decision I made for my health. The coaches are very supportive
+                and the plan is easy to follow."</div>
+              <div class="testi-author mt-auto flex-shrink-0">
+                <div class="testi-av av-g">N</div>
+                <div class="testi-name">Navya</div>
+                <div class="testi-meta">Lost 14kg &bull; Plan: SILVER</div>
+              </div>
+            </div>
+          </div>
+          <!-- T5 -->
+          <div class="testi-col d-flex flex-column">
+            <div class="testi-card d-flex flex-column h-100">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+              </div>
+              <div class="testi-quote flex-grow-1">"I tried many things before, but nothing worked like this. 21DWLC
+                Natural weight loss with real results. Thank you Khalid sir. For your support and guidance!"</div>
+              <div class="testi-author mt-auto flex-shrink-0">
+                <div class="testi-av av-r">V</div>
+                <div class="testi-name">Vinod</div>
+                <div class="testi-meta">Lost 18.5kg &bull; Plan: SILVER</div>
+              </div>
+            </div>
+          </div>
+          <!-- T6 -->
+          <div class="testi-col d-flex flex-column">
+            <div class="testi-card d-flex flex-column h-100">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <div class="testi-quote flex-grow-1">"From feeling tired every day to feeling active and fresh. 21DWLC
+                changed my lifestyle."</div>
+              <div class="testi-author mt-auto flex-shrink-0">
+                <div class="testi-av av-a">A</div>
+                <div class="testi-name">Adi</div>
+                <div class="testi-meta">Lost 22kg &bull; Plan: GOLD</div>
               </div>
             </div>
           </div>
           <!-- T7 -->
-          <div class="testi-col">
-            <div class="testi-card">
+          <div class="testi-col d-flex flex-column">
+            <div class="testi-card d-flex flex-column h-100">
               <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
               </div>
-              <div class="testi-quote">"Daily health talks helped me fix my eating habits permanently."</div>
-              <div class="testi-author">
-                <div class="testi-av av-g">P</div>
-                <div class="testi-name">Priya N.</div>
-                <div class="testi-meta">Lost 4kg &bull; Plan: PRO</div>
+              <div class="testi-quote flex-grow-1">"Affordable, simple, and effective. Perfect for busy people like me.
+                Thanks for your valuable support Khalid sir!"</div>
+              <div class="testi-author mt-auto flex-shrink-0">
+                <div class="testi-av av-g">M</div>
+                <div class="testi-name">Meera</div>
+                <div class="testi-meta">Lost 26kg &bull; Plan: GOLD</div>
               </div>
             </div>
           </div>
           <!-- T8 -->
-          <div class="testi-col">
-            <div class="testi-card">
+          <div class="testi-col d-flex flex-column">
+            <div class="testi-card d-flex flex-column h-100">
               <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
               </div>
-              <div class="testi-quote">"Premium plan support is amazing. Coach is always available."</div>
-              <div class="testi-author">
-                <div class="testi-av av-r">A</div>
-                <div class="testi-name">Arjun V.</div>
-                <div class="testi-meta">Lost 7kg &bull; Plan: PREMIUM</div>
+              <div class="testi-quote flex-grow-1">"Not just weight loss, it’s a complete transformation. I feel more
+                confident in myself now. And all my health problems are under control. Thank you so much Khalid Sir for
+                your guidance every day."</div>
+              <div class="testi-author mt-auto flex-shrink-0">
+                <div class="testi-av av-r">R</div>
+                <div class="testi-name">Rohit</div>
+                <div class="testi-meta">Lost 32kg &bull; Plan: DIAMOND</div>
               </div>
             </div>
           </div>
           <!-- T9 -->
-          <div class="testi-col">
-            <div class="testi-card">
+          <div class="testi-col d-flex flex-column">
+            <div class="testi-card d-flex flex-column h-100">
               <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
               </div>
-              <div class="testi-quote">"I joined just to try, but ended up transforming my lifestyle completely."</div>
-              <div class="testi-author">
-                <div class="testi-av av-a">N</div>
-                <div class="testi-name">Neha D.</div>
-                <div class="testi-meta">Lost 3kg &bull; Plan: ₹499</div>
+              <div class="testi-quote flex-grow-1">"Daily follow-ups kept me accountable. I didn’t feel alone in my
+                journey. I never thought weight gain would be so easy. All these things are possible only with the right
+                coach's guidance. Thank you Khalid sir for your motivation and support."</div>
+              <div class="testi-author mt-auto flex-shrink-0">
+                <div class="testi-av av-a">D</div>
+                <div class="testi-name">Deepika</div>
+                <div class="testi-meta">Gain 12kg &bull; Plan: GOLD</div>
               </div>
             </div>
           </div>
           <!-- T10 -->
-          <div class="testi-col">
-            <div class="testi-card">
+          <div class="testi-col d-flex flex-column">
+            <div class="testi-card d-flex flex-column h-100">
               <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
               </div>
-              <div class="testi-quote">"The structure, guidance, and motivation kept me consistent every single day."</div>
-              <div class="testi-author">
-                <div class="testi-av av-g">D</div>
-                <div class="testi-name">Deepak S.</div>
+              <div class="testi-quote flex-grow-1">"I have struggled to improve my skin for a very long time, seeing
+                results on Instagram and started my Skin program. I improved my skin by following proper Khalid sir's
+                guidance and gained back my confidence. Thank you Khalid sir."</div>
+              <div class="testi-author mt-auto flex-shrink-0">
+                <div class="testi-av av-g">R</div>
+                <div class="testi-name">Rohit</div>
                 <div class="testi-meta">Lost 6kg &bull; Plan: PRO</div>
               </div>
             </div>
           </div>
-</div>
+        </div>
+      </div>
+      <!-- Testimonials Nav -->
+      <div class="testi-nav fade-up mt-4 d-flex align-items-center justify-content-center gap-3">
+        <button class="tg-arrow" id="testiPrev" onclick="testiScroll(-1)" aria-label="Previous">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <div id="testiDots" class="d-flex align-items-center justify-content-center"></div>
+        <button class="tg-arrow" id="testiNext" onclick="testiScroll(1)" aria-label="Next">
+          <i class="bi bi-chevron-right"></i>
+        </button>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-    <section id="faq" class="sec" style="background:linear-gradient(180deg, rgba(255,253,254,.16) 0%, rgba(255,255,255,0) 100%), radial-gradient(circle at 82% 20%, rgba(30,75,142,.08) 0%, transparent 24%), radial-gradient(circle at 14% 82%, rgba(225,29,72,.06) 0%, transparent 24%);">
+  <section id="faq" class="sec"
+    style="background:linear-gradient(180deg, rgba(255,253,254,.16) 0%, rgba(255,255,255,0) 100%), radial-gradient(circle at 82% 20%, rgba(30,75,142,.08) 0%, transparent 24%), radial-gradient(circle at 14% 82%, rgba(225,29,72,.06) 0%, transparent 24%);">
     <div class="container">
       <div class="text-center mb-5 fade-up">
         <div class="sec-overline" style="justify-content:center;">Got Questions?</div>
@@ -3911,7 +4578,8 @@
               </h2>
               <div id="faq_join" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                 <div class="accordion-body" style="color:var(--muted);font-size:14.5px;padding:0 22px 20px;">
-                  Once registered, all details will be shared with you via WhatsApp. We use a very simple joining process that anyone can follow.
+                  Once registered, all details will be shared with you via WhatsApp. We use a very simple joining
+                  process that anyone can follow.
                 </div>
               </div>
             </div>
@@ -3944,7 +4612,8 @@
               </h2>
               <div id="faq_device" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                 <div class="accordion-body" style="color:var(--muted);font-size:14.5px;padding:0 22px 20px;">
-                  Yes, you can join using your phone, but we recommend using a laptop for a better and more immersive experience.
+                  Yes, you can join using your phone, but we recommend using a laptop for a better and more immersive
+                  experience.
                 </div>
               </div>
             </div>
@@ -3992,7 +4661,8 @@
               </h2>
               <div id="faq_supplements" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                 <div class="accordion-body" style="color:var(--muted);font-size:14.5px;padding:0 22px 20px;">
-                  No, we focus on 100% natural way to help you get the result, based on home food and lifestyle habit correction
+                  No, we focus on 100% natural way to help you get the result, based on home food and lifestyle habit
+                  correction
                 </div>
               </div>
             </div>
@@ -4008,7 +4678,8 @@
               </h2>
               <div id="faq_vip" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                 <div class="accordion-body" style="color:var(--muted);font-size:14.5px;padding:0 22px 20px;">
-                  THE VIP PASS IS EXCLUSIVELY FOR 12-MONTH PLAN USERS. IT INCLUDES 1 HEALTHY MEAL (LUNCH/DINNER) OR A 1-DAY VACATION EXPERIENCE WITH OUR COMMUNITY.
+                  THE VIP PASS IS EXCLUSIVELY FOR 12-MONTH PLAN USERS. IT INCLUDES 1 HEALTHY MEAL (LUNCH/DINNER) OR A
+                  1-DAY VACATION EXPERIENCE WITH OUR COMMUNITY.
                 </div>
               </div>
             </div>
@@ -4024,7 +4695,8 @@
               </h2>
               <div id="faq_office" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                 <div class="accordion-body" style="color:var(--muted);font-size:14.5px;padding:0 22px 20px;">
-                  No, the program is fully based online. Complete support via direct message on WhatsApp once you register for the program. 
+                  No, the program is fully based online. Complete support via direct message on WhatsApp once you
+                  register for the program.
                 </div>
               </div>
             </div>
@@ -4036,13 +4708,18 @@
 
 
   <!-- CONTACT -->
-    <!-- FINAL CTA -->
-  <section id="final-cta" class="sec" style="background:linear-gradient(180deg, rgba(255,252,253,.2) 0%, rgba(255,255,255,0) 100%), radial-gradient(circle at 16% 24%, rgba(225,29,72,.08) 0%, transparent 22%), radial-gradient(circle at 84% 76%, rgba(30,75,142,.08) 0%, transparent 24%); color: var(--ink);">
+  <!-- FINAL CTA -->
+  <section id="final-cta" class="sec"
+    style="background:linear-gradient(180deg, rgba(255,252,253,.2) 0%, rgba(255,255,255,0) 100%), radial-gradient(circle at 16% 24%, rgba(225,29,72,.08) 0%, transparent 22%), radial-gradient(circle at 84% 76%, rgba(30,75,142,.08) 0%, transparent 24%); color: var(--ink);">
     <div class="container position-relative text-center">
       <h2 class="sec-h2" style="color:var(--ink); font-size:42px;">Your Health Is Your Greatest Wealth</h2>
-      <p style="font-size:18px; opacity:0.9; margin-bottom: 24px;">Lose 3–5kg in 21 days with home workouts & Indian food. <br> It’s a luxury to live without health problems — start your transformation today.</p>
-      <button class="btn-cta fade-up" onclick="scrollToPlans()">Start My 21-Day Transformation <i class="bi bi-arrow-right"></i></button>
-      <p style="font-size:14px; color:rgba(100,116,139,.82); margin-top:20px; font-weight:600;"><i class="bi bi-clock-history"></i> 12,000+ transformed &bull; Limited slots left</p>
+      <p style="font-size:18px; opacity:0.9; margin-bottom: 24px;">Lose 3–5kg in 21 days with home workouts & Indian
+        food. <br> It’s a luxury to live without health problems — start your transformation today.</p>
+      <p style="font-size:14px; color:rgba(100,116,139,.82); margin-top:20px; font-weight:600;"><i
+          class="bi bi-clock-history"></i> Limited slots left</p>
+      <button class="btn-cta fade-up" onclick="scrollToPlans()">Start My Transformation Now <i
+          class="bi bi-arrow-right"></i></button>
+
     </div>
   </section>
 
@@ -4053,7 +4730,8 @@
           <div class="col-lg-5 fade-up position-relative" style="z-index:1;">
             <div class="sec-overline contact-over">Get In Touch</div>
             <div class="ch">ANY <em>QUESTIONS?</em></div>
-            <p class="cdesc">Our team replies within 1 hour on Call/WhatsApp.<br>Ready to start? Join over 12,000 members!
+            <p class="cdesc">Our team replies within 30 minutes on Call/WhatsApp.<br>Ready to start? Join over 12,000
+              members!
             </p>
             <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px;">
               <div class="c-info-row">
@@ -4064,14 +4742,13 @@
                 <div class="c-icon"><i class="bi bi-envelope-fill" style="color:#93c5fd;font-size:15px;"></i></div>
                 <a href="mailto:21daysweightlosscenter@gmail.com"
                   style="color:rgba(71,85,105,.84);text-decoration:none;transition:color .2s;"
-                  onmouseover="this.style.color='rgba(13,40,87,1)'"
-                  onmouseout="this.style.color='rgba(71,85,105,.84)'">
-                  21daysweightlosscenter@gmail.com
+                  onmouseover="this.style.color='rgba(13,40,87,1)'" onmouseout="this.style.color='rgba(71,85,105,.84)'">
+                  21daysweightlosscentre@gmail.com
                 </a>
               </div>
               <!-- ✏️ EDIT: Replace @your_instagram_handle with your real Instagram username -->
-              <a href="https://www.instagram.com/21daysweightlosscentre?igsh=ZzQ0b3BlZHZqcTh6"
-                target="_blank" rel="noopener" class="c-info-row c-insta-row">
+              <a href="https://www.instagram.com/21daysweightlosscentre?igsh=ZzQ0b3BlZHZqcTh6" target="_blank"
+                rel="noopener" class="c-info-row c-insta-row">
                 <div class="c-icon c-icon-insta">
                   <i class="bi bi-instagram" style="font-size:16px;"></i>
                 </div>
@@ -4080,8 +4757,8 @@
               </a>
 
               <!-- YouTube Channel Link -->
-              <a href="https://youtube.com/@21daysweightlosscenter?si=1W0fTAuwI0kv6xz_" target="_blank" rel="noopener" class="c-info-row c-insta-row"
-                style="margin-top:4px;">
+              <a href="https://youtube.com/@21daysweightlosscenter?si=1W0fTAuwI0kv6xz_" target="_blank" rel="noopener"
+                class="c-info-row c-insta-row" style="margin-top:4px;">
                 <div class="c-icon" style="background:#ff0000;color:#fff;border:none;">
                   <i class="bi bi-youtube" style="font-size:16px;"></i>
                 </div>
@@ -4097,8 +4774,8 @@
                     placeholder="Vijay" required /></div>
                 <div class="col-md-6"><label class="form-lbl">Phone Number</label><input type="tel" class="form-inp"
                     placeholder="987*******" required /></div>
-                <div class="col-12"><label class="form-lbl">Message (If you are in any medication, please mention)</label><textarea class="form-inp" rows="4"
-                    placeholder="Tell us your goals..."></textarea></div>
+                <div class="col-12"><label class="form-lbl">Message if you have any questions</label><textarea
+                    class="form-inp" rows="4" placeholder="Tell us your goals..."></textarea></div>
                 <div class="col-12"><button type="submit" class="btn-hero w-100"
                     style="justify-content:center;border:none;">Send Message <i class="bi bi-send-fill"></i></button>
                 </div>
@@ -4128,12 +4805,12 @@
 
       <div style="font-size:12px;color:rgba(100,116,139,.82);margin:24px 0 16px;">
         <strong>TERMS & CONDITIONS</strong><br />
-        By enrolling in any 21DWLC program, you agree that <strong>No refunds are available</strong>
+        By enrolling in any 21DWLC program, you agree that No refunds are available
         under any circumstances. Results may vary person-by-person depending on consistency and coach guidelines.
       </div>
 
       <div class="foot-copy">
-        &copy; {{ now.year if now else 2024 }} 21 Days. All rights reserved. &nbsp;·&nbsp; Secure payments by Razorpay.
+        &copy; {{ now.year if now else 2024 }} 21DWLC. All rights reserved. &nbsp;·&nbsp; Secure payments by Razorpay.
         &nbsp;·&nbsp;<a href="/admin" style="color:rgba(100,116,139,.42);text-decoration:none;font-size:11px;"
           tabindex="-1">admin</a>
       </div>
@@ -4494,6 +5171,106 @@
       update();  // set initial state
     })();
 
+    /* ── TESTIMONIALS GALLERY — arrow & dot nav ── */
+    (function () {
+      const el = document.getElementById('testiScrollContainer');
+      const track = document.getElementById('testiTrack');
+      const btnPrev = document.getElementById('testiPrev');
+      const btnNext = document.getElementById('testiNext');
+      const dotsContainer = document.getElementById('testiDots');
+      if (!el || !track) return;
+
+      const cards = track.querySelectorAll('.testi-col');
+      let totalSets = 0;
+      let currentSet = 0;
+
+      function getCardsPerView() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 991) return 2;
+        return 3;
+      }
+
+      function updateCarousel() {
+        const perView = getCardsPerView();
+        totalSets = Math.ceil(cards.length / perView);
+        if (dotsContainer) {
+          dotsContainer.innerHTML = '';
+          for (let i = 0; i < totalSets; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'testi-dot' + (i === currentSet ? ' active' : '');
+            dot.onclick = () => {
+              currentSet = i;
+              updateScroll();
+            };
+            dotsContainer.appendChild(dot);
+          }
+        }
+        updateScroll();
+      }
+
+      function updateScroll() {
+        const perView = getCardsPerView();
+        const targetCard = cards[currentSet * perView];
+        if (targetCard) {
+          const containerBox = el.getBoundingClientRect();
+          const cardBox = targetCard.getBoundingClientRect();
+          el.scrollBy({ left: cardBox.left - containerBox.left, behavior: 'smooth' });
+        }
+
+        if (dotsContainer) {
+          Array.from(dotsContainer.children).forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === currentSet);
+          });
+        }
+        if (btnPrev) btnPrev.disabled = currentSet === 0;
+        if (btnNext) btnNext.disabled = currentSet >= totalSets - 1;
+      }
+
+      window.testiScroll = function (dir) {
+        currentSet = Math.max(0, Math.min(totalSets - 1, currentSet + dir));
+        updateScroll();
+      };
+
+      el.addEventListener('scrollend', () => {
+        const containerBox = el.getBoundingClientRect();
+        const perView = getCardsPerView();
+        let closestSet = 0;
+        let minDiff = Infinity;
+        for (let i = 0; i < totalSets; i++) {
+          const targetCard = cards[i * perView];
+          if (targetCard) {
+            const cardBox = targetCard.getBoundingClientRect();
+            const diff = Math.abs(cardBox.left - containerBox.left);
+            if (diff < minDiff) {
+              minDiff = diff;
+              closestSet = i;
+            }
+          }
+        }
+        if (currentSet !== closestSet) {
+          currentSet = closestSet;
+          if (dotsContainer) {
+            Array.from(dotsContainer.children).forEach((dot, idx) => {
+              dot.classList.toggle('active', idx === currentSet);
+            });
+          }
+          if (btnPrev) btnPrev.disabled = currentSet === 0;
+          if (btnNext) btnNext.disabled = currentSet >= totalSets - 1;
+        }
+      });
+
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          currentSet = 0;
+          updateCarousel();
+        }, 150);
+      });
+
+      updateCarousel();
+    })();
+
     document.getElementById('contact-form').addEventListener('submit', e => {
       e.preventDefault();
       alert("Thanks! We'll reach out to you on WhatsApp within 2 hours. 🙌");
@@ -4501,7 +5278,52 @@
     });
   </script>
   </div><!-- /site-content -->
+  <button id="scrollToTopBtn" class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Nav Active State
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-links a");
+
+      const observerOptions = {
+        root: null,
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.remove("active-link");
+              if (link.getAttribute("href") === "#" + entry.target.id) {
+                link.classList.add("active-link");
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(sec => observer.observe(sec));
+
+      // Scroll to Top
+      const scrollTopBtn = document.getElementById("scrollToTopBtn");
+      if (scrollTopBtn) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 400) {
+            scrollTopBtn.classList.add("show");
+          } else {
+            scrollTopBtn.classList.remove("show");
+          }
+        });
+      }
+    });
+  </script>
+
 </body>
 
 </html>
-
