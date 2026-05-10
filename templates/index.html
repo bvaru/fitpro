@@ -1045,9 +1045,9 @@
     /* ── PLANS ── */
     #plans {
       background:
-        linear-gradient(180deg, rgba(255, 251, 252, .14) 0%, rgba(255, 255, 255, 0) 100%),
-        radial-gradient(circle at 14% 20%, rgba(200, 31, 69, .11) 0%, transparent 24%),
-        radial-gradient(circle at 88% 18%, rgba(30, 75, 142, .06) 0%, transparent 28%);
+        radial-gradient(ellipse at 15% 20%, rgba(200, 31, 69, .06) 0%, transparent 45%),
+        radial-gradient(ellipse at 85% 85%, rgba(13, 40, 87, .06) 0%, transparent 45%),
+        linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 252, 0.8) 50%, rgba(241, 245, 249, 1) 100%);
       position: relative;
       overflow: hidden;
       padding: 120px 0;
@@ -1057,15 +1057,22 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(255, 252, 253, .16) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 248, 250, .18) 100%);
+      background:
+        radial-gradient(circle at 80% 10%, rgba(30, 75, 142, .04) 0%, transparent 35%),
+        radial-gradient(circle at 20% 90%, rgba(200, 31, 69, .03) 0%, transparent 40%);
+      pointer-events: none;
     }
 
     #plans::after {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(13, 40, 87, .03) 1px, transparent 1px);
-      background-size: 30px 30px;
+      background-image:
+        linear-gradient(rgba(13, 40, 87, .015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 40, 87, .015) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.8;
+      pointer-events: none;
     }
 
     .plan-over {
@@ -1087,25 +1094,29 @@
     }
 
     .plan-card {
-      border-radius: 18px;
-      padding: 32px 26px;
+      border-radius: 20px;
+      padding: 36px 28px;
       height: 100%;
       position: relative;
       overflow: hidden;
-      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background .35s ease;
+      transition: transform .4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow .4s ease, border-color .4s ease, background .4s ease;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
     }
 
     .plan-card.tier {
-      background: linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(255, 241, 244, .97));
-      border: 1px solid rgba(200, 31, 69, .12);
-      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .9), rgba(250, 252, 255, .8));
+      border: 1px solid rgba(13, 40, 87, .06);
     }
 
     .plan-card.tier:hover {
-      background: linear-gradient(180deg, #ffffff, rgba(255, 238, 242, .99));
-      transform: translateY(-8px);
-      border-color: rgba(200, 31, 69, .18);
-      box-shadow: 0 22px 56px rgba(15, 23, 42, .08);
+      background: linear-gradient(180deg, #ffffff, rgba(248, 250, 252, .95));
+      transform: translateY(-8px) scale(1.01);
+      border-color: rgba(13, 40, 87, .12);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, .08);
     }
 
     .plan-card.featured {
@@ -1123,23 +1134,23 @@
       position: absolute;
       top: 16px;
       right: 16px;
-      background: linear-gradient(135deg, #fff, #fff0f3);
+      background: linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(239, 246, 255, .92));
       color: var(--forest);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: .06em;
+      letter-spacing: .1em;
       text-transform: uppercase;
       padding: 6px 12px;
       border-radius: 100px;
-      border: 1px solid rgba(200, 31, 69, .18);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, .06);
+      border: 1px solid rgba(30, 75, 142, .16);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, .05);
       overflow: hidden;
     }
 
     .plan-popular::before {
       content: '✨';
       margin-right: 6px;
-      display: inline-block;
+      display: none;
       animation: sparkleBadge 2.4s ease-in-out infinite;
     }
 
@@ -1167,6 +1178,24 @@
     .plan-card.silver-spotlight:hover {
       transform: translateY(-8px) scale(1.04);
       box-shadow: 0 28px 68px rgba(96, 165, 250, .16), 0 0 0 1px rgba(191, 219, 254, .3);
+    }
+
+    #plans .btc-launch-card {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .94), rgba(255, 244, 247, .88)),
+        radial-gradient(ellipse 92% 56% at 100% 0%, rgba(200, 31, 69, .15), transparent 64%),
+        radial-gradient(ellipse 72% 48% at 0% 100%, rgba(30, 75, 142, .1), transparent 62%) !important;
+      border-color: rgba(200, 31, 69, .28) !important;
+      box-shadow: 0 26px 68px rgba(8, 20, 48, .13), 0 14px 34px rgba(200, 31, 69, .11) !important;
+    }
+
+    #plans .double-launch-card {
+      background:
+        linear-gradient(180deg, #ffffff, rgba(239, 246, 255, .95)),
+        radial-gradient(ellipse 95% 54% at 100% 0%, rgba(30, 75, 142, .17), transparent 62%),
+        radial-gradient(ellipse 70% 44% at 0% 100%, rgba(200, 31, 69, .12), transparent 64%) !important;
+      border-color: rgba(30, 75, 142, .34) !important;
+      box-shadow: 0 30px 76px rgba(8, 20, 48, .16), 0 16px 42px rgba(30, 75, 142, .13) !important;
     }
 
     .plan-tier-label {
@@ -2842,41 +2871,197 @@
       }
     }
 
-    /* ADDED COSMETIC STYLES - REFINED PREMIUM THEME */
+    /* PREMIUM UI REFINEMENT - RED / BLUE / WHITE BRAND SYSTEM */
+    :root {
+      --brand-blue: #0d2857;
+      --brand-blue-2: #1e4b8e;
+      --brand-red: #c81f45;
+      --brand-red-2: #e11d48;
+      --cream-white: #fffafd;
+      --mist: #f5f7fb;
+      --soft-line: rgba(13, 40, 87, .1);
+      --premium-shadow: 0 22px 60px rgba(13, 40, 87, .1);
+      --premium-shadow-lg: 0 30px 90px rgba(13, 40, 87, .16);
+      --red-glow: 0 18px 44px rgba(200, 31, 69, .22);
+      --blue-glow: 0 18px 44px rgba(30, 75, 142, .18);
+    }
 
-    /* Premium Dynamic Background (Deep Blue Gradient) */
     body {
-      background: #0f1c3f !important;
-      color: #e2e8f0 !important;
+      background: linear-gradient(180deg, #fffafd 0%, #f5f7fb 42%, #ffffff 100%) !important;
+      color: var(--slate) !important;
     }
 
-    #hero,
-    #how-it-works,
-    #transformations,
-    #contact,
-    #final-cta {
-      background: linear-gradient(135deg, #0b1536 0%, #14285c 100%) !important;
+    body,
+    body :not(i, img, video, svg, path, script, style, input, textarea) {
+      text-transform: none !important;
     }
 
-    #about,
-    #plans,
-    #testimonials,
-    #faq,
-    #page-gate,
-    #success-overlay {
-      background: linear-gradient(135deg, #111f42 0%, #1a326e 100%) !important;
+    body .sec-overline,
+    body .plan-tier-label,
+    body .plan-popular,
+    body .form-lbl,
+    body .gate-lbl,
+    body .m-lbl,
+    body .stat-lbl,
+    body .tg-chip,
+    body .btn-plan,
+    body .btn-nav {
+      text-transform: uppercase !important;
     }
 
-    /* Completely hide background orbs/grain to ensure a clean, uniform color without white mixing */
+    .sec {
+      padding: 96px 0 !important;
+    }
+
+    .sec-h2,
+    .hero-h1,
+    .ch,
+    .feat-h,
+    .testi-name,
+    .tg-name,
+    .gate-title,
+    .sc-title {
+      color: var(--ink) !important;
+      letter-spacing: -.04em !important;
+    }
+
+    .sec-h2 em,
+    .hero-h1 em,
+    .ch em,
+    em {
+      color: var(--brand-red) !important;
+      font-style: normal !important;
+      background: none !important;
+      -webkit-text-fill-color: currentColor !important;
+    }
+
+    p,
+    .about-text,
+    .feat-p,
+    .testi-quote,
+    .tg-detail,
+    .cdesc,
+    .plan-tagline {
+      color: rgba(71, 85, 105, .78) !important;
+    }
+
+    .sec-overline {
+      color: rgba(13, 40, 87, .58) !important;
+      letter-spacing: .16em !important;
+    }
+
+    #navbar {
+      background: rgba(255, 255, 255, .54) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, .46) !important;
+      backdrop-filter: blur(18px) !important;
+      -webkit-backdrop-filter: blur(18px) !important;
+    }
+
+    #navbar.scrolled {
+      background: rgba(255, 255, 255, .9) !important;
+      border-bottom: 1px solid rgba(13, 40, 87, .08) !important;
+      box-shadow: 0 12px 32px rgba(13, 40, 87, .08) !important;
+    }
+
+    #navbar .nav-links a,
+    #navbar .logo-text .lt-main,
+    #navbar.scrolled .nav-links a,
+    #navbar.scrolled .logo-text .lt-main {
+      color: var(--brand-blue) !important;
+    }
+
+    #navbar .logo-text .lt-sub,
+    #navbar.scrolled .logo-text .lt-sub {
+      color: rgba(71, 85, 105, .68) !important;
+    }
+
+    .nav-links a.active-link,
+    #navbar.scrolled .nav-links a.active-link,
+    .nav-links a:hover {
+      background: rgba(200, 31, 69, .08) !important;
+      color: var(--brand-red) !important;
+    }
+
+    .btn-nav,
+    .btn-hero,
+    .btn-cta,
+    .btn-gate {
+      background: linear-gradient(135deg, var(--brand-red), #b31739) !important;
+      color: #fff !important;
+      border: none !important;
+      border-radius: 12px !important;
+      box-shadow: 0 14px 30px rgba(200, 31, 69, .24) !important;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease !important;
+    }
+
+    .btn-nav:hover,
+    .btn-hero:hover,
+    .btn-cta:hover,
+    .btn-gate:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 20px 42px rgba(200, 31, 69, .32) !important;
+      background: linear-gradient(135deg, #df254d, #a91534) !important;
+    }
+
+    #hero {
+      background:
+        linear-gradient(115deg, rgba(255, 255, 255, .92) 0%, rgba(255, 250, 252, .82) 40%, rgba(235, 242, 252, .72) 100%),
+        radial-gradient(ellipse 58% 48% at 84% 18%, rgba(30, 75, 142, .2) 0%, transparent 60%),
+        radial-gradient(ellipse 52% 46% at 16% 82%, rgba(200, 31, 69, .18) 0%, transparent 58%),
+        linear-gradient(135deg, #fff7fa 0%, #edf4ff 100%) !important;
+    }
+
+    #hero::after,
+    #plans::after,
+    #transformations::after,
+    #testimonials::after {
+      content: '' !important;
+      position: absolute !important;
+      inset: 0 !important;
+      pointer-events: none !important;
+      opacity: .46 !important;
+      background-image: linear-gradient(rgba(13, 40, 87, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(13, 40, 87, .035) 1px, transparent 1px) !important;
+      background-size: 46px 46px !important;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, .8), transparent 80%) !important;
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, .88) 0%, rgba(255, 255, 255, .5) 54%, rgba(255, 255, 255, .08) 100%) !important;
+    }
+
     .hero-orb,
     .hero-grain {
       display: none !important;
     }
 
-    /* Fix Hero Carousel Visibility */
+    .hero-h1,
+    .hero-h1 em,
+    .stat-val {
+      color: var(--brand-blue) !important;
+      text-shadow: none !important;
+      -webkit-text-fill-color: currentColor !important;
+    }
+
+    .hero-sub {
+      color: rgba(71, 85, 105, .86) !important;
+    }
+
+    .hero-eyebrow {
+      background: rgba(255, 255, 255, .72) !important;
+      color: var(--brand-blue) !important;
+      border: 1px solid rgba(200, 31, 69, .16) !important;
+      box-shadow: 0 12px 28px rgba(13, 40, 87, .08) !important;
+    }
+
     .hero-img-col {
       display: flex !important;
       visibility: visible !important;
+    }
+
+    .hero-img-frame {
+      box-shadow: 0 34px 90px rgba(13, 40, 87, .22), 0 0 0 1px rgba(255, 255, 255, .7) inset !important;
+      transform: translateZ(0);
     }
 
     .carousel-track {
@@ -2884,14 +3069,14 @@
       position: relative !important;
       display: block !important;
       aspect-ratio: 4/5 !important;
-      background: transparent !important;
+      background: linear-gradient(135deg, #0d2857, #1e4b8e) !important;
     }
 
     .carousel-slide {
       position: absolute !important;
       inset: 0 !important;
       opacity: 0 !important;
-      transition: opacity 0.9s ease-in-out !important;
+      transition: opacity .9s ease-in-out, transform 5s ease !important;
       z-index: 0 !important;
     }
 
@@ -2900,323 +3085,265 @@
       z-index: 2 !important;
     }
 
-    /* Text Colors - White and Light Grey */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    .sec-h2,
-    .hero-h1,
-    .sec-overline,
-    .plan-price,
-    .ch,
-    .testi-name,
-    .about-text,
-    .feat-h,
-    .tg-name,
-    .gate-title,
-    .sc-title {
-      color: #ffffff !important;
+    .carousel-slide.active img,
+    .carousel-slide.active video {
+      animation: premiumDrift 9s ease-in-out infinite alternate;
     }
 
-    p,
-    .plan-tagline,
-    .cdesc,
-    .testi-quote,
-    .feat-p,
-    .gate-sub,
-    .sc-subtitle,
-    .sc-msg,
-    .tg-detail {
-      color: #e2e8f0 !important;
+    @keyframes premiumDrift {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.035);
+      }
     }
 
-    /* Hero Section Color Balance - Keep it simple and readable */
-    #hero {
-      position: relative;
+    #about {
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fff8fb 100%),
+        radial-gradient(ellipse 46% 42% at 88% 16%, rgba(200, 31, 69, .08) 0%, transparent 64%) !important;
     }
 
-    .hero-sub {
-      color: #e2e8f0 !important;
-      position: relative;
-      z-index: 1;
+    #about .about-img,
+    .photo-frame {
+      box-shadow: var(--premium-shadow-lg) !important;
+      border-color: rgba(255, 255, 255, .8) !important;
     }
 
-    #hero .sec-overline {
-      color: #ffffff !important;
-      position: relative;
-      z-index: 1;
-    }
-
-    .stat-lbl {
-      color: #cbd5e1 !important;
-      position: relative;
-      z-index: 1;
-    }
-
-    .stat-val {
-      color: #ffffff !important;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Fix Contact Visibility (WhatsApp, Email, etc.) */
-    .c-info-row,
-    .c-info-row span,
-    .c-info-row a {
-      color: #ffffff !important;
-      font-weight: 500 !important;
-    }
-
-    .c-info-row a:hover {
-      color: #cbd5e1 !important;
-      text-decoration: underline !important;
-    }
-
-    .c-icon {
-      background: rgba(255, 255, 255, 0.1) !important;
-      border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    }
-
-    /* Accent Color - Red */
-    em,
-    .sec-h2 em,
-    .hero-h1 em,
-    .ch em {
-      color: #f43f5e !important;
-      /* Slightly brighter red for pop */
-      font-style: normal !important;
-      background: none !important;
-      -webkit-text-fill-color: currentColor !important;
-    }
-
-    /* Premium Glass Cards */
-    .plan-card,
+    .chip,
     .feat-card,
     .testi-card,
+    .tg-card,
     .contact-wrap,
-    .tg-card {
-      background: rgba(255, 255, 255, 0.03) !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
-      border-radius: 18px !important;
-      backdrop-filter: blur(16px) !important;
-      -webkit-backdrop-filter: blur(16px) !important;
+    .accordion-item {
+      box-shadow: var(--premium-shadow) !important;
     }
 
-    /* Hover States - Soft Lift */
-    .plan-card:hover,
+    #how-it-works {
+      background:
+        linear-gradient(180deg, #f5f9ff 0%, #edf4ff 100%),
+        radial-gradient(ellipse 62% 50% at 14% 8%, rgba(30, 75, 142, .12) 0%, transparent 60%),
+        radial-gradient(ellipse 52% 46% at 88% 74%, rgba(200, 31, 69, .09) 0%, transparent 58%) !important;
+    }
+
+    .feat-card {
+      background: rgba(255, 255, 255, .78) !important;
+      border: 1px solid rgba(255, 255, 255, .82) !important;
+      backdrop-filter: blur(18px) !important;
+      -webkit-backdrop-filter: blur(18px) !important;
+      padding: 34px 28px !important;
+    }
+
     .feat-card:hover,
     .testi-card:hover,
     .tg-card:hover {
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
-      background: rgba(255, 255, 255, 0.06) !important;
-      border-color: rgba(255, 255, 255, 0.15) !important;
+      transform: translateY(-8px) !important;
+      box-shadow: var(--premium-shadow-lg) !important;
+      border-color: rgba(200, 31, 69, .18) !important;
     }
 
-    /* Featured Plan Card Specifics */
-    .plan-card.featured {
-      border: 1px solid rgba(244, 63, 94, 0.8) !important;
-      /* Subtle red border */
-      box-shadow: 0 16px 40px rgba(244, 63, 94, 0.15) !important;
-      /* Soft red glow */
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
-      animation: none !important;
-    }
-
-    .plan-card.featured:hover {
-      box-shadow: 0 24px 48px rgba(244, 63, 94, 0.25) !important;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%) !important;
-    }
-
-    /* Plans Card Internal Styling */
-    .plan-price {
-      font-size: 56px !important;
-      font-weight: 800 !important;
-      color: #ffffff !important;
-      margin: 16px 0 !important;
-      letter-spacing: -1px !important;
-    }
-
-    .plan-price sub,
-    .plan-price small {
-      color: #94a3b8 !important;
-      font-size: 18px !important;
-      font-weight: 500 !important;
-    }
-
-    .plan-price-old {
-      color: rgba(255, 255, 255, 0.5) !important;
-      text-decoration: line-through !important;
-      font-size: 20px !important;
-    }
-
-    .plan-sep {
-      border-color: rgba(255, 255, 255, 0.1) !important;
-      margin: 20px 0 !important;
-    }
-
-    .plan-list li {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
-      color: #e2e8f0 !important;
-      padding: 14px 0 !important;
-    }
-
-    .plan-list li:last-child {
-      border-bottom: none !important;
-    }
-
-    .plan-list li i {
-      color: #f43f5e !important;
-    }
-
-    /* Join Buttons */
-    .btn-plan {
-      width: 100% !important;
-      background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%) !important;
-      color: #ffffff !important;
-      border: none !important;
-      border-radius: 12px !important;
-      padding: 16px !important;
-      font-weight: 700 !important;
-      font-size: 16px !important;
-      letter-spacing: 0.5px !important;
-      transition: all 0.3s ease !important;
-      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3) !important;
-    }
-
-    .btn-plan:hover {
-      background: linear-gradient(135deg, #e11d48 0%, #be123c 100%) !important;
-      transform: translateY(-3px) !important;
-      box-shadow: 0 8px 20px rgba(225, 29, 72, 0.4) !important;
-    }
-
-    /* Recommended Badge */
-    .plan-popular {
-      background: #f43f5e !important;
-      color: #ffffff !important;
-      border: none !important;
-      padding: 6px 16px !important;
-      border-radius: 100px !important;
-      font-size: 12px !important;
-      font-weight: 700 !important;
-      letter-spacing: 1px !important;
-      animation: none !important;
-      box-shadow: 0 4px 12px rgba(244, 63, 94, 0.4) !important;
-      text-transform: uppercase !important;
-    }
-
-    .plan-popular::before {
-      display: none !important;
-    }
-
-    /* Remove Silver Spotlight overrides */
-    .plan-card.silver-spotlight {
-      border-color: rgba(255, 255, 255, 0.08) !important;
-      background: rgba(255, 255, 255, 0.03) !important;
-      box-shadow: none !important;
-    }
-
-    .plan-card.silver-spotlight:hover {
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
-    }
-
-    /* Inputs & Forms */
-    .form-inp,
-    .gate-inp,
-    .gate-pfx,
-    #page-gate .gate-box,
-    .c-insta-row {
-      background: rgba(255, 255, 255, 0.06) !important;
-      color: #ffffff !important;
-      border: 1px solid rgba(255, 255, 255, 0.1) !important;
-      border-radius: 10px !important;
-    }
-
-    .form-inp:focus,
-    .gate-inp:focus {
-      border-color: rgba(244, 63, 94, 0.5) !important;
-      background: rgba(255, 255, 255, 0.08) !important;
-      box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.1) !important;
-    }
-
-    .form-inp::placeholder,
-    .gate-inp::placeholder {
-      color: rgba(255, 255, 255, 0.4) !important;
-    }
-
-    /* General Buttons */
-    .btn-nav,
-    .btn-hero,
-    .btn-cta,
-    .btn-wa-main,
-    .btn-gate {
-      background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%) !important;
-      color: #ffffff !important;
-      border: none !important;
-      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3) !important;
-      border-radius: 12px !important;
-      font-weight: 600 !important;
-    }
-
-    .btn-nav:hover,
-    .btn-hero:hover,
-    .btn-cta:hover,
-    .btn-wa-main:hover,
-    .btn-gate:hover {
-      background: linear-gradient(135deg, #e11d48 0%, #be123c 100%) !important;
-      transform: translateY(-2px) !important;
-      box-shadow: 0 8px 20px rgba(225, 29, 72, 0.4) !important;
-    }
-
-    /* Navigation - Fix Logo Text */
-    #navbar:not(.scrolled) .nav-links a,
-    #navbar:not(.scrolled) .logo-text .lt-main {
-      color: #ffffff !important;
-    }
-
-    #navbar:not(.scrolled) .logo-text .lt-sub {
-      color: #cbd5e1 !important;
-    }
-
-    #navbar.scrolled {
-      background: rgba(11, 21, 54, 0.95) !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-      backdrop-filter: blur(12px) !important;
-      -webkit-backdrop-filter: blur(12px) !important;
-    }
-
-    #navbar.scrolled .nav-links a,
-    #navbar.scrolled .logo-text .lt-main {
-      color: #ffffff !important;
-    }
-
-    #navbar.scrolled .logo-text .lt-sub {
-      color: #cbd5e1 !important;
-    }
-
-    .nav-links a.active-link {
-      background: rgba(255, 255, 255, 0.1) !important;
-      color: #ffffff !important;
-    }
-
-    #navbar.scrolled .nav-links a.active-link {
-      background: rgba(244, 63, 94, 0.15) !important;
-      color: #f43f5e !important;
-    }
-
-    /* Fix How It Works Icons */
     #how-it-works .fi-g,
     #how-it-works .fi-a,
     #how-it-works .fi-p,
     #how-it-works .fi-r {
-      background: rgba(244, 63, 94, 0.1) !important;
-      color: #f43f5e !important;
-      border: 1px solid rgba(244, 63, 94, 0.2) !important;
+      background: linear-gradient(135deg, rgba(13, 40, 87, .08), rgba(200, 31, 69, .08)) !important;
+      color: var(--brand-red) !important;
+      border: 1px solid rgba(200, 31, 69, .14) !important;
     }
 
-    /* Reviews Equal Height Cards & Fixed Stars */
+    #transformations {
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%),
+        radial-gradient(ellipse 52% 42% at 78% 16%, rgba(30, 75, 142, .08) 0%, transparent 60%) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .tg-card {
+      background: rgba(255, 255, 255, .9) !important;
+      border: 1px solid rgba(13, 40, 87, .08) !important;
+      border-radius: 20px !important;
+    }
+
+    #plans {
+      background:
+        linear-gradient(180deg, #fff8fb 0%, #f4f7fc 52%, #ffffff 100%),
+        radial-gradient(ellipse 62% 48% at 12% 18%, rgba(200, 31, 69, .12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 46% at 88% 22%, rgba(30, 75, 142, .12) 0%, transparent 58%) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    #plans::before {
+      background: linear-gradient(135deg, rgba(255, 255, 255, .62), rgba(255, 255, 255, 0)) !important;
+    }
+
+    .plan-over,
+    .contact-over {
+      color: rgba(13, 40, 87, .56) !important;
+    }
+
+    .plan-h2 {
+      color: var(--brand-blue) !important;
+    }
+
+    .plan-card {
+      padding: 24px 22px !important;
+      border-radius: 18px !important;
+      background: rgba(255, 255, 255, .88) !important;
+      border: 1px solid rgba(13, 40, 87, .08) !important;
+      box-shadow: 0 16px 38px rgba(13, 40, 87, .08) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease !important;
+    }
+
+    .plan-card.h-100 {
+      height: auto !important;
+    }
+
+    .plan-card .plan-list.flex-grow-1 {
+      flex-grow: 0 !important;
+    }
+
+    .plan-card::before {
+      content: '' !important;
+      position: absolute !important;
+      inset: 0 0 auto 0 !important;
+      height: 4px !important;
+      background: linear-gradient(90deg, var(--brand-red), var(--brand-blue-2)) !important;
+      opacity: .8 !important;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-8px) !important;
+      border-color: rgba(200, 31, 69, .22) !important;
+      box-shadow: 0 28px 74px rgba(13, 40, 87, .16), 0 10px 34px rgba(200, 31, 69, .08) !important;
+      background: rgba(255, 255, 255, .96) !important;
+    }
+
+    .plan-card.featured,
+    .plan-card.silver-spotlight {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(255, 244, 248, .94)) !important;
+      border-color: rgba(200, 31, 69, .28) !important;
+      box-shadow: 0 24px 66px rgba(200, 31, 69, .16), 0 0 0 1px rgba(255, 255, 255, .8) inset !important;
+    }
+
+    .plan-card.silver-spotlight,
+    .plan-card.silver-spotlight:hover {
+      transform: none !important;
+    }
+
+    .plan-card.featured:hover,
+    .plan-card.silver-spotlight:hover {
+      transform: translateY(-9px) !important;
+      box-shadow: 0 34px 82px rgba(200, 31, 69, .2), 0 12px 36px rgba(30, 75, 142, .12) !important;
+    }
+
+    .plan-tier-label {
+      margin-bottom: 4px !important;
+      font-size: 10.5px !important;
+      letter-spacing: .18em !important;
+      color: rgba(13, 40, 87, .66) !important;
+      text-transform: uppercase !important;
+    }
+
+    .plan-tagline {
+      margin-bottom: 12px !important;
+      font-size: 12.5px !important;
+      line-height: 1.4 !important;
+    }
+
+    .plan-price {
+      color: var(--brand-blue) !important;
+      font-size: 44px !important;
+      line-height: .95 !important;
+      margin: 8px 0 !important;
+      letter-spacing: -.06em !important;
+    }
+
+    .plan-price sub,
+    .plan-price small {
+      color: rgba(71, 85, 105, .72) !important;
+      font-size: 14px !important;
+      letter-spacing: 0 !important;
+    }
+
+    .plan-price-old {
+      margin-bottom: 6px !important;
+      font-size: 14px !important;
+      color: rgba(100, 116, 139, .64) !important;
+    }
+
+    .plan-sep {
+      margin: 12px 0 !important;
+      border-color: rgba(13, 40, 87, .08) !important;
+    }
+
+    .plan-list {
+      margin-bottom: 18px !important;
+    }
+
+    .plan-list li {
+      color: rgba(51, 65, 85, .9) !important;
+      border-bottom: 1px solid rgba(13, 40, 87, .07) !important;
+      padding: 5.5px 0 !important;
+      line-height: 1.38 !important;
+      font-size: 12.8px !important;
+    }
+
+    .plan-list li i {
+      color: var(--brand-red) !important;
+      font-size: 13px !important;
+    }
+
+    .btn-plan {
+      padding: 12px 14px !important;
+      border-radius: 12px !important;
+      font-size: 13.5px !important;
+      font-weight: 800 !important;
+      letter-spacing: .02em !important;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-2)) !important;
+      color: #fff !important;
+      border: 0 !important;
+      box-shadow: 0 14px 30px rgba(13, 40, 87, .18) !important;
+    }
+
+    .btn-plan:hover {
+      transform: translateY(-2px) !important;
+      background: linear-gradient(135deg, var(--brand-red), #b31739) !important;
+      box-shadow: var(--red-glow) !important;
+    }
+
+    .plan-popular {
+      background: linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(239, 246, 255, .92)) !important;
+      color: var(--forest) !important;
+      border: 1px solid rgba(30, 75, 142, .16) !important;
+      padding: 6px 12px !important;
+      border-radius: 999px !important;
+      font-size: 10px !important;
+      font-weight: 800 !important;
+      letter-spacing: .08em !important;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, .06) !important;
+      text-transform: uppercase !important;
+    }
+
+    .plan-popular::before {
+      content: none !important;
+      display: none !important;
+    }
+
+    #testimonials {
+      background:
+        linear-gradient(180deg, #f5f9ff 0%, #ffffff 100%),
+        radial-gradient(ellipse 54% 42% at 14% 18%, rgba(30, 75, 142, .1) 0%, transparent 62%),
+        radial-gradient(ellipse 46% 38% at 90% 72%, rgba(200, 31, 69, .08) 0%, transparent 58%) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
     .testi-track {
       display: flex !important;
       align-items: stretch !important;
@@ -3232,12 +3359,16 @@
       flex-direction: column !important;
       flex: 1 !important;
       height: 100% !important;
+      background: rgba(255, 255, 255, .86) !important;
+      border: 1px solid rgba(13, 40, 87, .08) !important;
+      backdrop-filter: blur(14px) !important;
+      -webkit-backdrop-filter: blur(14px) !important;
     }
 
     .stars {
       display: flex !important;
-      flex-direction: row !important;
       gap: 4px !important;
+      color: var(--brand-red) !important;
       margin-bottom: 12px !important;
     }
 
@@ -3249,6 +3380,7 @@
       text-overflow: ellipsis !important;
       flex: 1 !important;
       margin-bottom: 16px !important;
+      color: rgba(51, 65, 85, .9) !important;
     }
 
     .testi-author {
@@ -3256,7 +3388,145 @@
       flex-shrink: 0 !important;
     }
 
-    /* Scroll to Top Button */
+    #faq {
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fff8fb 100%),
+        radial-gradient(ellipse 50% 40% at 82% 12%, rgba(200, 31, 69, .08) 0%, transparent 60%) !important;
+    }
+
+    #faq .accordion-item {
+      background: rgba(255, 255, 255, .86) !important;
+      border: 1px solid rgba(13, 40, 87, .08) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+    }
+
+    #faq .accordion-button {
+      color: var(--brand-blue) !important;
+      background: rgba(255, 255, 255, .86) !important;
+    }
+
+    #faq .accordion-body {
+      color: rgba(71, 85, 105, .82) !important;
+    }
+
+    #final-cta {
+      background:
+        linear-gradient(135deg, rgba(13, 40, 87, .98), rgba(30, 75, 142, .92)),
+        radial-gradient(ellipse 56% 46% at 18% 22%, rgba(225, 29, 72, .3) 0%, transparent 62%) !important;
+      color: #fff !important;
+      overflow: hidden !important;
+    }
+
+    #final-cta .sec-h2,
+    #final-cta h2,
+    #final-cta p {
+      color: #fff !important;
+    }
+
+    #final-cta p {
+      opacity: .82 !important;
+    }
+
+    #contact {
+      background:
+        linear-gradient(180deg, #f7f9fd 0%, #ffffff 100%),
+        radial-gradient(ellipse 50% 42% at 10% 24%, rgba(200, 31, 69, .08) 0%, transparent 60%),
+        radial-gradient(ellipse 48% 40% at 88% 80%, rgba(30, 75, 142, .08) 0%, transparent 60%) !important;
+      padding-top: 72px !important;
+    }
+
+    .contact-wrap {
+      background: rgba(255, 255, 255, .84) !important;
+      border: 1px solid rgba(255, 255, 255, .82) !important;
+      backdrop-filter: blur(18px) !important;
+      -webkit-backdrop-filter: blur(18px) !important;
+      box-shadow: var(--premium-shadow-lg) !important;
+    }
+
+    .c-info-row,
+    .c-info-row span,
+    .c-info-row a {
+      color: rgba(51, 65, 85, .9) !important;
+      font-weight: 600 !important;
+    }
+
+    .c-info-row a:hover {
+      color: var(--brand-red) !important;
+      text-decoration: none !important;
+    }
+
+    .c-icon,
+    .c-insta-row {
+      background: rgba(255, 255, 255, .78) !important;
+      border: 1px solid rgba(13, 40, 87, .09) !important;
+      color: var(--brand-blue) !important;
+    }
+
+    .form-inp,
+    .gate-inp,
+    .gate-pfx {
+      background: rgba(255, 255, 255, .9) !important;
+      color: var(--ink) !important;
+      border: 1px solid rgba(13, 40, 87, .12) !important;
+      border-radius: 12px !important;
+    }
+
+    .form-inp:focus,
+    .gate-inp:focus {
+      border-color: rgba(200, 31, 69, .36) !important;
+      background: #fff !important;
+      box-shadow: 0 0 0 4px rgba(200, 31, 69, .08) !important;
+    }
+
+    .form-inp::placeholder,
+    .gate-inp::placeholder {
+      color: rgba(100, 116, 139, .5) !important;
+    }
+
+    footer {
+      background: linear-gradient(180deg, #ffffff, #f4f7fc) !important;
+      border-top: 1px solid rgba(13, 40, 87, .08) !important;
+    }
+
+    #page-gate,
+    #success-overlay {
+      background:
+        linear-gradient(135deg, rgba(13, 40, 87, .98), rgba(30, 75, 142, .94)),
+        radial-gradient(ellipse 52% 46% at 80% 12%, rgba(200, 31, 69, .28) 0%, transparent 64%) !important;
+    }
+
+    #page-gate .gate-box,
+    .success-card {
+      background: rgba(255, 255, 255, .96) !important;
+      border: 1px solid rgba(255, 255, 255, .62) !important;
+      box-shadow: 0 34px 90px rgba(3, 20, 52, .34) !important;
+    }
+
+    .gate-header,
+    .sc-header,
+    .modal-21 .modal-header {
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-2)) !important;
+    }
+
+    .gate-title,
+    .sc-title,
+    .modal-21 .modal-title {
+      color: #fff !important;
+    }
+
+    .gate-sub,
+    .sc-subtitle,
+    .modal-21 .modal-header p {
+      color: rgba(255, 255, 255, .72) !important;
+    }
+
+    .btn-wa-main {
+      background: linear-gradient(135deg, #16a34a, #15803d) !important;
+      color: #fff !important;
+      box-shadow: 0 14px 30px rgba(22, 163, 74, .22) !important;
+    }
+
     .scroll-to-top {
       position: fixed;
       bottom: 30px;
@@ -3264,18 +3534,18 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+      background: linear-gradient(135deg, var(--brand-red), #b31739);
       color: white;
       border: none;
       font-size: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 12px rgba(244, 63, 94, 0.4);
+      box-shadow: 0 14px 30px rgba(200, 31, 69, .28);
       cursor: pointer;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+      transition: opacity .3s, visibility .3s, transform .2s, box-shadow .2s;
       z-index: 1000;
     }
 
@@ -3286,85 +3556,1388 @@
 
     .scroll-to-top:hover {
       transform: translateY(-3px);
-      background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
-      box-shadow: 0 6px 16px rgba(244, 63, 94, 0.5);
+      box-shadow: 0 20px 42px rgba(200, 31, 69, .38);
     }
 
-    /* Uniform site background refinement */
-    body,
-    #hero,
-    #about,
+    .fade-up {
+      transition: opacity .85s cubic-bezier(.22, 1, .36, 1), transform .85s cubic-bezier(.22, 1, .36, 1) !important;
+    }
+
+    @media (max-width: 768px) {
+
+      html,
+      body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+      }
+
+      .sec {
+        padding: 72px 0 !important;
+      }
+
+      .sec-h2,
+      .plan-h2 {
+        font-size: 31px !important;
+        line-height: 1.08 !important;
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+        max-width: 100% !important;
+      }
+
+      .plan-h2 em {
+        display: block !important;
+      }
+
+      #plans .text-center>p {
+        max-width: 320px !important;
+        line-height: 1.6 !important;
+      }
+
+      #plans .container,
+      #plans .row,
+      #plans [class*="col-"] {
+        max-width: 100% !important;
+      }
+
+      #plans .container {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        overflow: hidden !important;
+      }
+
+      #plans .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      #plans [class*="col-"] {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      .plan-card {
+        padding: 22px 20px !important;
+        width: calc(100vw - 48px) !important;
+        max-width: calc(100vw - 48px) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .plan-price {
+        font-size: 40px !important;
+      }
+
+      .plan-list li {
+        font-size: 12.5px !important;
+      }
+
+      .plan-popular {
+        right: 12px !important;
+        max-width: calc(100% - 24px) !important;
+        white-space: normal !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+      }
+    }
+
+    @media (max-width: 576px) {
+      #plans .plan-card {
+        width: calc(100vw - 32px) !important;
+        max-width: 310px !important;
+      }
+
+      #plans .plan-popular {
+        font-size: 9px !important;
+        padding: 6px 10px !important;
+      }
+    }
+
+    /* PREMIUM ATMOSPHERE REFINE */
+    :root {
+      --premium-blue: #0a2557;
+      --premium-blue-soft: #edf5ff;
+      --premium-red: #c81f45;
+      --premium-rose-soft: #fff1f5;
+      --premium-lilac: #f4f1ff;
+      --premium-glass: rgba(255, 255, 255, .72);
+      --premium-line: rgba(13, 40, 87, .1);
+      --premium-shadow-xl: 0 30px 90px rgba(8, 20, 48, .16), 0 12px 34px rgba(200, 31, 69, .08);
+    }
+
+    html,
+    body {
+      text-transform: uppercase;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse 70% 46% at 4% 2%, rgba(200, 31, 69, .16), transparent 62%),
+        radial-gradient(ellipse 58% 42% at 96% 9%, rgba(30, 75, 142, .14), transparent 64%),
+        linear-gradient(135deg, #fff7fa 0%, #f2f7ff 42%, #fff 100%) !important;
+    }
+
+    .sec {
+      isolation: isolate;
+    }
+
+    .sec::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 54% 36% at 8% 10%, rgba(200, 31, 69, .08), transparent 64%),
+        radial-gradient(ellipse 46% 34% at 92% 18%, rgba(30, 75, 142, .08), transparent 66%);
+    }
+
+    .sec::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 72px;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .48)),
+        radial-gradient(80% 48px at 50% 100%, rgba(13, 40, 87, .06), transparent 72%);
+    }
+
+    #hero {
+      background:
+        linear-gradient(115deg, rgba(255, 248, 250, .93) 0%, rgba(238, 246, 255, .84) 46%, rgba(255, 240, 246, .76) 100%),
+        radial-gradient(ellipse 66% 48% at 82% 14%, rgba(200, 31, 69, .2), transparent 66%),
+        radial-gradient(ellipse 58% 44% at 12% 82%, rgba(30, 75, 142, .16), transparent 64%) !important;
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, .82), rgba(255, 255, 255, .44) 58%, rgba(255, 255, 255, .08)),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .032' numOctaves='3' seed='7'/%3E%3CfeColorMatrix values='1 0 0 0 0.88 0 1 0 0 0.40 0 0 1 0 0.52 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23w)' opacity='.46'/%3E%3C/svg%3E") !important;
+      background-size: auto, 540px 540px !important;
+      mix-blend-mode: normal;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 118px;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 248, 251, .94));
+      clip-path: ellipse(78% 58% at 50% 100%);
+      z-index: 0;
+    }
+
+    #navbar.scrolled {
+      background: rgba(255, 255, 255, .78) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, .72);
+      box-shadow: 0 18px 54px rgba(8, 20, 48, .1) !important;
+      backdrop-filter: blur(22px) saturate(135%) !important;
+      -webkit-backdrop-filter: blur(22px) saturate(135%) !important;
+    }
+
+    .hero-img-frame,
+    .photo-frame,
+    .hiw-card,
+    .feat-card,
+    .tg-card,
+    .testi-card,
+    .contact-wrap,
+    .accordion-item,
+    .gate-box,
+    .success-card,
+    .modal-21 .modal-content {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .84), rgba(255, 255, 255, .62)) !important;
+      border: 1px solid rgba(255, 255, 255, .72) !important;
+      box-shadow: var(--premium-shadow-xl) !important;
+      backdrop-filter: blur(18px) saturate(125%) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(125%) !important;
+    }
+
+    .hero-img-frame {
+      animation: premiumFloat 7s ease-in-out infinite;
+    }
+
+    .hero-float-card,
+    .hero-float-badge,
+    .chip,
+    .tg-chip,
+    .plan-popular,
+    .plan-pill {
+      background: rgba(255, 255, 255, .76) !important;
+      border: 1px solid rgba(255, 255, 255, .78) !important;
+      box-shadow: 0 16px 38px rgba(8, 20, 48, .12) !important;
+      backdrop-filter: blur(16px) saturate(130%) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(130%) !important;
+    }
+
+    @keyframes premiumFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .btn-hero,
+    .btn-nav,
+    .btn-cta,
+    .btn-gate,
+    .btn-proceed,
+    .btn-plan {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--premium-blue), #1d4f91 58%, var(--premium-red)) !important;
+      box-shadow: 0 18px 38px rgba(13, 40, 87, .22), 0 8px 20px rgba(200, 31, 69, .13) !important;
+    }
+
+    .btn-hero::after,
+    .btn-nav::after,
+    .btn-cta::after,
+    .btn-gate::after,
+    .btn-proceed::after,
+    .btn-plan::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, .28) 45%, transparent 72%);
+      transform: translateX(-120%);
+      transition: transform .75s ease;
+    }
+
+    .btn-hero:hover::after,
+    .btn-nav:hover::after,
+    .btn-cta:hover::after,
+    .btn-gate:hover::after,
+    .btn-proceed:hover::after,
+    .btn-plan:hover::after {
+      transform: translateX(120%);
+    }
+
+    #about {
+      background:
+        linear-gradient(180deg, #fff8fb 0%, #f8fbff 100%),
+        radial-gradient(ellipse 58% 42% at 86% 18%, rgba(200, 31, 69, .12), transparent 64%),
+        radial-gradient(ellipse 48% 38% at 12% 88%, rgba(30, 75, 142, .1), transparent 62%) !important;
+    }
+
     #how-it-works,
-    #plans,
+    #testimonials {
+      background:
+        linear-gradient(180deg, #eff6ff 0%, #fff7fb 100%),
+        radial-gradient(ellipse 60% 42% at 8% 12%, rgba(30, 75, 142, .12), transparent 64%),
+        radial-gradient(ellipse 50% 36% at 94% 76%, rgba(200, 31, 69, .11), transparent 62%) !important;
+    }
+
     #transformations,
-    #testimonials,
-    #faq,
-    #final-cta,
+    #faq {
+      background:
+        linear-gradient(180deg, #fff 0%, #f7f2ff 48%, #fff8fb 100%),
+        radial-gradient(ellipse 58% 42% at 84% 12%, rgba(30, 75, 142, .1), transparent 66%),
+        radial-gradient(ellipse 46% 36% at 14% 84%, rgba(200, 31, 69, .1), transparent 62%) !important;
+    }
+
+    #plans {
+      background:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 260 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.014 .026' numOctaves='4' seed='11'/%3E%3CfeColorMatrix values='1 0 0 0 0.80 0 1 0 0 0.20 0 0 1 0 0.32 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23p)' opacity='.52'/%3E%3C/svg%3E"),
+        linear-gradient(180deg, #fff4f7 0%, #eef6ff 48%, #fff 100%),
+        radial-gradient(ellipse 68% 44% at 12% 12%, rgba(200, 31, 69, .17), transparent 66%),
+        radial-gradient(ellipse 58% 42% at 90% 22%, rgba(30, 75, 142, .16), transparent 64%) !important;
+      background-size: 620px 620px, auto, auto, auto !important;
+    }
+
+    #plans .row {
+      align-items: stretch !important;
+    }
+
+    #plans .row>[class*="col-"] {
+      display: flex !important;
+    }
+
+    #plans .row>.col-12 {
+      display: block !important;
+    }
+
+    #plans .plan-card {
+      width: 100% !important;
+      min-height: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      padding: 28px 24px !important;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .82), rgba(255, 247, 250, .66)),
+        radial-gradient(ellipse 90% 50% at 100% 0%, rgba(30, 75, 142, .08), transparent 62%) !important;
+      border: 1px solid rgba(255, 255, 255, .78) !important;
+      box-shadow: 0 22px 58px rgba(8, 20, 48, .12), 0 10px 28px rgba(200, 31, 69, .08) !important;
+    }
+
+    #plans .plan-card.h-100 {
+      height: 100% !important;
+    }
+
+    #plans .plan-list.flex-grow-1,
+    #plans .plan-list {
+      flex: 1 1 auto !important;
+      margin-bottom: 18px !important;
+    }
+
+    #plans .btn-plan {
+      margin-top: auto !important;
+      min-height: 48px;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    #plans .row>.new-launch-plan-col {
+      display: block !important;
+    }
+
+    #plans .new-launch-card {
+      height: auto !important;
+      min-height: auto !important;
+    }
+
+    #plans .new-launch-card .plan-list {
+      flex: 0 1 auto !important;
+    }
+
+    #plans .new-launch-card .btn-plan {
+      margin-top: 18px !important;
+    }
+
+    #plans .col-12.mt-5 {
+      padding-top: 20px;
+    }
+
+    .plan-card.featured,
+    .plan-card.silver-spotlight {
+      transform: none !important;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .9), rgba(255, 239, 245, .72)),
+        radial-gradient(ellipse 90% 48% at 100% 0%, rgba(200, 31, 69, .12), transparent 62%) !important;
+      border-color: rgba(200, 31, 69, .24) !important;
+    }
+
+    .plan-card:hover,
+    .plan-card.featured:hover,
+    .plan-card.silver-spotlight:hover {
+      transform: translateY(-8px) !important;
+    }
+
     #contact {
-      background: #0f1c3f !important;
+      background:
+        linear-gradient(180deg, #f7fbff 0%, #fff5f8 100%),
+        radial-gradient(ellipse 60% 42% at 10% 24%, rgba(200, 31, 69, .12), transparent 62%),
+        radial-gradient(ellipse 50% 36% at 88% 78%, rgba(30, 75, 142, .12), transparent 62%) !important;
     }
 
-    #hero .hero-bg,
-    #hero .hero-orb,
-    #hero .hero-grain,
+    footer {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .86), rgba(239, 246, 255, .92)),
+        radial-gradient(ellipse 56% 120% at 50% 0%, rgba(200, 31, 69, .08), transparent 62%) !important;
+    }
+
+    .hiw-card,
+    .feat-card,
+    .tg-card,
+    .testi-card,
+    .accordion-item,
+    .contact-wrap {
+      transition: transform .32s cubic-bezier(.22, 1, .36, 1), box-shadow .32s cubic-bezier(.22, 1, .36, 1), border-color .32s ease !important;
+    }
+
+    .hiw-card:hover,
+    .feat-card:hover,
+    .tg-card:hover,
+    .testi-card:hover,
+    .accordion-item:hover {
+      transform: translateY(-7px) !important;
+      box-shadow: 0 34px 86px rgba(8, 20, 48, .18), 0 12px 34px rgba(200, 31, 69, .1) !important;
+    }
+
+    .sec-h2,
+    .hero-h1,
+    .plan-h2,
+    .ch,
+    .cta-h2 {
+      letter-spacing: 0 !important;
+    }
+
+    p,
+    .about-text,
+    .hero-sub,
+    .hiw-p,
+    .testi-quote,
+    .accordion-body,
+    .cdesc,
+    .gate-sub,
+    .sc-subtitle {
+      letter-spacing: .015em;
+    }
+
+    /* HERO ATMOSPHERE REFINEMENT */
+    #hero {
+      isolation: isolate;
+      background:
+        radial-gradient(ellipse 46% 34% at 24% 28%, rgba(115, 170, 255, .34), transparent 66%),
+        radial-gradient(ellipse 36% 30% at 72% 26%, rgba(29, 79, 145, .28), transparent 68%),
+        radial-gradient(ellipse 42% 32% at 82% 72%, rgba(200, 31, 69, .18), transparent 70%),
+        radial-gradient(ellipse 42% 36% at 16% 84%, rgba(255, 145, 177, .2), transparent 70%),
+        linear-gradient(118deg, #fffafd 0%, #f5faff 34%, #edf6ff 58%, #fff4f8 100%) !important;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: -18% -10% -12%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .78;
+      background:
+        conic-gradient(from 215deg at 38% 42%, rgba(255, 255, 255, 0), rgba(90, 150, 245, .2), rgba(255, 255, 255, .08), rgba(200, 31, 69, .13), rgba(255, 255, 255, 0)),
+        radial-gradient(circle at 45% 34%, rgba(255, 255, 255, .72), transparent 28%),
+        radial-gradient(circle at 68% 54%, rgba(30, 75, 142, .14), transparent 32%);
+      filter: blur(24px) saturate(125%);
+      animation: heroAuroraDrift 16s ease-in-out infinite alternate;
+    }
+
+    #hero::after {
+      z-index: 1 !important;
+    }
+
+    #hero .container {
+      z-index: 3;
+    }
+
+    #hero .hero-bg {
+      z-index: 0;
+      opacity: .95;
+      background:
+        radial-gradient(ellipse 42% 30% at 34% 44%, rgba(255, 255, 255, .86), transparent 68%),
+        radial-gradient(ellipse 36% 28% at 72% 58%, rgba(255, 246, 250, .58), transparent 72%),
+        linear-gradient(90deg, rgba(255, 255, 255, .78), rgba(255, 255, 255, .4) 52%, rgba(255, 255, 255, .1)),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 320 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .026' numOctaves='4' seed='11'/%3E%3CfeColorMatrix values='1 0 0 0 .70 0 1 0 0 .78 0 0 1 0 1 0 0 0 .32 0'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23m)' opacity='.64'/%3E%3C/svg%3E") !important;
+      background-size: auto, auto, auto, 660px 660px !important;
+      background-position: center !important;
+    }
+
     #hero .hero-line {
-      display: none !important;
+      z-index: 1;
+      opacity: .25;
+      background-image:
+        linear-gradient(rgba(30, 75, 142, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 31, 69, .025) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(ellipse 72% 62% at 50% 40%, #000, transparent 78%);
     }
 
-    #plans::before,
-    #plans::after {
-      background: none !important;
-      background-image: none !important;
+    #hero .hero-orb,
+    #hero .hero-grain {
+      display: block !important;
+    }
+
+    #hero .hero-orb {
+      z-index: 1;
+      filter: blur(34px);
+      opacity: .72;
+      mix-blend-mode: multiply;
+      animation: heroGlowFloat 12s ease-in-out infinite;
+    }
+
+    #hero .hero-orb-one {
+      width: 520px;
+      height: 520px;
+      top: 8%;
+      right: 38%;
+      background:
+        radial-gradient(circle, rgba(103, 166, 255, .34) 0%, rgba(30, 75, 142, .18) 38%, rgba(30, 75, 142, 0) 72%) !important;
+    }
+
+    #hero .hero-orb-two {
+      width: 460px;
+      height: 460px;
+      left: auto;
+      right: -120px;
+      bottom: 10%;
+      background:
+        radial-gradient(circle, rgba(255, 126, 164, .3) 0%, rgba(200, 31, 69, .16) 42%, rgba(200, 31, 69, 0) 74%) !important;
+      animation-delay: -4s;
+    }
+
+    #hero .hero-grain {
+      z-index: 2;
+      opacity: .075 !important;
+      mix-blend-mode: soft-light;
+      background-size: 180px 180px;
+      pointer-events: none;
     }
 
     #hero .hero-eyebrow {
-      color: #ffffff !important;
-      background: rgba(7, 55, 125, .72) !important;
-      border-color: rgba(147, 197, 253, .42) !important;
-      box-shadow: 0 8px 24px rgba(3, 25, 64, .18);
+      background: rgba(255, 255, 255, .66) !important;
+      border-color: rgba(255, 255, 255, .76) !important;
+      box-shadow: 0 18px 48px rgba(13, 40, 87, .08), inset 0 1px 0 rgba(255, 255, 255, .88) !important;
+      backdrop-filter: blur(18px) saturate(135%);
+      -webkit-backdrop-filter: blur(18px) saturate(135%);
     }
 
-    #hero .hero-h1,
-    #hero .hero-h1 em,
-    #hero .stat-val {
-      color: #ffffff !important;
-      -webkit-text-fill-color: currentColor !important;
-      text-shadow: 0 2px 12px rgba(3, 25, 64, .22);
+    #hero .hero-h1 {
+      text-shadow: 0 16px 46px rgba(13, 40, 87, .12) !important;
+    }
+
+    #hero .hero-h1 em {
+      color: var(--brand-red) !important;
+      text-shadow: 0 18px 52px rgba(200, 31, 69, .18) !important;
     }
 
     #hero .hero-sub {
-      color: #eaf4ff !important;
-    }
-
-    #hero .stat-lbl {
-      color: #dbeafe !important;
-    }
-
-    #hero .hero-stats {
-      border-top-color: rgba(191, 219, 254, .38) !important;
+      color: rgba(34, 57, 92, .82) !important;
     }
 
     #hero .btn-hero {
-      background: #062f6f !important;
-      color: #ffffff !important;
-      box-shadow: 0 14px 30px rgba(3, 25, 64, .28) !important;
+      background: linear-gradient(135deg, #0d2857 0%, #1e4b8e 54%, #c81f45 100%) !important;
+      box-shadow: 0 22px 48px rgba(13, 40, 87, .26), 0 10px 28px rgba(200, 31, 69, .18) !important;
+      transition: transform .42s cubic-bezier(.22, 1, .36, 1), box-shadow .42s cubic-bezier(.22, 1, .36, 1), background .42s ease !important;
     }
 
     #hero .btn-hero:hover {
-      background: #05275d !important;
-      box-shadow: 0 18px 36px rgba(3, 25, 64, .34) !important;
+      transform: translateY(-3px) scale(1.01) !important;
+      box-shadow: 0 30px 64px rgba(13, 40, 87, .3), 0 14px 36px rgba(200, 31, 69, .24) !important;
     }
 
     #hero .btn-hero-ghost {
-      background: rgba(7, 55, 125, .54) !important;
-      color: #ffffff !important;
-      border-color: rgba(191, 219, 254, .44) !important;
+      background: rgba(255, 255, 255, .62) !important;
+      border-color: rgba(255, 255, 255, .82) !important;
+      box-shadow: 0 16px 38px rgba(13, 40, 87, .1), inset 0 1px 0 rgba(255, 255, 255, .82) !important;
+      backdrop-filter: blur(16px) saturate(130%);
+      -webkit-backdrop-filter: blur(16px) saturate(130%);
+      transition: transform .38s cubic-bezier(.22, 1, .36, 1), box-shadow .38s ease, background .38s ease !important;
     }
 
     #hero .btn-hero-ghost:hover {
-      background: rgba(5, 39, 93, .72) !important;
-      color: #ffffff !important;
-      border-color: rgba(219, 234, 254, .62) !important;
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, .78) !important;
+      box-shadow: 0 22px 48px rgba(13, 40, 87, .14) !important;
+    }
+
+    #hero .hero-stats {
+      border-top-color: rgba(255, 255, 255, .7) !important;
+      box-shadow: 0 -1px 0 rgba(13, 40, 87, .06);
+    }
+
+    #hero .hero-img-col::before {
+      content: '';
+      position: absolute;
+      width: min(78vw, 620px);
+      aspect-ratio: 1;
+      right: -10%;
+      top: 48%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(circle, rgba(200, 31, 69, .18), transparent 34%),
+        radial-gradient(circle, rgba(30, 75, 142, .18), transparent 64%);
+      filter: blur(34px);
+      opacity: .92;
+      animation: heroHaloBreathe 8s ease-in-out infinite;
+    }
+
+    #hero .hero-img-frame {
+      --hero-card-lift: 0px;
+      --hero-card-scale: 1;
+      z-index: 1;
+      overflow: visible;
+      border-radius: 30px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .72), rgba(255, 255, 255, .28)) !important;
+      border: 1px solid rgba(255, 255, 255, .72) !important;
+      box-shadow:
+        0 42px 110px rgba(8, 20, 48, .24),
+        0 22px 58px rgba(200, 31, 69, .12),
+        inset 0 1px 0 rgba(255, 255, 255, .88) !important;
+      backdrop-filter: blur(22px) saturate(138%) !important;
+      -webkit-backdrop-filter: blur(22px) saturate(138%) !important;
+      animation: heroCardFloat 7s ease-in-out infinite !important;
+      transition: transform .55s cubic-bezier(.22, 1, .36, 1), box-shadow .55s cubic-bezier(.22, 1, .36, 1) !important;
+    }
+
+    #hero .hero-img-frame:hover {
+      --hero-card-lift: -8px;
+      --hero-card-scale: 1.01;
+      box-shadow:
+        0 56px 132px rgba(8, 20, 48, .27),
+        0 28px 72px rgba(200, 31, 69, .16),
+        inset 0 1px 0 rgba(255, 255, 255, .9) !important;
+    }
+
+    #hero .hero-img-frame::before {
+      inset: -1px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .92), rgba(88, 152, 255, .34), rgba(200, 31, 69, .22), rgba(255, 255, 255, .72)) !important;
+      opacity: .95;
+    }
+
+    #hero .hero-img-frame::after {
+      content: '';
+      position: absolute;
+      inset: -18px;
+      z-index: -1;
+      border-radius: 42px;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 58% 38% at 78% 20%, rgba(255, 255, 255, .46), transparent 68%),
+        radial-gradient(ellipse 70% 48% at 58% 84%, rgba(200, 31, 69, .18), transparent 72%),
+        radial-gradient(ellipse 72% 58% at 34% 18%, rgba(30, 75, 142, .2), transparent 76%);
+      filter: blur(12px);
+      opacity: .86;
+    }
+
+    #hero .carousel-track {
+      border-radius: 26px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(13, 40, 87, .92), rgba(30, 75, 142, .76)),
+        radial-gradient(circle at 70% 20%, rgba(255, 255, 255, .22), transparent 46%) !important;
+    }
+
+    #hero .hero-img-overlay {
+      border-radius: 0 0 26px 26px;
+      background:
+        linear-gradient(0deg, rgba(7, 15, 34, .9) 0%, rgba(7, 15, 34, .24) 58%, transparent 100%),
+        radial-gradient(ellipse 72% 34% at 80% 78%, rgba(200, 31, 69, .24), transparent 72%);
+    }
+
+    #hero .hero-float-card,
+    #hero .hero-float-badge {
+      background: rgba(255, 255, 255, .74) !important;
+      border: 1px solid rgba(255, 255, 255, .84) !important;
+      box-shadow: 0 22px 52px rgba(8, 20, 48, .18), inset 0 1px 0 rgba(255, 255, 255, .88) !important;
+      backdrop-filter: blur(18px) saturate(145%) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(145%) !important;
+      transition: transform .45s cubic-bezier(.22, 1, .36, 1), box-shadow .45s ease !important;
+    }
+
+    #hero .hero-img-frame:hover .hero-float-card {
+      transform: translateY(-4px);
+    }
+
+    #hero .hero-img-frame:hover .hero-float-badge {
+      transform: translateY(-3px);
+    }
+
+    @keyframes heroAuroraDrift {
+      0% {
+        transform: translate3d(-1%, -1%, 0) scale(1);
+      }
+
+      100% {
+        transform: translate3d(2%, 1.5%, 0) scale(1.04);
+      }
+    }
+
+    @keyframes heroCardFloat {
+
+      0%,
+      100% {
+        transform: translateY(var(--hero-card-lift)) scale(var(--hero-card-scale));
+      }
+
+      50% {
+        transform: translateY(calc(var(--hero-card-lift) + -10px)) scale(var(--hero-card-scale));
+      }
+    }
+
+    @keyframes heroGlowFloat {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate3d(18px, -18px, 0) scale(1.06);
+      }
+    }
+
+    @keyframes heroHaloBreathe {
+
+      0%,
+      100% {
+        opacity: .72;
+        transform: translateY(-50%) scale(.98);
+      }
+
+      50% {
+        opacity: .98;
+        transform: translateY(-50%) scale(1.04);
+      }
+    }
+
+    @media (max-width: 992px) {
+      #hero .hero-orb-one {
+        right: 24%;
+        top: 10%;
+      }
+
+      #hero .hero-img-col::before {
+        right: 50%;
+        transform: translate(50%, -50%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      #hero {
+        background:
+          radial-gradient(ellipse 76% 38% at 50% 20%, rgba(106, 166, 255, .26), transparent 70%),
+          radial-gradient(ellipse 72% 38% at 82% 62%, rgba(200, 31, 69, .14), transparent 72%),
+          linear-gradient(180deg, #fffafd 0%, #f0f7ff 56%, #fff7fa 100%) !important;
+      }
+
+      #hero .hero-bg {
+        background:
+          radial-gradient(ellipse 72% 32% at 50% 34%, rgba(255, 255, 255, .76), transparent 72%),
+          linear-gradient(180deg, rgba(255, 255, 255, .72), rgba(255, 255, 255, .18)),
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 320 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .026' numOctaves='4' seed='11'/%3E%3CfeColorMatrix values='1 0 0 0 .70 0 1 0 0 .78 0 0 1 0 1 0 0 0 .32 0'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23m)' opacity='.64'/%3E%3C/svg%3E") !important;
+      }
+
+      #hero .hero-orb {
+        opacity: .5;
+      }
+
+      #hero .hero-img-frame,
+      #hero .hero-img-frame:hover {
+        transform: none;
+        border-radius: 24px;
+      }
+
+      #hero .carousel-track {
+        border-radius: 20px;
+      }
+    }
+
+    /* CHIC WELLNESS REFRESH */
+    .premium-divider {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -1px;
+      height: 92px;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(72% 68px at 50% 0%, rgba(255, 255, 255, .9), transparent 72%),
+        linear-gradient(180deg, rgba(255, 255, 255, .86), rgba(255, 255, 255, 0));
+      clip-path: ellipse(86% 62% at 50% 0%);
+    }
+
+    .premium-art {
+      animation: wellnessSketchFloat 15s ease-in-out infinite;
+      transition: opacity 1s ease, transform 1s ease;
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      mix-blend-mode: multiply;
+      opacity: 0.95;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 24px 48px rgba(13, 40, 87, 0.1));
+      mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
+    }
+
+    .premium-art.hiw-workout {
+      right: -80px;
+      top: -40px;
+      max-width: 500px;
+      transform: rotate(3deg);
+    }
+
+    .premium-art.hiw-meal {
+      left: -60px;
+      bottom: -40px;
+      max-width: 480px;
+      transform: rotate(-2deg);
+    }
+
+    .premium-art.transform-journey {
+      left: -40px;
+      top: -10px;
+      max-width: 520px;
+      transform: rotate(2deg);
+    }
+
+    .premium-art.cta-art {
+      right: -50px;
+      top: -60px;
+      max-width: 500px;
+      transform: rotate(-3deg);
+    }
+
+    #hero .hero-bg::after {
+      content: '';
+      position: absolute;
+      right: 3%;
+      top: 12%;
+      width: min(36vw, 420px);
+      height: min(28vw, 320px);
+      pointer-events: none;
+      opacity: .22;
+      mix-blend-mode: multiply;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 420 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M71 245c56-57 115-69 176-36 42 23 76 18 103-15' stroke='%230d2857' stroke-width='3' opacity='.22'/%3E%3Cpath d='M99 216c36-34 72-50 108-47 35 3 64 24 88 62' stroke='%23c81f45' stroke-width='2.8' opacity='.38'/%3E%3Cpath d='M199 91c8-9 21-9 29 0 7 9 3 22-8 26-10 4-22-3-23-14 0-4 1-8 2-12zM213 122c-9 31-27 58-54 82M213 122c26 29 59 48 98 58M160 204c-20 14-39 24-58 30M242 194c18 18 37 31 57 40' stroke='%230d2857' stroke-width='3.6'/%3E%3Cpath d='M96 112c23-19 48-24 74-14M290 90c17 18 30 39 40 63M316 76c18 1 34 7 49 19' stroke='%23c81f45' stroke-width='2.3' opacity='.35'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+    }
+
+    #how-it-works {
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 360 360' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .032' numOctaves='4' seed='18'/%3E%3CfeColorMatrix values='1 0 0 0 .70 0 1 0 0 .82 0 0 1 0 1 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='360' height='360' filter='url(%23w)' opacity='.58'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 56% 38% at 12% 16%, rgba(116, 178, 255, .26), transparent 64%),
+        radial-gradient(ellipse 44% 34% at 88% 68%, rgba(200, 31, 69, .14), transparent 64%),
+        linear-gradient(180deg, #f3f9ff 0%, #fff7fb 100%) !important;
+      background-size: 620px 620px, auto, auto, auto !important;
+    }
+
+    .hiw-carousel-wrap {
+      padding: 12px 4px 28px;
+    }
+
+    .hiw-carousel-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 22px 34px 12px;
+      z-index: -1;
+      border-radius: 36px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .48), rgba(255, 255, 255, .12)),
+        radial-gradient(ellipse 70% 70% at 50% 100%, rgba(30, 75, 142, .12), transparent 70%);
+      border: 1px solid rgba(255, 255, 255, .56);
+      filter: blur(.2px);
+    }
+
+    .hiw-track {
+      gap: 24px !important;
+      padding: 28px 18px 34px !important;
+      mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+    }
+
+    .hiw-card {
+      position: relative;
+      min-height: 390px;
+      aspect-ratio: auto !important;
+      justify-content: flex-start;
+      overflow: hidden;
+      border-radius: 24px !important;
+      padding: 22px !important;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .86), rgba(255, 248, 251, .7)),
+        radial-gradient(ellipse 94% 58% at 100% 0%, rgba(30, 75, 142, .12), transparent 64%) !important;
+      box-shadow: 0 26px 70px rgba(8, 20, 48, .14), inset 0 1px 0 rgba(255, 255, 255, .9) !important;
+    }
+
+    .hiw-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(circle at 18% 16%, rgba(255, 255, 255, .78), transparent 18%),
+        radial-gradient(circle at 78% 18%, rgba(200, 31, 69, .1), transparent 26%),
+        linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, .46) 48%, transparent 72%);
+      opacity: .8;
+    }
+
+    .hiw-card::after {
+      content: counter(hiw-step, decimal-leading-zero);
+      counter-increment: hiw-step;
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      z-index: 2;
+      font-family: var(--ff-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      color: rgba(13, 40, 87, .46);
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .62);
+      border: 1px solid rgba(255, 255, 255, .74);
+    }
+
+    .hiw-track {
+      counter-reset: hiw-step;
+    }
+
+    .hiw-image {
+      position: relative;
+      z-index: 1;
+      height: 180px !important;
+      padding: 0;
+      object-fit: contain !important;
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      mix-blend-mode: multiply;
+      mask-image: radial-gradient(circle at center, black 68%, transparent 100%);
+      -webkit-mask-image: radial-gradient(circle at center, black 68%, transparent 100%);
+    }
+
+    .hiw-h,
+    .hiw-p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hiw-card:hover .hiw-image {
+      transform: translateY(-3px) scale(1.04) !important;
+    }
+
+    #transformations {
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 420 420' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .024' numOctaves='4' seed='23'/%3E%3CfeColorMatrix values='1 0 0 0 .78 0 1 0 0 .86 0 0 1 0 1 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='420' height='420' filter='url(%23t)' opacity='.6'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 58% 42% at 16% 16%, rgba(30, 75, 142, .18), transparent 66%),
+        radial-gradient(ellipse 50% 40% at 86% 62%, rgba(200, 31, 69, .16), transparent 64%),
+        linear-gradient(180deg, #ffffff 0%, #f2f8ff 46%, #fff5f8 100%) !important;
+      background-size: 680px 680px, auto, auto, auto !important;
+    }
+
+    #transformations .container {
+      z-index: 2;
+    }
+
+    #about,
+    #final-cta,
+    #contact {
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    #about .container,
+    #final-cta .container,
+    #contact .contact-wrap {
+      position: relative;
+    }
+
+    #about .row,
+    #final-cta h2,
+    #final-cta p,
+    #final-cta button,
+    #contact .row {
+      position: relative;
+      z-index: 1;
+    }
+
+    .tg-scroll {
+      position: relative;
+      margin: 10px -12px 0;
+      padding: 30px 12px 34px !important;
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .48), rgba(255, 255, 255, .14)),
+        radial-gradient(ellipse 70% 80% at 50% 100%, rgba(200, 31, 69, .1), transparent 72%);
+      border: 1px solid rgba(255, 255, 255, .58);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72);
+      mask-image: linear-gradient(90deg, transparent 0, #000 3%, #000 97%, transparent 100%);
+    }
+
+    .tg-track {
+      gap: 24px !important;
+      padding: 0 16px 8px !important;
+    }
+
+    .tg-card {
+      width: 316px !important;
+      border-radius: 28px !important;
+      overflow: visible !important;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .88), rgba(255, 247, 250, .7)),
+        radial-gradient(ellipse 90% 48% at 100% 0%, rgba(30, 75, 142, .1), transparent 64%) !important;
+      box-shadow: 0 30px 82px rgba(8, 20, 48, .15), 0 12px 32px rgba(200, 31, 69, .08) !important;
+    }
+
+    .tg-card::before {
+      inset: -1px !important;
+      height: auto !important;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .9), rgba(96, 165, 250, .24), rgba(200, 31, 69, .2), rgba(255, 255, 255, .72)) !important;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .tg-card::after {
+      content: 'BEFORE  |  AFTER';
+      position: absolute;
+      top: 22px;
+      left: 24px;
+      z-index: 3;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      color: #fff;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(13, 40, 87, .86), rgba(200, 31, 69, .78));
+      box-shadow: 0 12px 28px rgba(8, 20, 48, .2);
+    }
+
+    .tg-img {
+      width: calc(100% - 32px) !important;
+      aspect-ratio: 4 / 4.6 !important;
+      margin: 16px 16px 0 !important;
+      padding: 0 !important;
+      border-radius: 18px !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .tg-img img {
+      border-radius: 18px;
+      filter: saturate(1.04) contrast(1.02);
+    }
+
+    .tg-card:hover .tg-img img {
+      transform: scale(1.045) !important;
+    }
+
+    .tg-chip {
+      min-height: 56px !important;
+      border-radius: 16px !important;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .84), rgba(239, 246, 255, .62)),
+        radial-gradient(ellipse 80% 80% at 100% 0%, rgba(200, 31, 69, .12), transparent 70%) !important;
+      color: var(--premium-blue) !important;
+    }
+
+    .tg-arrow,
+    .hiw-btn {
+      background: rgba(255, 255, 255, .78) !important;
+      border: 1px solid rgba(255, 255, 255, .84) !important;
+      box-shadow: 0 18px 42px rgba(8, 20, 48, .14) !important;
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+    }
+
+    .tg-arrow:hover,
+    .hiw-btn:hover {
+      background: linear-gradient(135deg, var(--premium-blue), var(--premium-red)) !important;
+      color: #fff !important;
+    }
+
+    #plans .natural-diet-card {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(239, 248, 255, .76)),
+        radial-gradient(ellipse 88% 50% at 100% 0%, rgba(30, 75, 142, .16), transparent 64%),
+        radial-gradient(ellipse 76% 48% at 0% 100%, rgba(200, 31, 69, .14), transparent 66%) !important;
+      border-color: rgba(30, 75, 142, .28) !important;
+      box-shadow: 0 32px 84px rgba(8, 20, 48, .16), 0 16px 42px rgba(200, 31, 69, .12) !important;
+    }
+
+    #plans .natural-diet-card .plan-tier-label {
+      color: #be123c !important;
+    }
+
+    #plans .natural-diet-card .plan-price {
+      color: #0d2857 !important;
+      text-shadow: 0 16px 38px rgba(13, 40, 87, .12);
+    }
+
+    @keyframes premiumPlanFloat {
+
+      0%,
+      100% {
+        transform: translateY(-8px) scale(1.02);
+      }
+
+      50% {
+        transform: translateY(-16px) scale(1.02);
+      }
+    }
+
+    #plans .premium-recommended-card,
+    #plans .silver-spotlight {
+      animation: premiumPlanFloat 6s ease-in-out infinite;
+      border-color: rgba(200, 31, 69, .4) !important;
+      box-shadow:
+        0 42px 100px rgba(8, 20, 48, .22),
+        0 22px 54px rgba(200, 31, 69, .2),
+        0 0 0 1px rgba(255, 255, 255, .95) inset,
+        0 0 0 4px rgba(200, 31, 69, .06) !important;
+      z-index: 2;
+    }
+
+    #plans .premium-recommended-card {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(255, 240, 246, .85)),
+        radial-gradient(ellipse 90% 60% at 100% 0%, rgba(200, 31, 69, .2), transparent 70%),
+        radial-gradient(ellipse 80% 50% at 0% 100%, rgba(30, 75, 142, .15), transparent 70%) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    #plans .silver-spotlight {
+      border-color: rgba(96, 165, 250, .45) !important;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(239, 246, 255, .88)),
+        radial-gradient(ellipse 90% 60% at 100% 0%, rgba(96, 165, 250, .22), transparent 70%),
+        radial-gradient(ellipse 80% 50% at 0% 100%, rgba(200, 31, 69, .12), transparent 70%) !important;
+      box-shadow:
+        0 42px 100px rgba(8, 20, 48, .2),
+        0 22px 54px rgba(96, 165, 250, .22),
+        0 0 0 1px rgba(255, 255, 255, .95) inset,
+        0 0 0 4px rgba(96, 165, 250, .07) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    #plans .premium-recommended-card:hover,
+    #plans .silver-spotlight:hover {
+      animation-play-state: paused;
+      transform: translateY(-16px) scale(1.03) !important;
+      box-shadow:
+        0 48px 120px rgba(8, 20, 48, .26),
+        0 28px 64px rgba(200, 31, 69, .24),
+        0 0 0 1px rgba(255, 255, 255, .95) inset,
+        0 0 0 4px rgba(200, 31, 69, .08) !important;
+    }
+
+    #plans .silver-spotlight:hover {
+      box-shadow:
+        0 48px 120px rgba(8, 20, 48, .24),
+        0 28px 64px rgba(96, 165, 250, .26),
+        0 0 0 1px rgba(255, 255, 255, .95) inset,
+        0 0 0 4px rgba(96, 165, 250, .09) !important;
+    }
+
+    #plans .premium-recommended-card .plan-popular,
+    #plans .silver-spotlight .plan-popular {
+      background: linear-gradient(135deg, rgba(13, 40, 87, .98), rgba(200, 31, 69, .92)) !important;
+      color: #fff !important;
+      border-color: rgba(255, 255, 255, .4) !important;
+      box-shadow: 0 18px 40px rgba(8, 20, 48, .22), 0 0 20px rgba(200, 31, 69, .4) !important;
+      transform: translateY(-2px);
+    }
+
+    @keyframes wellnessSketchFloat {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(var(--float-rotate, 0deg));
+      }
+
+      50% {
+        transform: translateY(-14px) rotate(calc(var(--float-rotate, 0deg) + 4deg));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .wellness-illustration {
+        width: 210px;
+        height: 154px;
+        opacity: .18;
+      }
+
+      #about .container::after,
+      #final-cta .container::before,
+      #contact .contact-wrap::after {
+        width: 220px;
+        height: 160px;
+        opacity: .12;
+      }
+
+      .hiw-track,
+      .tg-scroll {
+        mask-image: none;
+      }
+
+      .hiw-card {
+        min-height: 370px;
+      }
+
+      .tg-card {
+        width: min(82vw, 304px) !important;
+      }
+
+      #plans .premium-recommended-card,
+      #plans .silver-spotlight {
+        transform: none !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-img-frame {
+        animation: none;
+      }
+
+      #plans .row>[class*="col-"] {
+        display: block !important;
+      }
+
+      #plans .plan-card {
+        min-height: auto !important;
+      }
+    }
+
+    /* --- PREMIUM WELLNESS PLANS SECTION --- */
+    #plans {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(200, 31, 69, 0.04), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(30, 75, 142, 0.04), transparent 40%),
+        var(--paper);
+    }
+
+    .plans-bg-art {
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      transition: opacity 0.5s ease;
+    }
+
+    .plans-bg-art-1 {
+      top: -10%;
+      left: -15%;
+      width: 700px;
+      max-width: 90vw;
+      transform: rotate(-5deg);
+      filter: blur(1px);
+      opacity: 0.25;
+    }
+
+    .plans-bg-art-2 {
+      bottom: -5%;
+      right: -10%;
+      width: 600px;
+      max-width: 80vw;
+      transform: rotate(5deg);
+      filter: blur(1px);
+      opacity: 0.2;
+    }
+
+    .plans-overlay-blend {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(180deg,
+          rgba(255, 255, 255, 0.7) 0%,
+          rgba(255, 255, 255, 0.2) 20%,
+          rgba(255, 255, 255, 0.2) 80%,
+          rgba(255, 255, 255, 0.7) 100%);
+    }
+
+    #plans .plan-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 10px 40px rgba(13, 40, 87, 0.04);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #plans .plan-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(13, 40, 87, 0.08);
+      background: rgba(255, 255, 255, 0.85);
+      border-color: rgba(255, 255, 255, 1);
+    }
+
+    /* Subtle shine effect */
+    #plans .plan-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+      transform: skewX(-20deg);
+      animation: shine 7s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shine {
+      0% {
+        left: -100%;
+      }
+
+      20% {
+        left: 200%;
+      }
+
+      100% {
+        left: 200%;
+      }
+    }
+
+    /* Recommended Cards - Emotional Energy */
+    #plans .plan-card.premium-recommended-card,
+    #plans .plan-card.silver-spotlight {
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 16px 48px rgba(13, 40, 87, 0.08), 0 0 0 1px inset rgba(255, 255, 255, 0.9);
+      transform: translateY(-4px);
+    }
+
+    #plans .plan-card.premium-recommended-card::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.4), transparent 70%);
+      z-index: -1;
+      border-radius: inherit;
+      filter: blur(12px);
+      opacity: 0.8;
+    }
+
+    #plans .plan-card.silver-spotlight::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, rgba(148, 163, 184, 0.5), transparent 70%);
+      z-index: -1;
+      border-radius: inherit;
+      filter: blur(12px);
+      opacity: 0.8;
+    }
+
+    #plans .plan-card.premium-recommended-card:hover,
+    #plans .plan-card.silver-spotlight:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 24px 64px rgba(13, 40, 87, 0.12);
+      background: rgba(255, 255, 255, 0.95);
     }
   </style>
 </head>
@@ -3388,7 +4961,7 @@
         <div id="gate-error"></div>
         <div class="gate-field">
           <label class="gate-lbl">Full Name *</label>
-          <input type="text" class="gate-inp" id="gate-name" placeholder="e.g. Vijay" autocomplete="name" />
+          <input type="text" class="gate-inp" id="gate-name" placeholder="e.g. Joseph Vijay" autocomplete="name" />
         </div>
         <div class="gate-field">
           <label class="gate-lbl">WhatsApp Number *</label>
@@ -3448,8 +5021,8 @@
           <ul class="nav-links" id="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#plans">Plans</a></li>
             <li><a href="#transformations">Results</a></li>
+            <li><a href="#plans">Plans</a></li>
             <li><a href="#testimonials">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><button class="btn-nav" onclick="scrollToPlans()">Start Now</button></li>
@@ -3789,7 +5362,10 @@
     }
   </style>
 
-  <section id="how-it-works" class="sec">
+  <section id="how-it-works" class="sec" style="position: relative; overflow: hidden;">
+    <div class="premium-divider"></div>
+    <img src="/static/images/hiw_workout_art.png" class="premium-art fade-up hiw-workout" alt="Workout Lifestyle Art" />
+    <img src="/static/images/hiw_meal_art.png" class="premium-art fade-up hiw-meal" alt="Healthy Meal Art" />
     <div class="container position-relative">
       <div class="text-center mb-5 fade-up">
         <div class="sec-overline" style="justify-content:center;">Simple & Effective</div>
@@ -3877,9 +5453,271 @@
     });
   </script>
 
+  <!-- TRANSFORMATIONS -->
+  <section id="transformations" class="sec" style="position: relative; overflow: hidden;">
+    <div class="premium-divider"></div>
+    <img src="/static/images/transform_journey_art.png" class="premium-art fade-up transform-journey"
+      alt="Transformation Journey Art" />
+    <div class="container">
+      <div class="text-center mb-4 fade-up">
+        <div class="sec-overline" style="justify-content:center;">Real Results</div>
+        <h2 class="sec-h2">REAL <em>TRANSFORMATIONS</em></h2>
+        <p
+          style="color:var(--muted);font-size:15px;margin-top:12px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.7;">
+          Real members, real results. Every transformation below is from someone who completed the 21DWLC program.
+        </p>
+      </div>
+
+      <div class="tg-scroll" id="tgScroll">
+        <div class="tg-track" id="tgTrack">
+
+
+
+          <!-- Card 2: Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client3.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: DIAMOND</div>
+            </div>
+          </div>
+
+          <!-- Card  Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client4.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: GOLD</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client5.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: DIAMOND</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client6.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: DIAMOND</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client13.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: SILVER</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client14.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: GOLD</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client15.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: DIAMOND</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client16.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: GOLD</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client17.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: SILVER</div>
+            </div>
+          </div>
+
+          <!-- Card Fat Loss -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client18.jpeg" alt="Fat Loss Transformation"
+                onerror="this.src='/static/images/client4.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: GOLD</div>
+            </div>
+          </div>
+
+          <!-- Card 3: Child -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/child.jpeg" alt="Child Transformation"
+                onerror="this.src='/static/images/client6.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: PREMIUM</div>
+            </div>
+          </div>
+
+          <!-- Card 4: Skin -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client7.jpeg" alt="Skin Transformation"
+                onerror="this.src='/static/images/client8.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-stars"></i> MEMBER OF: SKIN</div>
+            </div>
+          </div>
+
+          <!-- Skin -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client8.jpeg" alt="Skin Transformation"
+                onerror="this.src='/static/images/client8.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-stars"></i> MEMBER OF: SKIN</div>
+            </div>
+          </div>
+
+          <!-- Skin -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client9.jpeg" alt="Skin Transformation"
+                onerror="this.src='/static/images/client8.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-stars"></i> MEMBER OF: SKIN</div>
+            </div>
+          </div>
+
+          <!-- Skin -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client10.jpeg" alt="Skin Transformation"
+                onerror="this.src='/static/images/client8.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-stars"></i> MEMBER OF: SKIN</div>
+            </div>
+          </div>
+
+          <!-- Skin -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client11.jpeg" alt="Skin Transformation"
+                onerror="this.src='/static/images/client8.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-stars"></i> MEMBER OF: SKIN</div>
+            </div>
+          </div>
+
+          <!-- Skin -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client12.jpeg" alt="Skin Transformation"
+                onerror="this.src='/static/images/client8.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-stars"></i> MEMBER OF: SKIN</div>
+            </div>
+          </div>
+
+          <!-- Card 1: Founder -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client0.jpeg" alt="Founder Transformation"
+                onerror="this.src='/static/images/client5.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: SILVER</div>
+            </div>
+          </div>
+
+          <!-- Card 5: Weight Gain -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client1.jpeg" alt="Weight Gain Transformation"
+                onerror="this.src='/static/images/client2.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: SILVER</div>
+            </div>
+          </div>
+
+          <!-- Card 5: Weight Gain -->
+          <div class="tg-card">
+            <div class="tg-img">
+              <img src="/static/images/client2.jpeg" alt="Weight Gain Transformation"
+                onerror="this.src='/static/images/client2.jpeg'" />
+            </div>
+            <div class="tg-body">
+              <div class="tg-chip"><i class="bi bi-award-fill"></i> MEMBER OF: GOLD</div>
+            </div>
+          </div>
+
+        </div><!-- /tgTrack -->
+      </div><!-- /tg-scroll -->
+
+      <!-- Gallery nav arrows -->
+      <div class="tg-nav fade-up">
+        <button class="tg-arrow" id="tgPrev" onclick="tgScroll(-1)" aria-label="Previous">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <span class="tg-counter" id="tgCounter">1 / 5</span>
+        <button class="tg-arrow" id="tgNext" onclick="tgScroll(1)" aria-label="Next">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
   <!-- PLANS -->
   <section id="plans" class="sec">
-    <div class="container position-relative" style="z-index:1;">
+    <!-- Artistic Wellness Visuals -->
+    <img src="static/images/wellness_yoga_bg.png" class="plans-bg-art plans-bg-art-1" alt="Wellness Yoga Silhouette">
+    <img src="static/images/wellness_lifestyle_bg.png" class="plans-bg-art plans-bg-art-2" alt="Healthy Lifestyle Art">
+    <div class="plans-overlay-blend"></div>
+
+    <div class="container position-relative" style="z-index:2;">
       <div class="text-center mb-5 fade-up">
         <div class="sec-overline plan-over" style="justify-content:center;">Pricing Plans</div>
         <h2 class="sec-h2 plan-h2">PICK YOUR <em>PROGRAM</em></h2>
@@ -3914,7 +5752,6 @@
         <!-- Plan 4: PRO (Highlighted) -->
         <div class="col-md-6 col-lg-4 fade-up fd1">
           <div class="plan-card featured d-flex flex-column h-100">
-            <div class="plan-popular">MOST POPULAR</div>
             <div class="plan-tier-label">PRO</div>
             <div class="plan-tagline">For Best Weight Loss</div>
             <div class="plan-price"><sub>₹</sub>1999<small>/21 days</small></div>
@@ -3932,7 +5769,9 @@
 
         <!-- Plan 5: PREMIUM -->
         <div class="col-md-6 col-lg-4 fade-up fd2">
-          <div class="plan-card tier d-flex flex-column h-100" style="border-color: rgba(225,29,72,.4);">
+          <div class="plan-card tier premium-recommended-card d-flex flex-column h-100"
+            style="border-color: rgba(225,29,72,.4);">
+            <div class="plan-popular">RECOMMENDED</div>
             <div class="plan-tier-label" style="color:#f43f5e;">PREMIUM</div>
             <div class="plan-tagline">Advanced Monthly Plan</div>
             <div class="plan-price" style="font-size:46px;"><sub>₹</sub>2999<small>/30 days</small></div>
@@ -3959,14 +5798,13 @@
         <div class="col-md-6 col-lg-4 fade-up">
           <div class="plan-card tier silver-spotlight d-flex flex-column h-100"
             style="border-color: rgba(148,163,184,.6);">
-            <div class="plan-popular" style="background:linear-gradient(135deg,#f8fbff,#e0f2fe); color:#0f172a;">
-              RECOMMENDED</div>
+            <div class="plan-popular">RECOMMENDED</div>
             <div class="plan-tier-label" style="color:#94a3b8;">SILVER</div>
             <div class="plan-tagline">3 months commitment</div>
             <div class="plan-price" style="font-size:46px;"><sub>₹</sub>8997<small>/3 months</small></div>
             <hr class="plan-sep">
             <ul class="plan-list flex-grow-1">
-              <li><i class="bi bi-check-circle-fill" style="color:#94a3b8;"></i> Up to 15kgs weight loss</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#94a3b8;"></i> Up to 15 kgs weight loss</li>
               <li><i class="bi bi-check-circle-fill" style="color:#94a3b8;"></i> Everything in premium</li>
               <li><i class="bi bi-check-circle-fill" style="color:#94a3b8;"></i> 1-on-1 coach call</li>
             </ul>
@@ -3979,7 +5817,6 @@
         <!-- Plan 7: GOLD -->
         <div class="col-md-6 col-lg-4 fade-up fd1">
           <div class="plan-card tier d-flex flex-column h-100" style="border-color: rgba(250,204,21,.5);">
-            <div class="plan-popular" style="background:#facc15; color:#422006;">10% off on coaching fee</div>
             <div class="plan-tier-label" style="color:#facc15;">GOLD</div>
             <div class="plan-tagline">Ultimate transformation</div>
             <span class="plan-price-old"><span class="rupee">₹</span>19,793.4</span>
@@ -4000,8 +5837,6 @@
         <!-- Plan 8: DIAMOND -->
         <div class="col-md-6 col-lg-4 fade-up fd2">
           <div class="plan-card tier d-flex flex-column h-100" style="border-color: rgba(96,165,250,.6);">
-            <div class="plan-popular" style="background:linear-gradient(135deg,#eff6ff,#dbeafe); color:#0f172a;">15% OFF
-              on coaching fee</div>
             <div class="plan-tier-label" style="color:#60a5fa;">DIAMOND</div>
             <div class="plan-tagline">Complete lifestyle change</div>
             <span class="plan-price-old"><span class="rupee">₹</span>41,397.7</span>
@@ -4030,7 +5865,7 @@
         <!-- Plan 9: SKIN PROGRAM -->
         <div class="col-md-6 col-lg-6 fade-up">
           <div class="plan-card tier d-flex flex-column h-100" style="border-color: rgba(244,114,182,.5);">
-            <div class="plan-tier-label" style="color:#f472b6;">SKIN PROGRAM</div>
+            <div class="plan-tier-label" style="color:#f472b6;">SKIN CARE</div>
             <div class="plan-tagline">Skin improvement</div>
             <div class="plan-price" style="font-size:46px;"><sub>₹</sub>999</div>
             <hr class="plan-sep">
@@ -4048,7 +5883,6 @@
         <!-- Plan 10: WEIGHT GAIN -->
         <div class="col-md-6 col-lg-6 fade-up fd1">
           <div class="plan-card tier d-flex flex-column h-100" style="border-color: rgba(167,139,250,.5);">
-            <div class="plan-popular" style="background:#8b5cf6; color:#fff;">Best Transformation</div>
             <div class="plan-tier-label" style="color:#a78bfa;">WEIGHT GAIN</div>
             <div class="plan-tagline">Build healthy mass</div>
             <div class="plan-price" style="font-size:46px;"><sub>₹</sub>2999</div>
@@ -4070,10 +5904,36 @@
           <div class="sec-overline" style="margin-bottom:0; color:var(--forest);">New Launch</div>
         </div>
 
+        <!-- Plan 0: Natural Diet Plan -->
+        <div class="col-md-6 col-lg-4 fade-up new-launch-plan-col">
+          <div class="plan-card tier d-flex flex-column new-launch-card natural-diet-card">
+            <div class="plan-tier-label">NATURAL DIET PLAN</div>
+            <div class="plan-tagline">REACH YOUR PERFECT SHAPE</div>
+            <div class="plan-price"><sub>&#8377;</sub>999</div>
+            <hr class="plan-sep">
+            <ul class="plan-list flex-grow-1">
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> LOSS/GAIN WEIGHT NATURALLY</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> IMPROVE HEALTHIER SKIN &amp; GLOW</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> IMPROVE ENERGY &amp; CONFIDENCE</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> HELPS IMPROVE SLEEP QUALITY</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> EASY TO FOLLOW DIET PLAN</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> COACH &amp; COMMUNITY SUPPORT</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> HOME-BASED TRANSFORMATION</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> BUILD HEALTHY LIFESTYLE HABITS</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> FEEL ACTIVE &amp; LIGHT IN JUST 21 DAYS
+              </li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> FLEXIBLE FOR STUDENTS, EMPLOYEES,
+                PARENTS, AND BEGINNERS</li>
+            </ul>
+            <button class="btn-plan btn-plan-ghost" style="border-color:#be123c !important;"
+              onclick="openRegistration('NEW LAUNCH: NATURAL DIET PLAN', 99900, '&#8377;999')">Join for
+              &#8377;999</button>
+          </div>
+        </div>
+
         <!-- Plan 1: Information session -->
-        <div class="col-md-6 col-lg-4 fade-up">
-          <div class="plan-card tier d-flex flex-column h-100">
-            <div class="plan-popular">NEW LAUNCH</div>
+        <div class="col-md-6 col-lg-4 fade-up new-launch-plan-col">
+          <div class="plan-card tier d-flex flex-column new-launch-card">
             <div class="plan-tier-label">Happy To Help</div>
             <div class="plan-tagline">Understand more about 21DWLC</div>
             <div class="plan-price"><sub>₹</sub>49</div>
@@ -4090,9 +5950,8 @@
         </div>
 
         <!-- Plan 2: Meet new friends -->
-        <div class="col-md-6 col-lg-4 fade-up fd1">
-          <div class="plan-card tier d-flex flex-column h-100">
-            <div class="plan-popular">NEW LAUNCH</div>
+        <div class="col-md-6 col-lg-4 fade-up fd1 new-launch-plan-col">
+          <div class="plan-card tier d-flex flex-column new-launch-card">
             <div class="plan-tier-label">Meet New Friends</div>
             <div class="plan-tagline">Outdoor fun</div>
             <div class="plan-price"><sub>₹</sub>100</div>
@@ -4107,263 +5966,86 @@
               onclick="openRegistration('NEW LAUNCH: Meet new friends', 10000, '₹100')">Join for ₹100</button>
           </div>
         </div>
+
+        <!-- Plan 3: BMI CHECK-UP -->
+        <div class="col-md-6 col-lg-4 fade-up fd2 new-launch-plan-col">
+          <div class="plan-card tier d-flex flex-column new-launch-card" style="border-color: rgba(96,165,250,.45);">
+            <div class="plan-tier-label" style="color:#2563eb;">BMI CHECK-UP</div>
+            <div class="plan-tagline">Know your full body condition</div>
+            <div class="plan-price"><sub>₹</sub>249</div>
+            <hr class="plan-sep">
+            <ul class="plan-list flex-grow-1">
+              <li><i class="bi bi-check-circle-fill" style="color:#2563eb;"></i> Height</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#2563eb;"></i> Body Weight</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#2563eb;"></i> Body Fat Percentage</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#2563eb;"></i> Visceral Fat Level</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#2563eb;"></i> Resting Metabolism (BMR)</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#2563eb;"></i> Body Mass Index (BMI)</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#2563eb;"></i> Body Age</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#2563eb;"></i> Subcutaneous Fat (TSF)</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#2563eb;"></i> Skeletal Muscle (MM)</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#2563eb;"></i> Body Measurements</li>
+              <li><i class="bi bi-stars" style="color:#e11d48;"></i> Receive a detailed lifestyle correction counselling
+                from the expert coach and get effective solutions to improve your body condition.</li>
+              <li><i class="bi bi-stars" style="color:#e11d48;"></i> Detailed counselling available to address your
+                personal health issues.</li>
+              <li><i class="bi bi-stars" style="color:#e11d48;"></i> Free 30-minute health counselling</li>
+            </ul>
+            <button class="btn-plan btn-plan-ghost" style="border-color:#2563eb !important;"
+              onclick="openRegistration('NEW LAUNCH: BMI CHECK-UP', 24900, '₹249')">Join for ₹249</button>
+          </div>
+        </div>
+
+        <!-- Plan 4: Body Transformation Challenge -->
+        <div class="col-md-6 col-lg-4 fade-up fd3 new-launch-plan-col">
+          <div class="plan-card tier d-flex flex-column new-launch-card btc-launch-card">
+            <div class="plan-tier-label" style="color:#be123c;">BODY TRANSFORMATION CHALLENGE (BTC)</div>
+            <div class="plan-tagline">CELEBRATION OF TRANSFORMATIONS</div>
+            <div class="plan-price"><sub>&#8377;</sub>999<small>/1 ticket</small></div>
+            <hr class="plan-sep">
+            <ul class="plan-list flex-grow-1">
+              <li><i class="bi bi-stars" style="color:#be123c;"></i> &#128525; GRAND FINALE AT BEST HOTEL</li>
+              <li><i class="bi bi-trophy-fill" style="color:#be123c;"></i> CASH PRIZE FOR 1ST WINNER &#8377;10,000</li>
+              <li><i class="bi bi-award-fill" style="color:#be123c;"></i> CASH PRIZE FOR 2ND WINNER &#8377;7,000</li>
+              <li><i class="bi bi-award" style="color:#be123c;"></i> CASH PRIZE FOR 3RD WINNER &#8377;5,000</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> GALA LUNCH OR DINNER</li>
+              <li><i class="bi bi-gift-fill" style="color:#be123c;"></i> GIFT FOR ALL BTC PARTICIPANTS</li>
+              <li><i class="bi bi-stars" style="color:#be123c;"></i> &#127881; RECOGNITION &amp; GIFTS FOR MULTIPLE
+                CATEGORY WINNERS</li>
+              <li><i class="bi bi-people-fill" style="color:#be123c;"></i> CHALLENGE WITH FRIENDS AND YOURSELF</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> SPECIAL SESSIONS ONLY FOR BTC
+                PARTICIPANTS</li>
+              <li><i class="bi bi-plus-circle-fill" style="color:#be123c;"></i> AND MORE!</li>
+            </ul>
+            <button class="btn-plan btn-plan-ghost" style="border-color:#be123c !important;"
+              onclick="openRegistration('NEW LAUNCH: BODY TRANSFORMATION CHALLENGE (BTC)', 99900, '&#8377;999')">Join
+              for &#8377;999</button>
+          </div>
+        </div>
+
+        <!-- Plan 5: Double Dhamaka -->
+        <div class="col-md-6 col-lg-4 fade-up fd4 new-launch-plan-col">
+          <div class="plan-card tier d-flex flex-column new-launch-card double-launch-card">
+            <div class="plan-tier-label" style="color:#1d4f91;">DOUBLE DHAMAKA</div>
+            <div class="plan-tagline">30-DAY WEIGHT LOSS CHALLENGE WITH BTC TICKET</div>
+            <div class="plan-price"><sub>&#8377;</sub>3499</div>
+            <hr class="plan-sep">
+            <ul class="plan-list flex-grow-1">
+              <li><i class="bi bi-stars" style="color:#1d4f91;"></i> INCLUDE ALL BENEFITS OF BTC GRAND FINALE</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#1d4f91;"></i> INCLUDE ALL BENEFITS OF PREMIUM PLAN
+              </li>
+            </ul>
+            <button class="btn-plan btn-plan-ghost" style="border-color:#1d4f91 !important;"
+              onclick="openRegistration('NEW LAUNCH: DOUBLE DHAMAKA', 349900, '&#8377;3499')">Join for
+              &#8377;3499</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- TRANSFORMATIONS -->
-  <section id="transformations" class="sec">
-    <div class="container">
-      <div class="text-center mb-4 fade-up">
-        <div class="sec-overline" style="justify-content:center;">Real Results</div>
-        <h2 class="sec-h2">REAL <em>TRANSFORMATIONS</em></h2>
-        <p
-          style="color:var(--muted);font-size:15px;margin-top:12px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.7;">
-          Real members, real results. Every transformation below is from someone who completed the 21DWLC program.
-        </p>
-      </div>
 
-      <div class="tg-scroll" id="tgScroll">
-        <div class="tg-track" id="tgTrack">
-
-
-
-          <!-- Card 2: Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client3.jpeg" alt="Fat Loss Transformation"
-                onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: DIAMOND</div>
-            </div>
-          </div>
-
-          <!-- Card  Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client4.jpeg" alt="Fat Loss Transformation"
-                onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
-            </div>
-          </div>
-
-          <!-- Card Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client5.jpeg" alt="Fat Loss Transformation"
-                onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: DIAMOND</div>
-            </div>
-          </div>
-
-          <!-- Card Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client6.jpeg" alt="Fat Loss Transformation"
-                onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: DIAMOND</div>
-            </div>
-          </div>
-
-          <!-- Card Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client13.jpeg" alt="Fat Loss Transformation"
-                onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
-            </div>
-          </div>
-
-          <!-- Card Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client14.jpeg" alt="Fat Loss Transformation"
-                onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
-            </div>
-          </div>
-
-          <!-- Card Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client15.jpeg" alt="Fat Loss Transformation"
-                onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: DIAMOND</div>
-            </div>
-          </div>
-
-          <!-- Card Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client16.jpeg" alt="Fat Loss Transformation"
-                onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
-            </div>
-          </div>
-
-          <!-- Card Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client17.jpeg" alt="Fat Loss Transformation"
-                onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
-            </div>
-          </div>
-
-          <!-- Card Fat Loss -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client18.jpeg" alt="Fat Loss Transformation"
-                onerror="this.src='/static/images/client4.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
-            </div>
-          </div>
-
-          <!-- Card 3: Child -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/child.jpeg" alt="Child Transformation"
-                onerror="this.src='/static/images/client6.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: PREMIUM</div>
-            </div>
-          </div>
-
-          <!-- Card 4: Skin -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client7.jpeg" alt="Skin Transformation"
-                onerror="this.src='/static/images/client8.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN</div>
-            </div>
-          </div>
-
-          <!-- Skin -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client8.jpeg" alt="Skin Transformation"
-                onerror="this.src='/static/images/client8.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN</div>
-            </div>
-          </div>
-
-          <!-- Skin -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client9.jpeg" alt="Skin Transformation"
-                onerror="this.src='/static/images/client8.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN</div>
-            </div>
-          </div>
-
-          <!-- Skin -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client10.jpeg" alt="Skin Transformation"
-                onerror="this.src='/static/images/client8.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN</div>
-            </div>
-          </div>
-
-          <!-- Skin -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client11.jpeg" alt="Skin Transformation"
-                onerror="this.src='/static/images/client8.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN</div>
-            </div>
-          </div>
-
-          <!-- Skin -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client12.jpeg" alt="Skin Transformation"
-                onerror="this.src='/static/images/client8.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-stars"></i> PLAN OPTED: SKIN</div>
-            </div>
-          </div>
-
-          <!-- Card 1: Founder -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client0.jpeg" alt="Founder Transformation"
-                onerror="this.src='/static/images/client5.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
-            </div>
-          </div>
-
-          <!-- Card 5: Weight Gain -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client1.jpeg" alt="Weight Gain Transformation"
-                onerror="this.src='/static/images/client2.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: SILVER</div>
-            </div>
-          </div>
-
-          <!-- Card 5: Weight Gain -->
-          <div class="tg-card">
-            <div class="tg-img">
-              <img src="/static/images/client2.jpeg" alt="Weight Gain Transformation"
-                onerror="this.src='/static/images/client2.jpeg'" />
-            </div>
-            <div class="tg-body">
-              <div class="tg-chip"><i class="bi bi-award-fill"></i> PLAN OPTED: GOLD</div>
-            </div>
-          </div>
-
-        </div><!-- /tgTrack -->
-      </div><!-- /tg-scroll -->
-
-      <!-- Gallery nav arrows -->
-      <div class="tg-nav fade-up">
-        <button class="tg-arrow" id="tgPrev" onclick="tgScroll(-1)" aria-label="Previous">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-        <span class="tg-counter" id="tgCounter">1 / 5</span>
-        <button class="tg-arrow" id="tgNext" onclick="tgScroll(1)" aria-label="Next">
-          <i class="bi bi-chevron-right"></i>
-        </button>
-      </div>
-
-    </div>
-  </section>
   <!-- TESTIMONIALS -->
   <section id="testimonials" class="sec">
     <div class="container">
@@ -4536,7 +6218,7 @@
               <div class="testi-author mt-auto flex-shrink-0">
                 <div class="testi-av av-g">R</div>
                 <div class="testi-name">Rohit</div>
-                <div class="testi-meta">Lost 6kg &bull; Plan: PRO</div>
+                <div class="testi-meta">Skin Improvement &bull; Plan: Skin Care</div>
               </div>
             </div>
           </div>
@@ -4710,7 +6392,8 @@
   <!-- CONTACT -->
   <!-- FINAL CTA -->
   <section id="final-cta" class="sec"
-    style="background:linear-gradient(180deg, rgba(255,252,253,.2) 0%, rgba(255,255,255,0) 100%), radial-gradient(circle at 16% 24%, rgba(225,29,72,.08) 0%, transparent 22%), radial-gradient(circle at 84% 76%, rgba(30,75,142,.08) 0%, transparent 24%); color: var(--ink);">
+    style="position: relative; overflow: hidden; background:linear-gradient(180deg, rgba(255,252,253,.2) 0%, rgba(255,255,255,0) 100%), radial-gradient(circle at 16% 24%, rgba(225,29,72,.08) 0%, transparent 22%), radial-gradient(circle at 84% 76%, rgba(30,75,142,.08) 0%, transparent 24%); color: var(--ink);">
+    <img src="/static/images/cta_wellness_art.png" class="premium-art fade-up cta-art" alt="Wellness CTA Art" />
     <div class="container position-relative text-center">
       <h2 class="sec-h2" style="color:var(--ink); font-size:42px;">Your Health Is Your Greatest Wealth</h2>
       <p style="font-size:18px; opacity:0.9; margin-bottom: 24px;">Lose 3–5kg in 21 days with home workouts & Indian
@@ -4730,8 +6413,8 @@
           <div class="col-lg-5 fade-up position-relative" style="z-index:1;">
             <div class="sec-overline contact-over">Get In Touch</div>
             <div class="ch">ANY <em>QUESTIONS?</em></div>
-            <p class="cdesc">Our team replies within 30 minutes on Call/WhatsApp.<br>Ready to start? Join over 12,000
-              members!
+            <p class="cdesc">Fill out the form now—our team will contact you shortly! Join a community of over 12,000+
+              members!.
             </p>
             <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px;">
               <div class="c-info-row">
@@ -4740,7 +6423,7 @@
               </div>
               <div class="c-info-row">
                 <div class="c-icon"><i class="bi bi-envelope-fill" style="color:#93c5fd;font-size:15px;"></i></div>
-                <a href="mailto:21daysweightlosscenter@gmail.com"
+                <a href="mailto:21daysweightlosscentre@gmail.com"
                   style="color:rgba(71,85,105,.84);text-decoration:none;transition:color .2s;"
                   onmouseover="this.style.color='rgba(13,40,87,1)'" onmouseout="this.style.color='rgba(71,85,105,.84)'">
                   21daysweightlosscentre@gmail.com
@@ -4771,7 +6454,7 @@
             <form id="contact-form">
               <div class="row g-3">
                 <div class="col-md-6"><label class="form-lbl">Your Name</label><input type="text" class="form-inp"
-                    placeholder="Vijay" required /></div>
+                    placeholder="Joseph Vijay" required /></div>
                 <div class="col-md-6"><label class="form-lbl">Phone Number</label><input type="tel" class="form-inp"
                     placeholder="987*******" required /></div>
                 <div class="col-12"><label class="form-lbl">Message if you have any questions</label><textarea
@@ -5321,6 +7004,47 @@
           }
         });
       }
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const skipTags = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "SVG", "PATH"]);
+      const attrs = ["placeholder", "aria-label", "alt", "title"];
+
+      function uppercaseVisibleText(root) {
+        if (!root || skipTags.has(root.nodeName)) return;
+        if (root.nodeType === Node.TEXT_NODE) {
+          const upper = root.nodeValue.toUpperCase();
+          if (root.nodeValue !== upper) root.nodeValue = upper;
+          return;
+        }
+        if (root.nodeType !== Node.ELEMENT_NODE && root.nodeType !== Node.DOCUMENT_NODE) return;
+        if (root.nodeType === Node.ELEMENT_NODE) {
+          attrs.forEach(attr => {
+            if (root.hasAttribute(attr)) {
+              const value = root.getAttribute(attr);
+              const upper = value.toUpperCase();
+              if (value !== upper) root.setAttribute(attr, upper);
+            }
+          });
+        }
+        root.childNodes.forEach(uppercaseVisibleText);
+      }
+
+      document.title = document.title.toUpperCase();
+      uppercaseVisibleText(document.body);
+
+      const textObserver = new MutationObserver(mutations => {
+        textObserver.disconnect();
+        mutations.forEach(mutation => {
+          if (mutation.type === "characterData") uppercaseVisibleText(mutation.target);
+          mutation.addedNodes.forEach(uppercaseVisibleText);
+        });
+        textObserver.observe(document.body, { childList: true, characterData: true, subtree: true });
+      });
+
+      textObserver.observe(document.body, { childList: true, characterData: true, subtree: true });
     });
   </script>
 
