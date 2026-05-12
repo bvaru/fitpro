@@ -4384,18 +4384,7 @@
       transform: rotate(-3deg);
     }
 
-    #hero .hero-bg::after {
-      content: '';
-      position: absolute;
-      right: 3%;
-      top: 12%;
-      width: min(36vw, 420px);
-      height: min(28vw, 320px);
-      pointer-events: none;
-      opacity: .22;
-      mix-blend-mode: multiply;
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 420 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M71 245c56-57 115-69 176-36 42 23 76 18 103-15' stroke='%230d2857' stroke-width='3' opacity='.22'/%3E%3Cpath d='M99 216c36-34 72-50 108-47 35 3 64 24 88 62' stroke='%23c81f45' stroke-width='2.8' opacity='.38'/%3E%3Cpath d='M199 91c8-9 21-9 29 0 7 9 3 22-8 26-10 4-22-3-23-14 0-4 1-8 2-12zM213 122c-9 31-27 58-54 82M213 122c26 29 59 48 98 58M160 204c-20 14-39 24-58 30M242 194c18 18 37 31 57 40' stroke='%230d2857' stroke-width='3.6'/%3E%3Cpath d='M96 112c23-19 48-24 74-14M290 90c17 18 30 39 40 63M316 76c18 1 34 7 49 19' stroke='%23c81f45' stroke-width='2.3' opacity='.35'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
-    }
+
 
     #how-it-works {
       overflow: hidden;
@@ -4581,21 +4570,7 @@
       pointer-events: none;
     }
 
-    .tg-card::after {
-      content: 'BEFORE  |  AFTER';
-      position: absolute;
-      top: 22px;
-      left: 24px;
-      z-index: 3;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: .16em;
-      color: #fff;
-      padding: 8px 11px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, rgba(13, 40, 87, .86), rgba(200, 31, 69, .78));
-      box-shadow: 0 12px 28px rgba(8, 20, 48, .2);
-    }
+
 
     .tg-img {
       width: calc(100% - 32px) !important;
@@ -4938,6 +4913,120 @@
       transform: translateY(-12px);
       box-shadow: 0 24px 64px rgba(13, 40, 87, 0.12);
       background: rgba(255, 255, 255, 0.95);
+    }
+
+    /* =========================================================================
+       COMPREHENSIVE RESPONSIVE OPTIMIZATION
+       ========================================================================= */
+    .sec-overline {
+      font-size: 13.5px !important;
+      letter-spacing: 0.16em !important;
+    }
+
+    html,
+    body {
+      overflow-x: hidden !important;
+      width: 100%;
+      max-width: 100vw;
+    }
+
+    img,
+    video,
+    iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .hero-sub,
+    .plan-features li {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    @media (min-width: 993px) {
+      .container {
+        max-width: 1140px;
+      }
+    }
+
+    @media (max-width: 992px) {
+
+      .plan-card,
+      .testi-card,
+      .hiw-card,
+      .tg-card {
+        max-width: 100% !important;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #hero {
+        text-align: center;
+      }
+
+      .hero-btns,
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-eyebrow {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-h1 {
+        font-size: clamp(32px, 8vw, 42px) !important;
+        letter-spacing: -1px !important;
+      }
+
+      .sec-h2 {
+        font-size: clamp(28px, 7vw, 36px) !important;
+        letter-spacing: -0.5px !important;
+      }
+
+      .btn-hero,
+      .btn-hero-ghost,
+      .btn-plan,
+      .btn-proceed,
+      .btn-cta {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+      }
+
+      .hero-btns .btn-hero,
+      .hero-btns .btn-hero-ghost {
+        width: 100%;
+        margin: 0;
+      }
+
+      .hero-float-card {
+        transform: scale(0.85);
+        transform-origin: bottom left;
+        left: 10px;
+        bottom: 10px;
+      }
+
+      .hero-float-badge {
+        transform: scale(0.85);
+        transform-origin: top right;
+        right: 10px;
+        top: 10px;
+      }
     }
   </style>
 </head>
@@ -5364,8 +5453,7 @@
 
   <section id="how-it-works" class="sec" style="position: relative; overflow: hidden;">
     <div class="premium-divider"></div>
-    <img src="/static/images/hiw_workout_art.png" class="premium-art fade-up hiw-workout" alt="Workout Lifestyle Art" />
-    <img src="/static/images/hiw_meal_art.png" class="premium-art fade-up hiw-meal" alt="Healthy Meal Art" />
+
     <div class="container position-relative">
       <div class="text-center mb-5 fade-up">
         <div class="sec-overline" style="justify-content:center;">Simple & Effective</div>
@@ -5456,8 +5544,7 @@
   <!-- TRANSFORMATIONS -->
   <section id="transformations" class="sec" style="position: relative; overflow: hidden;">
     <div class="premium-divider"></div>
-    <img src="/static/images/transform_journey_art.png" class="premium-art fade-up transform-journey"
-      alt="Transformation Journey Art" />
+
     <div class="container">
       <div class="text-center mb-4 fade-up">
         <div class="sec-overline" style="justify-content:center;">Real Results</div>
@@ -5904,32 +5991,7 @@
           <div class="sec-overline" style="margin-bottom:0; color:var(--forest);">New Launch</div>
         </div>
 
-        <!-- Plan 0: Natural Diet Plan -->
-        <div class="col-md-6 col-lg-4 fade-up new-launch-plan-col">
-          <div class="plan-card tier d-flex flex-column new-launch-card natural-diet-card">
-            <div class="plan-tier-label">NATURAL DIET PLAN</div>
-            <div class="plan-tagline">REACH YOUR PERFECT SHAPE</div>
-            <div class="plan-price"><sub>&#8377;</sub>999</div>
-            <hr class="plan-sep">
-            <ul class="plan-list flex-grow-1">
-              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> LOSS/GAIN WEIGHT NATURALLY</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> IMPROVE HEALTHIER SKIN &amp; GLOW</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> IMPROVE ENERGY &amp; CONFIDENCE</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> HELPS IMPROVE SLEEP QUALITY</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> EASY TO FOLLOW DIET PLAN</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> COACH &amp; COMMUNITY SUPPORT</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> HOME-BASED TRANSFORMATION</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> BUILD HEALTHY LIFESTYLE HABITS</li>
-              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> FEEL ACTIVE &amp; LIGHT IN JUST 21 DAYS
-              </li>
-              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> FLEXIBLE FOR STUDENTS, EMPLOYEES,
-                PARENTS, AND BEGINNERS</li>
-            </ul>
-            <button class="btn-plan btn-plan-ghost" style="border-color:#be123c !important;"
-              onclick="openRegistration('NEW LAUNCH: NATURAL DIET PLAN', 99900, '&#8377;999')">Join for
-              &#8377;999</button>
-          </div>
-        </div>
+
 
         <!-- Plan 1: Information session -->
         <div class="col-md-6 col-lg-4 fade-up new-launch-plan-col">
@@ -6004,13 +6066,13 @@
             <div class="plan-price"><sub>&#8377;</sub>999<small>/1 ticket</small></div>
             <hr class="plan-sep">
             <ul class="plan-list flex-grow-1">
-              <li><i class="bi bi-stars" style="color:#be123c;"></i> &#128525; GRAND FINALE AT BEST HOTEL</li>
+              <li> &#128525; GRAND FINALE AT BEST HOTEL</li>
               <li><i class="bi bi-trophy-fill" style="color:#be123c;"></i> CASH PRIZE FOR 1ST WINNER &#8377;10,000</li>
               <li><i class="bi bi-award-fill" style="color:#be123c;"></i> CASH PRIZE FOR 2ND WINNER &#8377;7,000</li>
               <li><i class="bi bi-award" style="color:#be123c;"></i> CASH PRIZE FOR 3RD WINNER &#8377;5,000</li>
               <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> GALA LUNCH OR DINNER</li>
               <li><i class="bi bi-gift-fill" style="color:#be123c;"></i> GIFT FOR ALL BTC PARTICIPANTS</li>
-              <li><i class="bi bi-stars" style="color:#be123c;"></i> &#127881; RECOGNITION &amp; GIFTS FOR MULTIPLE
+              <li>&#127881; RECOGNITION &amp; GIFTS FOR MULTIPLE
                 CATEGORY WINNERS</li>
               <li><i class="bi bi-people-fill" style="color:#be123c;"></i> CHALLENGE WITH FRIENDS AND YOURSELF</li>
               <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> SPECIAL SESSIONS ONLY FOR BTC
@@ -6038,6 +6100,32 @@
             <button class="btn-plan btn-plan-ghost" style="border-color:#1d4f91 !important;"
               onclick="openRegistration('NEW LAUNCH: DOUBLE DHAMAKA', 349900, '&#8377;3499')">Join for
               &#8377;3499</button>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 fade-up new-launch-plan-col">
+          <div class="plan-card tier d-flex flex-column new-launch-card natural-diet-card">
+            <div class="plan-tier-label">NATURAL DIET PLAN</div>
+            <div class="plan-tagline">REACH YOUR PERFECT SHAPE</div>
+            <div class="plan-price"><sub>&#8377;</sub>999</div>
+            <hr class="plan-sep">
+            <ul class="plan-list flex-grow-1">
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> LOSS/GAIN WEIGHT NATURALLY</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> IMPROVE HEALTHIER SKIN &amp; GLOW</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> IMPROVE ENERGY &amp; CONFIDENCE</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> HELPS IMPROVE SLEEP QUALITY</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> EASY TO FOLLOW DIET PLAN</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> COACH &amp; COMMUNITY SUPPORT</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> HOME-BASED TRANSFORMATION</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> BUILD HEALTHY LIFESTYLE HABITS</li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> FEEL ACTIVE &amp; LIGHT IN JUST 21 DAYS
+              </li>
+              <li><i class="bi bi-check-circle-fill" style="color:#be123c;"></i> FLEXIBLE FOR STUDENTS, EMPLOYEES,
+                PARENTS, AND BEGINNERS</li>
+            </ul>
+            <button class="btn-plan btn-plan-ghost" style="border-color:#be123c !important;"
+              onclick="openRegistration('NEW LAUNCH: NATURAL DIET PLAN', 99900, '&#8377;999')">Join for
+              &#8377;999</button>
           </div>
         </div>
 
@@ -6393,7 +6481,7 @@
   <!-- FINAL CTA -->
   <section id="final-cta" class="sec"
     style="position: relative; overflow: hidden; background:linear-gradient(180deg, rgba(255,252,253,.2) 0%, rgba(255,255,255,0) 100%), radial-gradient(circle at 16% 24%, rgba(225,29,72,.08) 0%, transparent 22%), radial-gradient(circle at 84% 76%, rgba(30,75,142,.08) 0%, transparent 24%); color: var(--ink);">
-    <img src="/static/images/cta_wellness_art.png" class="premium-art fade-up cta-art" alt="Wellness CTA Art" />
+
     <div class="container position-relative text-center">
       <h2 class="sec-h2" style="color:var(--ink); font-size:42px;">Your Health Is Your Greatest Wealth</h2>
       <p style="font-size:18px; opacity:0.9; margin-bottom: 24px;">Lose 3–5kg in 21 days with home workouts & Indian
@@ -6489,7 +6577,8 @@
       <div style="font-size:12px;color:rgba(100,116,139,.82);margin:24px 0 16px;">
         <strong>TERMS & CONDITIONS</strong><br />
         By enrolling in any 21DWLC program, you agree that No refunds are available
-        under any circumstances. Results may vary person-by-person depending on consistency and coach guidelines.
+        under any circumstances (including 18% service tax). Results may vary person-by-person depending on consistency
+        and coach guidelines.
       </div>
 
       <div class="foot-copy">
